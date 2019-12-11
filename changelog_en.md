@@ -1,5 +1,9 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.13</h2>
+<ul>
+<li> Updating CFWs/modules/homebrews/usful_payloads packs in version 307.</li>
+</ul>
 <h2>V4.1.12</h2>
 <ul>
 <li>Update the  SwitchPresence-Rewritten client to version 1.6.</li>

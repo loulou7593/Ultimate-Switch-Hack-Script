@@ -1,5 +1,10 @@
 <h1>Changelog des packs de l'Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V307</h2>
+<ul>
+<li>Mise à jour de Nxdumptool en version 1.1.8.</li>
+<li>Supression de Mod_Plague, de GagOrder et de N1dusd.</li>
+</ul>
 <h2>V306</h2>
 <ul>
 <li>Mise à jour du Homebrew Menu en version 3.2.0.</li>
