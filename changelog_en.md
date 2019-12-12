@@ -1,5 +1,10 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.15</h2>
+<ul>
+<li>Update the  sha256 values of the  new keys for the 9.1.0 firmware for the keys file verification function.</li>
+<li>In the SD preparation, the SX-AutoLoader module and the module witch can configure the state of some functions of SX OS when starting will be removed if they exist and if the SX OS pack is copied.</li>
+</ul>
 <h2>V4.1.14</h2>
 <ul>
 <li>Update Hekate to version 5.1.1.</li>
