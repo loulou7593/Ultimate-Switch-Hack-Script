@@ -1,5 +1,10 @@
 <h1>Changelog of the Ultimate Switch Hack Script packs</h1>
 &nbsp;
+<h2>V308</h2>
+<ul>
+<li>Update Hekate to version 5.1.1.</li>
+<li>Update Incognito-RCM to version 0.4.1 via <a target="_blank" href="https://github.com/borntohonk/Incognito_RCM/releases">this fork</a>.</li>
+</ul>
 <h2>V307</h2>
 <ul>
 <li>Update Nxdumptool to version 1.1.8.</li>

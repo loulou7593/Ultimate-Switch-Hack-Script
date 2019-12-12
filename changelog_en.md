@@ -1,5 +1,11 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.14</h2>
+<ul>
+<li>Update Hekate to version 5.1.1.</li>
+<li>Update Incognito-RCM to version 0.4.1 via <a target="_blank" href="https://github.com/borntohonk/Incognito_RCM/releases">this fork</a>.</li>
+<li> Updating CFWs/modules/homebrews/usful_payloads packs in version 308.</li>
+</ul>
 <h2>V4.1.13</h2>
 <ul>
 <li> Updating CFWs/modules/homebrews/usful_payloads packs in version 307.</li>
