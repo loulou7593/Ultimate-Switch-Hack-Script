@@ -1,5 +1,10 @@
 <h1>Changelog des packs de l'Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V309</h2>
+<ul>
+<li>Mise à jour de NX-Activity-Log en version 1.1.0.</li>
+<li>Mise à jour de Sigpatch-Updater et de EdiZon vers la version master du Github, compilé par moi-même.</li>
+</ul>
 <h2>V308</h2>
 <ul>
 <li>Mise à jour de Hekate en version 5.1.1.</li>
