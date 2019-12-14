@@ -1,5 +1,9 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.17</h2>
+<ul>
+<li>Mise à jour des packs de CFWs/modules/homebrews/payloads_utiles en version 310.</li>
+</ul>
 <h2>V4.1.16</h2>
 <ul>
 <li>Mise à jour de Switchboot en version 5.1.1.</li>

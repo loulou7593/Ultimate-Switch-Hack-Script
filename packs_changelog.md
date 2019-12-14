@@ -1,5 +1,9 @@
 <h1>Changelog des packs de l'Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V310</h2>
+<ul>
+<li>Mise à jour de Awoo-Installer en version 1.2.2.</li>
+</ul>
 <h2>V309</h2>
 <ul>
 <li>Mise à jour de NX-Activity-Log en version 1.1.0.</li>
