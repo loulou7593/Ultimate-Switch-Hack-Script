@@ -42,6 +42,7 @@ echo 10: Encrypt a dump or a partition of a rawnand?
 echo 11: Remove console's identification infos  from PRODINFO for a rawnand or a PRODINFO file (same function as Incognito)?
 echo 12: Use Ninfs to mount a rawnand dump file?
 echo 13: Resize the USER partition of a RAWNAND or a FULL NAND?
+echo 14: Brute force the bis_keys?
 echo 0: Mount a console's nand partition via USB and Memloader?
 echo All other choices: Go back to previous menu?
 echo.
@@ -236,6 +237,27 @@ goto:eof
 
 :resize_user_part_value_choice
 set /p resize_user_partition_value=Define the new size of the partition in MB or leave empty to cancel ^(the value couldn't be lesser than 2000 and must be a integer^): 
+goto:eof
+
+:brute_force_input_begin
+echo In fact, this function isn't usful cause it takes too much time, it's just a function that I have developed for fun. Also, the FULL DUMP are not supported.
+pause
+echo.
+echo Choose the support from where the key brute force will be done:
+goto:eof
+
+:brute_force_output_folder_choice
+echo You will need to select the folder where the key will be extracted.
+pause
+%windir%\system32\wscript.exe //Nologo TOOLS\Storage\functions\select_dir.vbs "templogs\tempvar.txt" "Select folder"
+goto:eof
+
+:brute_force_output_folder_empty_error
+echo The folder where the key will be extracted couldn't be empty, the function will be canceled.
+goto:eof
+
+:brute_force_erase_existing_file_choice
+set /p erase_output_file=This folder already contain a file of this type of key, do you realy want to continue and remove the existing file ^(if yes, the file will be removed just after this choice^)? ^(%lng_yes_choice%/%lng_no_choice%^): 
 goto:eof
 
 :bad_char_error

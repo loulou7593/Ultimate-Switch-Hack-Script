@@ -223,7 +223,10 @@ echo Input "4" to change top keygeneration to 4 (FW 4.0.0-4.1.0)
 echo Input "5" to change top keygeneration to 5 (FW 5.0.0-5.1.0)
 echo Input "6" to change top keygeneration to 6 (FW 6.0.0-6.1.0)
 echo Input "7" to change top keygeneration to 7 (FW 6.2.0)
-echo Input "8" to change top keygeneration to 8 (FW 7.0.0-7.0.1)
+echo Input "8" to change top keygeneration to 8 (FW 7.0.0-8.0.1)
+echo Input "9" to change top keygeneration to 9 (FW 8.1.0)
+echo Input "10" to change top keygeneration to 10 (FW 9.0.0-9.01)
+echo Input "11" to change top keygeneration to 11 (FW 9.1.0)
 echo.
 echo Input "b" to return to AUTO-MODE - CONFIGURATION
 echo Input "c" to return to CONFIG MENU
@@ -232,16 +235,32 @@ echo ...........................................................................
 echo.
 set /p bs="Enter your choice: "
 set "v_KGEN=none"
+set "v_CAPRSV=0"
 if /i "%bs%"=="f" set "v_KGEN=-kp false"
 if /i "%bs%"=="0" set "v_KGEN=-kp 0"
+if /i "%bs%"=="0" set "v_CAPRSV=--RSVcap 0"
 if /i "%bs%"=="1" set "v_KGEN=-kp 1"
+if /i "%bs%"=="1" set "v_CAPRSV=--RSVcap 65796"
 if /i "%bs%"=="2" set "v_KGEN=-kp 2"
+if /i "%bs%"=="2" set "v_CAPRSV=--RSVcap 201327002"
 if /i "%bs%"=="3" set "v_KGEN=-kp 3"
+if /i "%bs%"=="3" set "v_CAPRSV=--RSVcap 201392178"
 if /i "%bs%"=="4" set "v_KGEN=-kp 4"
+if /i "%bs%"=="4" set "v_CAPRSV=--RSVcap 268435656"
 if /i "%bs%"=="5" set "v_KGEN=-kp 5"
+if /i "%bs%"=="5" set "v_CAPRSV=--RSVcap 335544750"
 if /i "%bs%"=="6" set "v_KGEN=-kp 6"
+if /i "%bs%"=="6" set "v_CAPRSV=--RSVcap 402653494"
 if /i "%bs%"=="7" set "v_KGEN=-kp 7"
-if /i "%bs%"=="7" set "v_KGEN=-kp 8"
+if /i "%bs%"=="7" set "v_CAPRSV=--RSVcap 404750336"
+if /i "%bs%"=="8" set "v_KGEN=-kp 8"
+if /i "%bs%"=="8" set "v_CAPRSV=--RSVcap 469762048"
+if /i "%bs%"=="9" set "v_KGEN=-kp 9"
+if /i "%bs%"=="9" set "v_CAPRSV=--RSVcap 537919488"
+if /i "%bs%"=="10" set "v_KGEN=-kp 10"
+if /i "%bs%"=="10" set "v_CAPRSV=--RSVcap 603979776"
+if /i "%bs%"=="11" set "v_KGEN=-kp 11"
+if /i "%bs%"=="11" set "v_CAPRSV=--RSVcap 605028352"
 
 if /i "%bs%"=="b" goto sc2
 if /i "%bs%"=="c" goto sc1
@@ -253,9 +272,13 @@ if "%v_RSV%"=="none" goto op_RSV
 
 set v_KGEN="vkey=%v_KGEN%"
 set v_KGEN="%v_KGEN%"
+set v_CAPRSV="capRSV=%v_CAPRSV%"
+set v_CAPRSV="%v_CAPRSV%"
 %pycommand% "%listmanager%" -cl "%op_file%" -ln "95" -nl "set %v_KGEN%" 
+%pycommand% "%listmanager%" -cl "%op_file%" -ln "42" -nl "set %v_CAPRSV%" 
 echo.
 %pycommand% "%listmanager%" -rl "%op_file%" -ln "95" -nl "Line in config was changed to: "
+%pycommand% "%listmanager%" -rl "%op_file%" -ln "42" -nl "Line in config was changed to: "
 echo.
 pause
 goto sc2
@@ -1397,6 +1420,33 @@ if /i "%bs%"=="e" goto salida
 :interface
 cls
 call :logo
+echo ********************************************************
+echo AUTO-MODE - CONFIGURATION
+echo ********************************************************
+echo Input "1" to change STARTUP VISIBILITY configuration
+echo Input "2" to choose a BROWSER for the interface 
+echo Input "3" to deactivate VIDEO PLAYBACK
+echo.
+echo Input "d" to restore INTERFACE DEFAULTS
+echo Input "0" to return to CONFIG MENU
+echo Input "e" to go back to the MAIN PROGRAM
+echo .......................................................
+echo.
+set /p bs="Enter your choice: "
+if /i "%bs%"=="1" goto op_interface_consolevisibility
+if /i "%bs%"=="2" goto op_interface_browser
+if /i "%bs%"=="3" goto op_interface_video_playback
+
+if /i "%bs%"=="d" goto op_interface_defaults
+if /i "%bs%"=="0" goto sc1
+if /i "%bs%"=="e" goto salida
+echo WRONG CHOICE
+echo.
+goto interface
+
+:op_interface_consolevisibility
+cls
+call :logo
 echo ***************************************************************************
 echo START INTERFACE.BAT MINIMIZED?
 echo ***************************************************************************
@@ -1408,6 +1458,7 @@ echo Input "2"  to NOT start MINIMIZED
 echo Input "D"  for default (NOT MINIMIZED)
 echo.
 echo Input "0" to return to CONFIG MENU
+echo Input "b" to return to INTERFACE MENU
 echo Input "e" to go back to the MAIN PROGRAM
 echo.
 set /p bs="Enter your choice: "
@@ -1417,21 +1468,137 @@ if /i "%bs%"=="2" set "v_interface=no"
 if /i "%bs%"=="d" set "v_interface=no"
 
 if /i "%bs%"=="0" goto sc1
+if /i "%bs%"=="b" goto interface
 if /i "%bs%"=="e" goto salida
 
 if "%v_interface%"=="none" echo WRONG CHOICE
 if "%v_interface%"=="none" echo.
-if "%v_interface%"=="none" goto interface
+if "%v_interface%"=="none" goto op_interface_consolevisibility
 
 set v_interface="start_minimized=%v_interface%"
 set v_interface="%v_interface%"
-%pycommand% "%listmanager%" -cl "%opt_interface%" -ln "14" -nl "set %v_interface%" 
+%pycommand% "%listmanager%" -cl "%opt_interface%" -ln "16" -nl "set %v_interface%" 
 echo.
-%pycommand% "%listmanager%" -rl "%opt_interface%" -ln "14" -nl "Line in config was changed to: "
+%pycommand% "%listmanager%" -rl "%opt_interface%" -ln "16" -nl "Line in config was changed to: "
 echo.
 pause
-goto sc1
+goto interface
 
+:op_interface_browser
+cls
+call :logo
+echo ***************************************************************************
+echo CHOOSE BROWSER TO STARTUP INTERFACE
+echo ***************************************************************************
+echo Selects the browser used to startup the interface:
+echo Options:
+echo 1. Auto. Order is set in base of ztools\chromium or browser installed in 
+echo system. This is autoset by squirrel in the following order:
+echo    I.   ztools\chromium (Chromium portable\Slimjet portable)
+echo    II.  Chrome or Chromium installed on system
+echo    III. Microsoft Edge (Not recommended)
+echo 2. Sytem Default. USes default system brwoser (low compatibility)
+echo 3. Set a raw path to a pure chromium browser by one of the following methods.
+echo    I.   Absolute path to your browser, ending by .exe
+echo    II.  Absolute path to a .lnk file (windows shortcut)
+echo    III. Name of a .lnk file in ztools\chromium (ending by .lnk)
+echo         Example: brave.lnk 
+echo         This will read ztools\chromium\brave.lnk and redirect to the exe 
+echo         path launching brave browser
+echo.
+echo Input "1" or "d" to set variable to AUTO
+echo Input "2" to set variable to SYSTEM DEFAULT
+echo Input shortcut.lnk name to 3.III methods
+echo Input absolute route to browser or shortcut for 3.I or 3.II method
+echo.
+echo Input "0" to return to CONFIG MENU
+echo Input "b" to return to INTERFACE MENU
+echo Input "e" to go back to the MAIN PROGRAM
+echo.
+set /p bs="Enter your choice: "
+set "v_interface_browser=%bs%"
+if /i "%bs%"=="1" set "v_interface_browser=auto"
+if /i "%bs%"=="2" set "v_interface_browser=default"
+if /i "%bs%"=="d" set "v_interface_browser=auto"
+
+if /i "%bs%"=="0" goto sc1
+if /i "%bs%"=="b" goto interface
+if /i "%bs%"=="e" goto salida
+
+set v_interface_browser="browserpath=%v_interface_browser%"
+set v_interface_browser="%v_interface_browser%"
+
+%pycommand% "%listmanager%" -cl "%opt_interface%" -ln "30" -nl "set %v_interface_browser%" 
+echo.
+%pycommand% "%listmanager%" -rl "%opt_interface%" -ln "30" -nl "Line in config was changed to: "
+echo.
+pause
+goto interface
+
+:op_interface_video_playback
+cls
+call :logo
+echo ***************************************************************************
+echo DEACTIVATE VIDEO PLAYBACK
+echo ***************************************************************************
+echo Deactivates HLS player for Nintendo.com videos.
+echo This is meant for old computers that may freeze with the HLS javascript 
+echo player
+echo.
+echo Input "1"  to ENABLE video playback
+echo Input "2"  to DISABLE video playback
+echo Input "D"  for default (NOT MINIMIZED)
+echo.
+echo Input "0" to return to CONFIG MENU
+echo Input "b" to return to INTERFACE MENU
+echo Input "e" to go back to the MAIN PROGRAM
+echo.
+set /p bs="Enter your choice: "
+set "v_video_playback=none"
+if /i "%bs%"=="1" set "v_video_playback=true"
+if /i "%bs%"=="2" set "v_video_playback=false"
+if /i "%bs%"=="d" set "v_video_playback=false"
+
+if /i "%bs%"=="0" goto sc1
+if /i "%bs%"=="b" goto interface
+if /i "%bs%"=="e" goto salida
+
+if "%v_video_playback%"=="none" echo WRONG CHOICE
+if "%v_video_playback%"=="none" echo.
+if "%v_video_playback%"=="none" goto op_interface_video_playback
+
+set v_video_playback="videoplayback=%v_video_playback%"
+set v_video_playback="%v_video_playback%"
+%pycommand% "%listmanager%" -cl "%opt_interface%" -ln "34" -nl "set %v_video_playback%" 
+echo.
+%pycommand% "%listmanager%" -rl "%opt_interface%" -ln "34" -nl "Line in config was changed to: "
+echo.
+pause
+goto interface
+
+:op_interface_defaults
+cls
+call :logo
+::Startup
+set v_interface="start_minimized=no"
+set v_interface="%v_interface%"
+%pycommand% "%listmanager%" -cl "%opt_interface%" -ln "16" -nl "set %v_interface%" 
+%pycommand% "%listmanager%" -rl "%opt_interface%" -ln "16" -nl "Line in config was changed to: "
+echo.
+::Browserpath
+set v_interface_browser="browserpath=auto"
+set v_interface_browser="%v_interface_browser%"
+%pycommand% "%listmanager%" -cl "%opt_interface%" -ln "30" -nl "set %v_interface_browser%" 
+%pycommand% "%listmanager%" -rl "%opt_interface%" -ln "30" -nl "Line in config was changed to: "
+echo.
+::Video playback
+set v_video_playback="videoplayback=true"
+set v_video_playback="%v_video_playback%"
+%pycommand% "%listmanager%" -cl "%opt_interface%" -ln "34" -nl "set %v_video_playback%" 
+%pycommand% "%listmanager%" -rl "%opt_interface%" -ln "34" -nl "Line in config was changed to: "
+pause
+
+goto sc1
 
 :salida
 exit /B
@@ -1451,7 +1618,7 @@ ECHO =============================     BY JULESONTHEROAD     ===================
 ECHO -------------------------------------------------------------------------------------
 ECHO "                                POWERED BY SQUIRREL                                "
 ECHO "                    BASED IN THE WORK OF BLAWAR AND LUCA FRAGA                     "
-ECHO                                    VERSION 0.96d
+ECHO                                    VERSION 0.96e
 ECHO -------------------------------------------------------------------------------------                   
 ECHO Program's github: https://github.com/julesontheroad/NSC_BUILDER
 ECHO Blawar's github:  https://github.com/blawar

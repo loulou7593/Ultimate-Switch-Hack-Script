@@ -1,6 +1,6 @@
 @ECHO OFF
 chcp 65001 >nul
-set "program_version=0.96d"
+set "program_version=0.97"
 
 :TOP_INIT
 set "prog_dir=%~dp0"
@@ -1030,7 +1030,8 @@ echo Tapez "6" pour changer la keygeneration à 6 (FW 6.0.0-6.1.0)
 echo Tapez "7" pour changer la keygeneration à 7 (FW 6.2.0)
 echo Tapez "8" pour changer la keygeneration à 8 (FW 7.0.0-8.0.1)
 echo Tapez "9" pour changer la keygeneration à 9 (FW 8.1.0)
-echo Tapez "10" pour changer la keygeneration à 10 (FW 9.0.0)
+echo Tapez "10" pour changer la keygeneration à 10 (FW 9.0.0-9.01)
+echo Tapez "11" pour changer la keygeneration à 11 (FW 9.1.0)
 echo.
 ECHO **************************************************
 echo Ou tapez "b" pour revenir aux options de la liste.
@@ -1063,6 +1064,8 @@ if /i "%bs%"=="9" set "vkey=-kp 9"
 if /i "%bs%"=="9" set "capRSV=--RSVcap 537919488"
 if /i "%bs%"=="10" set "vkey=-kp 10"
 if /i "%bs%"=="10" set "capRSV=--RSVcap 603979776"
+if /i "%bs%"=="11" set "vkey=-kp 11"
+if /i "%bs%"=="11" set "capRSV=--RSVcap 605028352"
 if /i "%vkey%"=="none" echo Choix inexistant.
 if /i "%vkey%"=="none" goto s_KeyChange_wrongchoice
 goto s_KeyChange_skip
@@ -1836,7 +1839,8 @@ echo Tapez "6" pour changer la keygeneration à 6 (FW 6.0.0-6.1.0)
 echo Tapez "7" pour changer la keygeneration à 7 (FW 6.2.0)
 echo Tapez "8" pour changer la keygeneration à 8 (FW 7.0.0-8.0.1)
 echo Tapez "9" pour changer la keygeneration à 9 (FW 8.1.0)
-echo Tapez "10" pour changer la keygeneration à 10 (FW 9.0.0)
+echo Tapez "10" pour changer la keygeneration à 10 (FW 9.0.0-9.01)
+echo Tapez "11" pour changer la keygeneration à 11 (FW 9.1.0)
 echo.
 ECHO **************************************************
 echo Ou tapez "b" pour revenir aux options de la liste.
@@ -1869,6 +1873,8 @@ if /i "%bs%"=="9" set "vkey=-kp 9"
 if /i "%bs%"=="9" set "capRSV=--RSVcap 537919488"
 if /i "%bs%"=="10" set "vkey=-kp 10"
 if /i "%bs%"=="10" set "capRSV=--RSVcap 603979776"
+if /i "%bs%"=="11" set "vkey=-kp 11"
+if /i "%bs%"=="11" set "capRSV=--RSVcap 605028352"
 if /i "%vkey%"=="none" echo Choix inexistant.
 if /i "%vkey%"=="none" goto m_KeyChange_wrongchoice
 

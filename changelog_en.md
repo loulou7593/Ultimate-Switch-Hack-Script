@@ -1,5 +1,15 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.18</h2>
+<ul>
+<li>Add a function that could brute force the  Bis Keys in the Nand Toolbox. Note that this function is unusful cause it take too much time to realy obtain the keys, it's just a function that I have developed for fun.</li>
+<li>Fix the general profiles  for the SD prepare script.</li>
+<li>Fix the reset file of the toolbox script.</li>
+<li>Update NSC_Builder to version 0.97.</li>
+<li>Update SwitchPresence-Rewritten to version 1.6.1.</li>
+<li>Update Rekado to version 3.3.1.</li>
+<li><li> Updating CFWs/modules/homebrews/usful_payloads packs in version 311.</li></li>
+</ul>
 <h2>V4.1.17</h2>
 <ul>
 <li> Updating CFWs/modules/homebrews/usful_payloads packs in version 310.</li>

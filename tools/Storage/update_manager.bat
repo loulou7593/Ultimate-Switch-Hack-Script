@@ -1159,6 +1159,10 @@ call :verif_folder_version "tools\memloader"
 IF "!update_finded!"=="Y" (
 	call :update_folder
 )
+call :verif_folder_version "tools\python3_scripts\brute_force_biskeys"
+IF "!update_finded!"=="Y" (
+	call :update_folder
+)
 call :verif_folder_version "tools\TegraRcmSmash"
 IF "!update_finded!"=="Y" (
 	call :update_folder

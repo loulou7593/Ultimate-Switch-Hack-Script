@@ -349,9 +349,9 @@ echo    efficace que les threads et a une puissance de calcul plus faible
 echo     
 echo  + Si vous avez assez d'espace disque et de puissance de calcul 
 echo    n'ayez pas peur d'essayer d'utiliser 10 à 20 instances
-echo  + tqdm is a little wonky when printing pararell bars
-echo    with threads some so the screen will refresh 
-echo    each 3s in pararell mode to clear bad prints.
+echo  + tqdm est un peu problématique lors de l'affichage des barres en mode pararell
+echo    avec les threads donc l'écran sera rafraichi 
+echo    Toute les 3s en mode pararell pour nettoyer les erreurs d'affichage.
 echo.
 ECHO ********************************************************
 echo Tapez "d" pour défaut (4 instances)

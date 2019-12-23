@@ -222,7 +222,10 @@ echo Tapez "4" pour configurer la keygeneration à 4 (FW 4.0.0-4.1.0)
 echo Tapez "5" pour configurer la keygeneration à 5 (FW 5.0.0-5.1.0)
 echo Tapez "6" pour configurer la keygeneration à 6 (FW 6.0.0-6.1.0)
 echo Tapez "7" pour configurer la keygeneration à 7 (FW 6.2.0)
-echo Tapez "8" pour configurer la keygeneration à 8 (FW 7.0.0-7.0.1)
+echo Tapez "8" pour configurer la keygeneration à 8 (FW 7.0.0-8.0.1)
+echo Tapez "9" pour configurer la keygeneration à 9 (FW 8.1.0)
+echo Tapez "10" pour configurer la keygeneration à 10 (FW 9.0.0-9.01)
+echo Tapez "11" pour configurer la keygeneration à 11 (FW 9.1.0)
 echo.
 echo Tapez "b" pour revenir au menu de configuration du mode automatique
 echo Tapez "c" pour revenir au menu de configuration
@@ -231,16 +234,32 @@ echo ...........................................................................
 echo.
 set /p bs="Faites votre choix: "
 set "v_KGEN=none"
+set "v_CAPRSV=0"
 if /i "%bs%"=="f" set "v_KGEN=-kp false"
 if /i "%bs%"=="0" set "v_KGEN=-kp 0"
+if /i "%bs%"=="0" set "v_CAPRSV=--RSVcap 0"
 if /i "%bs%"=="1" set "v_KGEN=-kp 1"
+if /i "%bs%"=="1" set "v_CAPRSV=--RSVcap 65796"
 if /i "%bs%"=="2" set "v_KGEN=-kp 2"
+if /i "%bs%"=="2" set "v_CAPRSV=--RSVcap 201327002"
 if /i "%bs%"=="3" set "v_KGEN=-kp 3"
+if /i "%bs%"=="3" set "v_CAPRSV=--RSVcap 201392178"
 if /i "%bs%"=="4" set "v_KGEN=-kp 4"
+if /i "%bs%"=="4" set "v_CAPRSV=--RSVcap 268435656"
 if /i "%bs%"=="5" set "v_KGEN=-kp 5"
+if /i "%bs%"=="5" set "v_CAPRSV=--RSVcap 335544750"
 if /i "%bs%"=="6" set "v_KGEN=-kp 6"
+if /i "%bs%"=="6" set "v_CAPRSV=--RSVcap 402653494"
 if /i "%bs%"=="7" set "v_KGEN=-kp 7"
-if /i "%bs%"=="7" set "v_KGEN=-kp 8"
+if /i "%bs%"=="7" set "v_CAPRSV=--RSVcap 404750336"
+if /i "%bs%"=="8" set "v_KGEN=-kp 8"
+if /i "%bs%"=="8" set "v_CAPRSV=--RSVcap 469762048"
+if /i "%bs%"=="9" set "v_KGEN=-kp 9"
+if /i "%bs%"=="9" set "v_CAPRSV=--RSVcap 537919488"
+if /i "%bs%"=="10" set "v_KGEN=-kp 10"
+if /i "%bs%"=="10" set "v_CAPRSV=--RSVcap 603979776"
+if /i "%bs%"=="11" set "v_KGEN=-kp 11"
+if /i "%bs%"=="11" set "v_CAPRSV=--RSVcap 605028352"
 
 if /i "%bs%"=="b" goto sc2
 if /i "%bs%"=="c" goto sc1
@@ -252,9 +271,13 @@ if "%v_RSV%"=="none" goto op_RSV
 
 set v_KGEN="vkey=%v_KGEN%"
 set v_KGEN="%v_KGEN%"
+set v_CAPRSV="capRSV=%v_CAPRSV%"
+set v_CAPRSV="%v_CAPRSV%"
 %pycommand% "%listmanager%" -cl "%op_file%" -ln "95" -nl "set %v_KGEN%" 
+%pycommand% "%listmanager%" -cl "%op_file%" -ln "42" -nl "set %v_CAPRSV%" 
 echo.
 %pycommand% "%listmanager%" -rl "%op_file%" -ln "95" -nl "La ligne de configuration a été modifiée en: "
+%pycommand% "%listmanager%" -rl "%op_file%" -ln "42" -nl "La ligne de configuration a été modifiée en: "
 echo.
 pause
 goto sc2
@@ -1397,6 +1420,33 @@ if /i "%bs%"=="e" goto salida
 :interface
 cls
 call :logo
+echo ********************************************************
+echo AUTO-MODE - CONFIGURATION
+echo ********************************************************
+echo Tapez "1" pour changer la configuration de la VISIBILITÉ DE DÉMARRAGE
+echo Tapez "2" pour choisir un NAVIGATEUR pour l'interface
+echo Tapez "3" pour désactiver la LECTURE VIDÉO
+echo.
+echo Tapez "d" pour restaurer les option par defauts de l'interface
+echo Tapez "0" pour revenir au menu de configuration
+echo Tapez "e" pour revenir au programme principal
+echo .......................................................
+echo.
+set /p bs="Faites votre choix: "
+if /i "%bs%"=="1" goto op_interface_consolevisibility
+if /i "%bs%"=="2" goto op_interface_browser
+if /i "%bs%"=="3" goto op_interface_video_playback
+
+if /i "%bs%"=="d" goto op_interface_defaults
+if /i "%bs%"=="0" goto sc1
+if /i "%bs%"=="e" goto salida
+echo mauvais choix
+echo.
+goto interface
+
+:op_interface_consolevisibility
+cls
+call :logo
 echo ***************************************************************************
 echo Démarre l'INTERFACE en mode minimisée
 echo ***************************************************************************
@@ -1408,6 +1458,7 @@ echo Tapez "2"  pour ne pas démarer en mode minimisée
 echo Tapez "D"  pour le mode par défaut (non minimisé)
 echo.
 echo Tapez "0" pour revenir au menu de configuration
+echo Tapez "b" pour revenir au menu de l'interface
 echo Tapez "e" pour revenir au programme principal
 echo.
 set /p bs="Faites votre: "
@@ -1417,21 +1468,137 @@ if /i "%bs%"=="2" set "v_interface=no"
 if /i "%bs%"=="d" set "v_interface=no"
 
 if /i "%bs%"=="0" goto sc1
+if /i "%bs%"=="b" goto interface
 if /i "%bs%"=="e" goto salida
 
 if "%v_interface%"=="none" echo mauvais choix
 if "%v_interface%"=="none" echo.
-if "%v_interface%"=="none" goto interface
+if "%v_interface%"=="none" goto op_interface_consolevisibility
 
 set v_interface="start_minimized=%v_interface%"
 set v_interface="%v_interface%"
-%pycommand% "%listmanager%" -cl "%opt_interface%" -ln "14" -nl "set %v_interface%" 
+%pycommand% "%listmanager%" -cl "%opt_interface%" -ln "16" -nl "set %v_interface%" 
 echo.
 %pycommand% "%listmanager%" -rl "%opt_interface%" -ln "14" -nl "La ligne de configuration a été modifiée en: "
 echo.
 pause
-goto sc1
+goto interface
 
+:op_interface_browser
+cls
+call :logo
+echo *******************************************************************************************
+echo CHOISISSEZ LE NAVIGATEUR POUR L'INTERFACE DE DÉMARRAGE
+echo *******************************************************************************************
+echo Sélectionne le navigateur utilisé pour démarrer l'interface:
+echo Options:
+echo 1. Auto. L'ordre est défini dans la base de ztools \ chrome ou du navigateur installé dans 
+echo le système. Ceci est réglé automatiquement par squirrel dans l'ordre suivant:
+echo    I.   ztools\chromium (Chromium portable\Slimjet portable)
+echo    II.  Chrome ou Chromium installé sur le système
+echo    III. Microsoft Edge (Non recommandé)
+echo 2. Sytem Default. Utilise le navigateur par défaut (faible compatibilité)
+echo 3. Définissez un chemin brut vers un navigateur par l'une des méthodes suivantes.
+echo    I.   Chemin absolu vers votre navigateur, se terminant par .exe
+echo    II.  Chemin absolu vers un fichier .lnk (raccourci Windows)
+echo    III. Nom d'un fichier .lnk dans ztools \ chromium (se terminant par .lnk)
+echo         Example: brave.lnk 
+echo         Cela lira ztools \ chrome \ brave.lnk et redirigera vers l'exe 
+echo         
+echo.
+echo Tapez "1" ou "d" pour régler la variable sur AUTO
+echo Tapez "2" pour définir la variable sur SYSTEM DEFAULT
+echo Tapez le nom shortcut.lnk dans les mèthodes 3.III
+echo Tapez le chemin absolu vers le navigateur ou un raccourci pour la méthode 3.I ou 3.II
+echo.
+echo Tapez "0" pour revenir au menu de configuration
+echo Tapez "b" pour revenir au menu de l'interface
+echo Tapez "e" pour revenir au programme principal
+echo.
+set /p bs="Faites votre choix: "
+set "v_interface_browser=%bs%"
+if /i "%bs%"=="1" set "v_interface_browser=auto"
+if /i "%bs%"=="2" set "v_interface_browser=default"
+if /i "%bs%"=="d" set "v_interface_browser=auto"
+
+if /i "%bs%"=="0" goto sc1
+if /i "%bs%"=="b" goto interface
+if /i "%bs%"=="e" goto salida
+
+set v_interface_browser="browserpath=%v_interface_browser%"
+set v_interface_browser="%v_interface_browser%"
+
+%pycommand% "%listmanager%" -cl "%opt_interface%" -ln "30" -nl "set %v_interface_browser%" 
+echo.
+%pycommand% "%listmanager%" -rl "%opt_interface%" -ln "30" -nl "La ligne de configuration a été remplacée par: "
+echo.
+pause
+goto interface
+
+:op_interface_video_playback
+cls
+call :logo
+echo ***************************************************************************
+echo DÉSACTIVER LA LECTURE VIDÉO
+echo ***************************************************************************
+echo Désactive le lecteur HLS pour les vidéos Nintendo.com.
+echo Ceci est destiné aux anciens ordinateurs qui peuvent geler avec le javascript HLS
+echo 
+echo.
+echo Tapez "1"  pour ACTIVER la lecture vidéo
+echo Tapez "2"  pour désactiver la lecture vidéo
+echo Tapez "D"  par défaut (NON MINIMISÉ)
+echo.
+echo Tapez "0" pour revenir au menu de configuration
+echo Tapez "b" pour revenir au menu de l'interface
+echo Tapez "e" pour revenir au programme principal
+echo.
+set /p bs="Faites votre choix: "
+set "v_video_playback=none"
+if /i "%bs%"=="1" set "v_video_playback=true"
+if /i "%bs%"=="2" set "v_video_playback=false"
+if /i "%bs%"=="d" set "v_video_playback=false"
+
+if /i "%bs%"=="0" goto sc1
+if /i "%bs%"=="b" goto interface
+if /i "%bs%"=="e" goto salida
+
+if "%v_video_playback%"=="none" echo mauvais choix
+if "%v_video_playback%"=="none" echo.
+if "%v_video_playback%"=="none" goto op_interface_video_playback
+
+set v_video_playback="videoplayback=%v_video_playback%"
+set v_video_playback="%v_video_playback%"
+%pycommand% "%listmanager%" -cl "%opt_interface%" -ln "34" -nl "set %v_video_playback%" 
+echo.
+%pycommand% "%listmanager%" -rl "%opt_interface%" -ln "34" -nl "La ligne de configuration a été remplacée par: "
+echo.
+pause
+goto interface
+
+:op_interface_defaults
+cls
+call :logo
+::Startup
+set v_interface="start_minimized=no"
+set v_interface="%v_interface%"
+%pycommand% "%listmanager%" -cl "%opt_interface%" -ln "16" -nl "set %v_interface%" 
+%pycommand% "%listmanager%" -rl "%opt_interface%" -ln "16" -nl "La ligne de configuration a été remplacée par: "
+echo.
+::Browserpath
+set v_interface_browser="browserpath=auto"
+set v_interface_browser="%v_interface_browser%"
+%pycommand% "%listmanager%" -cl "%opt_interface%" -ln "30" -nl "set %v_interface_browser%" 
+%pycommand% "%listmanager%" -rl "%opt_interface%" -ln "30" -nl "La ligne de configuration a été remplacée par: "
+echo.
+::Video playback
+set v_video_playback="videoplayback=true"
+set v_video_playback="%v_video_playback%"
+%pycommand% "%listmanager%" -cl "%opt_interface%" -ln "34" -nl "set %v_video_playback%" 
+%pycommand% "%listmanager%" -rl "%opt_interface%" -ln "34" -nl "La ligne de configuration a été remplacée par: "
+pause
+
+goto sc1
 
 :salida
 exit /B

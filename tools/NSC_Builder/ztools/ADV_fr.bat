@@ -223,7 +223,7 @@ goto s_exit_choice
 cls
 call :program_logo
 echo ********************************************************
-echo Extraire tous les fichiers d'un nsp/XCI en mode brut
+echo Extraire tous les fichiers d'un NSP/XCI en mode brut
 echo ********************************************************
 CD /d "%prog_dir%"
 for /f "tokens=*" %%f in (advlist.txt) do (

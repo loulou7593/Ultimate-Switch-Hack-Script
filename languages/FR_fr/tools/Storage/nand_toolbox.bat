@@ -33,6 +33,7 @@ echo 10: Chiffrer un dump ou une partition d'une rawnand ^(fonction en Alpha tes
 echo 11: Supprimer les informations d'identification de la console dans PRODINFO (fonction identique à Incognito)?
 echo 12: Utiliser Ninfs pour monter un fichier de dump de la rawnand?
 echo 13: Changer la taille de la partition USER d'une RAWNAND ou d'une FULL NAND?
+echo 14: Brute forcer les bis_keys?
 echo 0: Charger une partie de la nand d'une console via USB avec Memloader?
 echo N'importe quel autre choix: Revenir au menu précédent?
 echo.
@@ -227,6 +228,27 @@ goto:eof
 
 :resize_user_part_value_choice
 set /p resize_user_partition_value=Définir la nouvelle taille de la partition en MB ou laisser vide pour annuler ^(la valeur ne peut être inférieur à 2000 et doit être un nombre entier^): 
+goto:eof
+
+:brute_force_input_begin
+echo Cette fonction ne sert en réalité à rien car le traitement prend beaucoup trop de temps, c'est juste une fonction développée pour m'amuser. De plus les FULL DUMP ne sont pas supportées.
+pause
+echo.
+echo Choisissez le support sur lequel utiliser le brute force:
+goto:eof
+
+:brute_force_output_folder_choice
+echo Vous allez devoir sélectionner le dossier vers lequel extraire la clé.
+pause
+%windir%\system32\wscript.exe //Nologo TOOLS\Storage\functions\select_dir.vbs "templogs\tempvar.txt" "Sélection du dossier"
+goto:eof
+
+:brute_force_output_folder_empty_error
+echo Le répertoire pour extraire la clé ne peut être vide, la fonction va être annulée.
+goto:eof
+
+:brute_force_erase_existing_file_choice
+set /p erase_output_file=Ce dossier contient déjà un fichier de ce type de clé, souhaitez-vous vraiment continuer en écrasant le fichier existant ^(si oui, le fichier sera supprimé juste après ce choix^)? ^(%lng_yes_choice%/%lng_no_choice%^): 
 goto:eof
 
 :bad_char_error

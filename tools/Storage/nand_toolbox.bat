@@ -94,6 +94,7 @@ IF "%action_choice%"=="12" (
 	goto:define_action_choice
 )
 IF "%action_choice%"=="13" cls & goto:resize_user_partition
+IF "%action_choice%"=="14" cls & goto:brute_force
 IF "%action_choice%"=="0" (
 	cls
 	call tools\storage\mount_discs.bat "auto_close"
@@ -770,6 +771,72 @@ echo.
 pause
 goto:define_action_choice
 
+:brute_force
+set input_path=
+set output_path=
+set action_choice=
+call "%associed_language_script%" "brute_force_input_begin"
+call :list_disk
+call "%associed_language_script%" "nand_choice"
+IF "%action_choice%" == "" (
+	goto:define_action_choice
+)
+call :verif_disk_choice %action_choice% brute_force
+IF "%action_choice%" == "0" (
+	call :nand_file_input_select
+) else (
+	IF EXIST templogs\disks_list.txt (
+		TOOLS\gnuwin32\bin\sed.exe -n %action_choice%p <templogs\disks_list.txt > templogs\tempvar.txt 2> nul
+		set /p input_path=<templogs\tempvar.txt
+	)
+)
+IF "%input_path%"=="" (
+	call "%associed_language_script%" "dump_not_exist_error"
+	echo.
+	goto:brute_force
+)
+set partition=
+call :get_type_nand "%input_path%"
+IF /i "%nand_type%"=="PRODINFO" set partition=PRODINFO
+IF /i "%nand_type%"=="PRODINFOF" set partition=PRODINFO
+IF /i "%nand_type%"=="SAFE" set partition=SAFE
+IF /i "%nand_type%"=="SYSTEM" set partition=SYSTEM
+IF /i "%nand_type%"=="USER" set partition=USER
+IF /i "%nand_type%"=="RAWNAND" call :partition_select brute_force brute_force_choice
+IF /i "%nand_type%"=="RAWNAND (splitted dump)" call :partition_select brute_force brute_force_choice
+IF /i "%nand_type%"=="FULL NAND" call :partition_select brute_force brute_force_choice
+IF /i "%partition%" == "PRODINFOF" set partition=PRODINFO
+echo.
+call "%associed_language_script%" "brute_force_output_folder_choice"
+set /p output_path=<templogs\tempvar.txt
+IF "%output_path%"=="" (
+	call "%associed_language_script%" "brute_force_output_folder_empty_error"
+	goto:brute_force
+)
+IF NOT "%output_path%"=="" set output_path=%output_path%\
+IF NOT "%output_path%"=="" set output_path=%output_path:\\=\%
+IF /i "%partition%" == "PRODINFO" set output_path=%output_path%\biskey_00.txt
+IF /i "%partition%" == "SAFE" set output_path=%output_path%\biskey_01.txt
+IF /i "%partition%" == "SYSTEM" set output_path=%output_path%\biskey_02.txt
+IF /i "%partition%" == "USER" set output_path=%output_path%\biskey_03.txt
+IF EXIST "%output_path%" (
+	call "%associed_language_script%" "dump_erase_existing_file_choice"
+)
+IF NOT "%erase_output_file%"=="" set erase_output_file=%erase_output_file:~0,1%
+call "tools\Storage\functions\modify_yes_no_always_never_vars.bat" "erase_output_file" "o/n_choice"
+IF EXIST "%output_path%" (
+	IF /i NOT "%erase_output_file%"=="o" (
+		call "%associed_language_script%" "canceled"
+		goto:brute_force
+	) else (
+		del /q "%output_path%"
+	)
+)
+"tools\python3_scripts\brute_force_biskeys\brute_force_biskeys.exe" "%partition%" "%input_path%" "%output_path%"
+echo.
+pause
+goto:define_action_choice
+
 :get_type_nand
 set nand_type=
 set nand_file_or_disk=
@@ -1234,12 +1301,12 @@ IF "%~2"=="all_partitions_excepted" (
 call "%associed_language_script%" "partition_choice_begin"
 echo 1: PRODINFO.
 echo 2: PRODINFOF.
-echo 3: BCPKG2-1-Normal-Main
-echo 4: BCPKG2-2-Normal-Sub
-echo 5: BCPKG2-3-SafeMode-Main
-echo 6: BCPKG2-4-SafeMode-Sub
-echo 7: BCPKG2-5-Repair-Main
-echo 8: BCPKG2-6-Repair-Sub
+IF NOT "%~2" == "brute_force_choice" echo 3: BCPKG2-1-Normal-Main
+IF NOT "%~2" == "brute_force_choice" echo 4: BCPKG2-2-Normal-Sub
+IF NOT "%~2" == "brute_force_choice" echo 5: BCPKG2-3-SafeMode-Main
+IF NOT "%~2" == "brute_force_choice" echo 6: BCPKG2-4-SafeMode-Sub
+IF NOT "%~2" == "brute_force_choice" echo 7: BCPKG2-5-Repair-Main
+IF NOT "%~2" == "brute_force_choice" echo 8: BCPKG2-6-Repair-Sub
 echo 9: SAFE
 echo 10: SYSTEM
 echo 11: USER
