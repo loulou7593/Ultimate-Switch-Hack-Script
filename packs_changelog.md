@@ -1,5 +1,16 @@
 <h1>Changelog des packs de l'Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V313</h2>
+<ul>
+<li>Mise à jour de Awoo-Installer en version 1.3.0.</li>
+<li>Mise à jour de uLaunch en version 0.2.1.</li>
+<li>Mise à jour de Goldleaf en version 0.8.</li>
+<li>Mise à jour de Lockpick-RCM en version 1.8.1.</li>
+<li>Mise à jour de KosmosToolbox en version 3.0.0.</li>
+<li>Mise à jour de Sys-FTPD vers Sys-FTPD-Light.</li>
+<li>Mise à jour de Emuiibo en version 0.4.</li>
+<li>Mise à jour du Homebrew Menu vers la version Master du Github, compilé par moi-même.</li>
+</ul>
 <h2>V312</h2>
 <ul>
 <li>Mise à jour de Homebrew App Store en version 2.2.</li>

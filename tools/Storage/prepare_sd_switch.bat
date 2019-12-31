@@ -529,6 +529,9 @@ for /l %%i in (1,1,%temp_count%) do (
 		IF EXIST "%volume_letter%:\SlideNX\attach.mp3" del /q "%volume_letter%:\SlideNX\attach.mp3"
 		IF EXIST "%volume_letter%:\SlideNX\detach.mp3" del /q "%volume_letter%:\SlideNX\detach.mp3"
 	)
+	IF "!temp_module!"=="Sys-FTPD" (
+		IF EXIST "%volume_letter%:\config\sys-ftpd\*.mp3" del /q "%volume_letter%:\config\sys-ftpd\*.mp3"
+	)
 	IF "!temp_module!"=="BootSoundNX" (
 		IF EXIST "%volume_letter%:\bootloader\sound\bootsound.mp3" rmdir /s /q "%volume_letter%:\bootloader\sound"
 		IF EXIST "%volume_letter%:\config\BootSoundNX\bootsound.mp3" del /q "%volume_letter%:\config\BootSoundNX\bootsound.mp3" >nul

@@ -35,6 +35,7 @@
 <li><a target="_blank" href="https://github.com/retronx-team/sys-clk">Sys-clk</a> and <a target="_blank" href="https://github.com/SunTheCourier/sys-clk-Editor/">Sys-clk-Editor</a></li>
 <li><a target="_blank" href="https://github.com/cathery/sys-con">Sys-con</a></li>
 <li><a target="_blank" href="https://github.com/jakibaki/sys-ftpd">Sys-FTPD</a></li>
+<li><a target="_blank" href="https://github.com/cathery/sys-ftpd-light">Sys-FTPD-Light</a></li>
 <li><a target="_blank" href="https://github.com/Cesura/nxsh">Sys-nxsh, Nxsh</a></li>
 <li><a target="_blank" href="https://github.com/XorTroll/uLaunch">uLaunch</a></li>
 <li><a target="_blank" href="https://github.com/khedoros/khedgb">Khedgb</a></li>

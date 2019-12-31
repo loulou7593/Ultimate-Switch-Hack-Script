@@ -1,5 +1,12 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.20</h2>
+<ul>
+<li>Update the download link of Retroarch for the version 1.8.2.</li>
+<li>Update Lockpick-RCM to version 1.8.1.</li>
+<li>In the SD preparation script, the MP3 files of Sys-FTPD are deleted if the module is updatedcause these are not anymore necessary with Sys-FTPD-Light.</li>
+<li> Updating CFWs/modules/homebrews/usful_payloads packs in version 313.</li>
+</ul>
 <h2>V4.1.19</h2>
 <ul>
 <li>Update credits.</li>
