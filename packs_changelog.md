@@ -1,5 +1,14 @@
 <h1>Changelog des packs de l'Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V314</h2>
+<ul>
+<li>Mise à jour de Atmosphere en version 0.10.2.</li>
+<li>Mise à jour de Sys-CLK-Editor en version 2.</li>
+<li>Mise à jour de Haku33 en version 2.2.</li>
+<li>Mise à jour de Incognito-RCM en version 0.6.1.</li>
+<li>Mise à jour de JKSV en version 01.06.2020.</li>
+<li>Mise à jour de Kosmos Toolbox en version 4.0.0.</li>
+</ul>
 <h2>V313</h2>
 <ul>
 <li>Mise à jour de Awoo-Installer en version 1.3.0.</li>

@@ -69,6 +69,11 @@ IF /i "%copy_atmosphere_pack%"=="o" (
 		) else (
 			echo Redirection des sauvegardes de jeu vers la SD désactivée.
 		)
+						IF /i "%atmo_enable_deprecated_hid_mitm%"=="o" (
+			echo Forçage de l'ancienne méthode de détection des boutons pour les homebrews: activée.
+		) else (
+			echo Forçage de l'ancienne méthode de détection des boutons pour les homebrews: désactivée.
+		)
 		IF "%atmo_fatal_auto_reboot_interval%"=="0" (
 			echo Temps avant de redémarrer en cas de crash: jusqu'à l'appui d'une touche par l'utilisateur
 		) else (

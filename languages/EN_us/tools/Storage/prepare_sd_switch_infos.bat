@@ -78,6 +78,11 @@ IF /i "%copy_atmosphere_pack%"=="o" (
 		) else (
 			echo Game save redirecting to SD disabled.
 		)
+						IF /i "%atmo_enable_deprecated_hid_mitm%"=="o" (
+			echo Force old method of buttons detections for homebrews: enabled.
+		) else (
+			echo Force old method of buttons detections for homebrews: disabled.
+		)
 		IF "%atmo_fatal_auto_reboot_interval%"=="0" (
 			echo Time before reboot if a crash occure: if the user press a button
 		) else (

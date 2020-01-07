@@ -174,6 +174,7 @@ echo set "atmo_dmnt_always_save_cheat_toggles=%atmo_dmnt_always_save_cheat_toggl
 echo set "atmo_enable_hbl_bis_write=%atmo_enable_hbl_bis_write%">>"%profile_path%"
 echo set "atmo_enable_hbl_cal_read=%atmo_enable_hbl_cal_read%">>"%profile_path%"
 echo set "atmo_fsmitm_redirect_saves_to_sd=%atmo_fsmitm_redirect_saves_to_sd%">>"%profile_path%"
+echo set "atmo_enable_deprecated_hid_mitm=%atmo_enable_deprecated_hid_mitm%">>"%profile_path%"
 echo set "atmo_applet_heap_size=%atmo_applet_heap_size%">>"%profile_path%"
 echo set "atmo_applet_heap_reservation_size=%atmo_applet_heap_reservation_size%">>"%profile_path%"
 echo set "atmo_hbl_override_key=%atmo_hbl_override_key%">>"%profile_path%"

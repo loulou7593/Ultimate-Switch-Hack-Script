@@ -513,6 +513,10 @@ set atmo_fsmitm_redirect_saves_to_sd=
 call "%associed_language_script2%" "atmosphere_manual_config_gamesave-on-sd_param_choice"
 IF NOT "%atmo_fsmitm_redirect_saves_to_sd%"=="" set atmo_fsmitm_redirect_saves_to_sd=%atmo_fsmitm_redirect_saves_to_sd:~0,1%
 call "tools\Storage\functions\modify_yes_no_always_never_vars.bat" "atmo_fsmitm_redirect_saves_to_sd" "o/n_choice"
+set atmo_enable_deprecated_hid_mitm=
+call "%associed_language_script2%" "atmosphere_manual_enable_deprecated_hid_mitm_param_choice"
+IF NOT "%atmo_enable_deprecated_hid_mitm%"=="" set atmo_enable_deprecated_hid_mitm=%atmo_enable_deprecated_hid_mitm:~0,1%
+call "tools\Storage\functions\modify_yes_no_always_never_vars.bat" "atmo_enable_deprecated_hid_mitm" "o/n_choice"
 :define_atmo_applet_heap_size
 set atmo_applet_heap_size=
 call "%associed_language_script2%" "atmosphere_manual_config_applet-heap-size_param_choice"

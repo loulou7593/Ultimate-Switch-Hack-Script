@@ -211,6 +211,10 @@ goto:eof
 set /p atmo_fsmitm_redirect_saves_to_sd=Activer la redirrection des sauvegardes vers la SD ^(expérimental donc non recommandé^)? ^(%lng_yes_choice%/%lng_no_choice%^): 
 goto:eof
 
+:atmosphere_manual_enable_deprecated_hid_mitm_param_choice
+set /p atmo_enable_deprecated_hid_mitm=Activer l'ancienne méthode de détection des boutons pour les homebrews ^(non recommandé sauf si vous utilisez encore des vieux homebrews^)? ^(%lng_yes_choice%/%lng_no_choice%^): 
+goto:eof
+
 :atmosphere_manual_config_applet-heap-size_param_choice
 set /p atmo_applet_heap_size=Taille réservée au Homebrew Loader en mode applet, mettre à 0 pour utiliser la taille maximum est fortement recommandé ^(valeur réglée à 0 si laissé vide^): 
 goto:eof

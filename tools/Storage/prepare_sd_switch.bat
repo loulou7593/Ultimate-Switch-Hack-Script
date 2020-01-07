@@ -798,7 +798,12 @@ IF /i "%atmo_fsmitm_redirect_saves_to_sd%"=="o" (
 ) else (
 	set atmo_fsmitm_redirect_saves_to_sd=0x0
 )
-
+IF /i "%atmo_enable_deprecated_hid_mitm%"=="o" (
+	set atmo_enable_deprecated_hid_mitm=0x1
+) else (
+	set atmo_enable_deprecated_hid_mitm=0x0
+)
+enable_deprecated_hid_mitm
 IF "%atmo_fatal_auto_reboot_interval%"=="" (
 	set atmo_fatal_auto_reboot_interval=0x0
 ) else (
@@ -882,6 +887,12 @@ echo ; 0 = Do not redirect, 1 = Redirect.>>%volume_letter%:\atmosphere\config\sy
 echo ; NOTE: EXPERIMENTAL>>%volume_letter%:\atmosphere\config\system_settings.ini
 echo ; If you do not know what you are doing, do not touch this yet.>>%volume_letter%:\atmosphere\config\system_settings.ini
 echo fsmitm_redirect_saves_to_sd = u8!%atmo_fsmitm_redirect_saves_to_sd%>>%volume_letter%:\atmosphere\config\system_settings.ini
+echo ; Controls whether to enable the deprecated hid mitm>>%volume_letter%:\atmosphere\config\system_settings.ini
+echo ; to fix compatibility with old homebrew.>>%volume_letter%:\atmosphere\config\system_settings.ini
+echo ; 0 = Do not enable, 1 = Enable.>>%volume_letter%:\atmosphere\config\system_settings.ini
+echo ; Please note this setting may be removed in a>>%volume_letter%:\atmosphere\config\system_settings.ini
+echo ; future release of Atmosphere.>>%volume_letter%:\atmosphere\config\system_settings.ini
+echo enable_deprecated_hid_mitm = u8!%atmo_enable_deprecated_hid_mitm%>>%volume_letter%:\atmosphere\config\system_settings.ini
 echo [hbloader]>>%volume_letter%:\atmosphere\config\system_settings.ini
 echo ; Controls the size of the homebrew heap when running as applet.>>%volume_letter%:\atmosphere\config\system_settings.ini
 echo ; If set to zero, all available applet memory is used as heap.>>%volume_letter%:\atmosphere\config\system_settings.ini
@@ -893,11 +904,20 @@ echo ; applet_heap_size is non-zero. The default is zero.>>%volume_letter%:\atmo
 echo applet_heap_reservation_size = u64!%atmo_applet_heap_reservation_size%>>%volume_letter%:\atmosphere\config\system_settings.ini
 
 echo [hbl_config]>%volume_letter%:\atmosphere\config\override_config.ini
-echo title_id=010000000000100D>>%volume_letter%:\atmosphere\config\override_config.ini
+echo ; Program Specific Config>>%volume_letter%:\atmosphere\config\override_config.ini
+echo ; Up to 8 program-specific configurations can be set.>>%volume_letter%:\atmosphere\config\override_config.ini
+echo ; These use `program_id_#` and `override_key_#`>>%volume_letter%:\atmosphere\config\override_config.ini
+echo ; where # is in range [0,7].>>%volume_letter%:\atmosphere\config\override_config.ini
+echo program_id_0=010000000000100D>>%volume_letter%:\atmosphere\config\override_config.ini
+echo override_key_0=%atmo_hbl_override_key%>>%volume_letter%:\atmosphere\config\override_config.ini
+echo.>>%volume_letter%:\atmosphere\config\override_config.ini
+echo ; Any Application Config>>%volume_letter%:\atmosphere\config\override_config.ini
+echo ; Note that this will only apply to program IDs that>>%volume_letter%:\atmosphere\config\override_config.ini
+echo ; are both applications and not specified above>>%volume_letter%:\atmosphere\config\override_config.ini
+echo ; by a program specific config.>>%volume_letter%:\atmosphere\config\override_config.ini
 echo override_any_app=true>>%volume_letter%:\atmosphere\config\override_config.ini
-echo path=atmosphere/hbl.nsp>>%volume_letter%:\atmosphere\config\override_config.ini
-echo override_key=%atmo_hbl_override_key%>>%volume_letter%:\atmosphere\config\override_config.ini
 echo override_any_app_key=%atmo_hbl_override_any_app_key%>>%volume_letter%:\atmosphere\config\override_config.ini
+echo path=atmosphere/hbl.nsp>>%volume_letter%:\atmosphere\config\override_config.ini
 echo.>>%volume_letter%:\atmosphere\config\override_config.ini
 echo [default_config]>>%volume_letter%:\atmosphere\config\override_config.ini
 echo override_key=%atmo_layeredfs_override_key%>>%volume_letter%:\atmosphere\config\override_config.ini

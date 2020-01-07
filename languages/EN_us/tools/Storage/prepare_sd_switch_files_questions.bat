@@ -220,6 +220,10 @@ goto:eof
 set /p atmo_fsmitm_redirect_saves_to_sd=Enable the game save SD  redirection ^(experimental so not recommanded^)? ^(%lng_yes_choice%/%lng_no_choice%^): 
 goto:eof
 
+:atmosphere_manual_enable_deprecated_hid_mitm_param_choice
+set /p atmo_enable_deprecated_hid_mitm=Enable the old buttons detection for homebrews ^(not recommanded except if you use old homebrews^)? ^(%lng_yes_choice%/%lng_no_choice%^): 
+goto:eof
+
 :atmosphere_manual_config_applet-heap-size_param_choice
 set /p atmo_applet_heap_size=Size reserved for the Homebrew Loader  in applet mode, set to 0 to use the maximum size is  recommanded ^(value set to 0 if empty^): 
 goto:eof

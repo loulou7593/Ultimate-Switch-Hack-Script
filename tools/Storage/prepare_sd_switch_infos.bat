@@ -47,6 +47,9 @@ IF /i NOT "%atmo_enable_hbl_cal_read%"=="o" (
 IF /i NOT "%atmo_fsmitm_redirect_saves_to_sd%"=="o" (
 	set atmo_fsmitm_redirect_saves_to_sd=n
 )
+IF /i NOT "%atmo_enable_deprecated_hid_mitm%"=="o" (
+	set atmo_enable_deprecated_hid_mitm=n
+)
 IF "%atmo_fatal_auto_reboot_interval%"=="" (
 	set atmo_fatal_auto_reboot_interval=0
 )
