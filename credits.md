@@ -22,6 +22,7 @@
 <li><a target="_blank" href="https://github.com/motezazer/pk1decryptor">Pk1decryptor</a></li>
 <li><a target="_blank" href="https://github.com/shchmue/Lockpick_RCM">Lockpick-RCM</a></li>
 <li><a target="_blank" href="https://github.com/shchmue/Lockpick">Lockpick</a></li>
+<li><a target="_blank" href="https://github.com/suchmememanyskill/TegraExplorer">TegraExplorer</a></li>
 <li><a target="_blank" href="https://github.com/KranKRival/BootSoundNX">BootSoundNX</a> </li>
 <li><a target="_blank" href="https://github.com/XorTroll/emuiibo">Emuiibo</a></li>
 <li><a target="_blank" href="https://github.com/FuryBaguette/AmiiSwap">AmiiSwap</a></li>
@@ -70,6 +71,7 @@
 <li><a target="_blank" href="https://github.com/DarkMatterCore/nxdumptool">Nxdumptool</a></li>
 <li><a target="_blank" href="https://github.com/retronx-team/mtp-server-nx/">mtp-server-nx</a></li>
 <li><a target="_blank" href="https://github.com/joel16/NX-Shell">NX-Shell</a></li>
+<li><a target="_blank" href="https://github.com/t-flo/nxTransmission">NXTransmission</a></li>
 <li><a target="_blank" href="https://github.com/suchmememanyskill/Payload_Launcher">Payload_Launcher</a></li>
 <li><a target="_blank" href="https://github.com/Cpasjuste/pplay">Pplay</a></li>
 <li><a target="_blank" href="https://github.com/darkxex/prodinfoenabler">ProdinfoEnabler</a></li>

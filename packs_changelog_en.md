@@ -1,5 +1,11 @@
 <h1>Changelog of the Ultimate Switch Hack Script packs</h1>
 &nbsp;
+<h2>V315</h2>
+<ul>
+<li>Add the NXTransmission homebrew.</li>
+<li>Update Awoo-Installer to version 1.3.1.</li>
+<li>Update Haku33 and FTPD to the Github's master version, compiled by myself.</li>
+</ul>
 <h2>V314</h2>
 <ul>
 <li>Update Atmosphere to version 0.10.2.</li>

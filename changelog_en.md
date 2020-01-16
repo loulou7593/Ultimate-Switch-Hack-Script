@@ -1,5 +1,14 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.22</h2>
+<ul>
+<li>Add the TegraExplorer payload.</li>
+<li>Update the download link of Retroarch for the version 1.8.3.</li>
+<li>Update Hactoolnet to version 0.8.2.</li>
+<li>Update Hactool to version 1.3.0.</li>
+<li>Update documentation and credits.</li>
+<li> Updating CFWs/modules/homebrews/usful_payloads packs in version 315.</li>
+</ul>
 <h2>V4.1.21</h2>
 <ul>
 <li>In the SD preparation script, the new params of  Atmosphere 0.10.2 are supported for the manual configuration of the CFW. For the overide configuration file, for now it's possible to configure only one program (the album), a more flexible configuration may be implemented in a futur version.</li>
