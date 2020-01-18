@@ -1,5 +1,9 @@
 <h1>Changelog of the Ultimate Switch Hack Script packs</h1>
 &nbsp;
+<h2>V316</h2>
+<ul>
+<li>Add Gamecard-Installer-NX homebrew.</li>
+</ul>
 <h2>V315</h2>
 <ul>
 <li>Add the NXTransmission homebrew.</li>

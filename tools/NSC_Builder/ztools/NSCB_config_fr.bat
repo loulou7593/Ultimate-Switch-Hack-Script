@@ -12,6 +12,7 @@ echo Tapez "2" pour les OPTIONS globales et manuelles.
 echo Tapez "3" pour vérifier le fichier KEYS.TXT 
 echo tapez "4" pour la mise à jour de NUTDB
 echo Tapez "5" pour les options de l'interface
+echo Tapez "6" pour les options de GOOGLE DRIVE
 echo.
 echo Tapez "c" pour voir le profile actuel
 echo Tapez "d" pour remettre les paramètres par défaut
@@ -24,6 +25,7 @@ if /i "%bs%"=="2" goto sc3
 if /i "%bs%"=="3" goto verify_keys
 if /i "%bs%"=="4" goto update_nutdb
 if /i "%bs%"=="5" goto interface
+if /i "%bs%"=="6" goto google_drive
 
 if /i "%bs%"=="c" call :curr_set1
 if /i "%bs%"=="c" call :curr_set2
@@ -1417,11 +1419,57 @@ set bs=%bs:"=%
 if /i "%bs%"=="0" goto sc1
 if /i "%bs%"=="e" goto salida
 
+:google_drive
+cls
+call :logo
+echo ********************************************************
+echo Configuration de GOOGLE-DRIVE 
+echo ********************************************************
+echo Tappez "1" pour enregistrer le compte
+echo.
+echo Tappez "0" pour revenir au menu de configuration
+echo Tappez "e" pour revenir au PROGRAMME PRINCIPAL
+echo .......................................................
+echo.
+set /p bs="Faites votre choix: "
+if /i "%bs%"=="1" goto op_google_drive_account
+
+if /i "%bs%"=="0" goto sc1
+if /i "%bs%"=="e" goto salida
+echo MAUVAIS CHOIX
+echo.
+goto google_drive
+
+:op_google_drive_account
+cls
+call :logo
+echo ***************************************************************************
+echo Enregistrer un compte Google Drive
+echo ***************************************************************************
+echo Vous avez besoin d'un credentials.json, cela peut être appelé credentials.json ou nom 
+echo du jeton que vous générerez.json. Un credentials.json peut être utilisé avec de nombreux comptes
+echo pour générer des jetons, mais s'il est utilisé avec un compte différent de celui qui est
+echo généré, vous obtiendrez un avertissement.
+echo Un système est implémenté pour avoir de nombreuses informations credentials json dans le dossier d'informations d'identification
+echo lire le document distribué avec NSCB pour savoir comment obtenir le fichier.
+echo.
+echo Remarque. Le nom que vous saisissez à cette étape sera utilisé pour enregistrer le jeton et pour
+echo le chemin.
+echo.
+echo Example: Un jeton nommé "drive" utilisera des chemins comme drive:/folder/file.nsp
+echo.
+set /p bs="Entrez le nom du lecteur: "
+set "token=%bs%"
+echo.
+%pycommand% "%nut%" -lib_call Drive.Private create_token -xarg "%token%" headless="False"
+pause
+goto google_drive
+
 :interface
 cls
 call :logo
 echo ********************************************************
-echo AUTO-MODE - CONFIGURATION
+echo INTERFACE - CONFIGURATION
 echo ********************************************************
 echo Tapez "1" pour changer la configuration de la VISIBILITÉ DE DÉMARRAGE
 echo Tapez "2" pour choisir un NAVIGATEUR pour l'interface

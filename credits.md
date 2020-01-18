@@ -59,6 +59,7 @@
 <li><a target="_blank" href="https://github.com/noahc3/fakenews-injector">Fakenews-injector</a></li>
 <li><a target="_blank" href="https://github.com/mtheall/ftpd">Ftpd</a></li>
 <li><a target="_blank" href="https://github.com/Adubbz/Gag-Order">GagOrder</a></li>
+<li><a target="_blank" href="https://github.com/ITotalJustice/Gamecard-Installer-NX">Gamecard-Installer-NX</a></li>
 <li><a target="_blank" href="https://github.com/XorTroll/Goldleaf">Goldleaf and Goldtree</a></li>
 <li><a target="_blank" href="https://github.com/StarDustCFW/Haku33/">Haku33</a></li>
 <li><a target="_blank" href="https://github.com/blawar/incognito">Incognito</a></li>

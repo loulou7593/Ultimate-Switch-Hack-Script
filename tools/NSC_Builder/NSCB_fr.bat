@@ -1,6 +1,6 @@
 @ECHO OFF
 chcp 65001 >nul
-set "program_version=0.97"
+set "program_version=0.98"
 
 :TOP_INIT
 set "prog_dir=%~dp0"
@@ -740,6 +740,7 @@ echo Tapez "9" pour entrer en mode restauration
 REM echo Tapez "10" pour dans le gestionnaire de fichiers
 echo Input "0" pour configurer le script.
 echo.
+echo Tapez "D" pour utiliser GOOGLE DRIVE
 echo Tapez "L" pour entrer dans l'ancien mode
 echo .............................................................................................................
 echo.
@@ -755,6 +756,7 @@ if /i "%bs%"=="7" goto JOINmode
 if /i "%bs%"=="8" goto ZSTDmode
 if /i "%bs%"=="9" goto RSTmode
 REM if /i "%bs%"=="10" goto MNGmode
+if /i "%bs%"=="D" goto DriveMode
 if /i "%bs%"=="L" goto LegacyMode
 if /i "%bs%"=="0" goto OPT_CONFIG
 goto manual_Reentry
@@ -776,6 +778,9 @@ call "%prog_dir%ztools\MNG_fr.bat"
 goto manual_Reentry
 :LegacyMode
 call "%prog_dir%ztools\LEGACY_fr.bat"
+goto manual_Reentry
+:DriveMode
+call "%prog_dir%ztools\DriveMode_fr.bat"
 goto manual_Reentry
 REM //////////////////////////////////////////////////
 REM /////////////////////////////////////////////////
