@@ -1,5 +1,9 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.24</h2>
+<ul>
+<li>Update NSC_Builder to version 0.98b.</li>
+</ul>
 <h2>V4.1.23</h2>
 <ul>
 <li>Update NSC_Builder to version 0.98.</li>
