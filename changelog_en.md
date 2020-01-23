@@ -1,5 +1,10 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.25</h2>
+<ul>
+<li>Update credits.</li>
+<li> Updating CFWs/modules/homebrews/usful_payloads packs in version 317.</li>
+</ul>
 <h2>V4.1.24</h2>
 <ul>
 <li>Update NSC_Builder to version 0.98b.</li>

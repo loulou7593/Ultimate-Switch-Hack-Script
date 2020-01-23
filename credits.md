@@ -57,6 +57,7 @@
 <li><a target="_blank" href="https://github.com/WerWolv/EdiZon">EdiZon</a></li>
 <li><a target="_blank" href="https://github.com/noirscape/emummc-toggler">EmuMMC-Toggle</a></li>
 <li><a target="_blank" href="https://github.com/noahc3/fakenews-injector">Fakenews-injector</a></li>
+<li><a target="_blank" href="https://github.com/averne/Fizeau">Fizeau</a></li>
 <li><a target="_blank" href="https://github.com/mtheall/ftpd">Ftpd</a></li>
 <li><a target="_blank" href="https://github.com/Adubbz/Gag-Order">GagOrder</a></li>
 <li><a target="_blank" href="https://github.com/ITotalJustice/Gamecard-Installer-NX">Gamecard-Installer-NX</a></li>

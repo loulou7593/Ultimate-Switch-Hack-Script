@@ -563,7 +563,7 @@ for /l %%i in (1,1,%temp_count%) do (
 		IF NOT EXIST "%volume_letter%:\switch" mkdir "%volume_letter%:\switch"
 		IF EXIST "%volume_letter%:\EdiZon" move "%volume_letter%:\EdiZon" "%volume_letter%:\switch\EdiZon" >nul
 	)
-		IF "!temp_homebrew!"=="Tinfoil" (
+		IF "!temp_homebrew!"=="Fizeau" (
 		set temp_special_homebrew=Y
 		IF EXIST "%volume_letter%:\atmosphere\contents" (
 			set one_cfw_chosen=Y
@@ -586,7 +586,6 @@ for /l %%i in (1,1,%temp_count%) do (
 		IF /i "%copy_atmosphere_pack%"=="o" (
 			set one_cfw_chosen=Y
 			IF NOT EXIST "%volume_letter%:\atmosphere" mkdir "%volume_letter%:\atmosphere"
-			%windir%\System32\Robocopy.exe tools\sd_switch\mixed\modular\!temp_homebrew!\special_atmosphere %volume_letter%: /e >nul
 			%windir%\System32\Robocopy.exe tools\sd_switch\mixed\modular\!temp_homebrew!\module\titles %volume_letter%:\atmosphere\contents /e >nul
 		)
 		IF /i "%copy_reinx_pack%"=="o" (
