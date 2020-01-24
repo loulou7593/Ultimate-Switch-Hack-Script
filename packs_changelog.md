@@ -4,6 +4,7 @@
 <ul>
 <li>Ajout du homebrew Fiseau.</li>
 <li>Mise à jour de ProdInfoEnabler en version 1.0.1.</li>
+<li>Mise à jour de MGBA en version 0.8.0.</li>
 <li>Mise à jour  des cheats.</li>
 </ul>
 <h2>V316</h2>
