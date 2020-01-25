@@ -78,6 +78,7 @@
 <li><a target="_blank" href="https://github.com/Cpasjuste/pplay">Pplay</a></li>
 <li><a target="_blank" href="https://github.com/darkxex/prodinfoenabler">ProdinfoEnabler</a></li>
 <li><a target="_blank" href="https://github.com/nx-python/PyNX">PyNX</a></li>
+<li><a target="_blank" href="https://github.com/ITotalJustice/Reset-Parental-Controls-NX">Reset-Parental-Controls-NX</a></li>
 <li><a target="_blank" href="https://github.com/HookedBehemoth/screen-nx">Screen-NX</a></li>
 <li><a target="_blank" href="https://github.com/noahc3/sdsetup-switch">Sdsetup-switch</a></li>
 <li><a target="_blank" href="https://github.com/nadrino/SimpleModManager">SimpleModManager</a></li>

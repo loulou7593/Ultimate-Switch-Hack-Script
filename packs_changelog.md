@@ -1,5 +1,9 @@
 <h1>Changelog des packs de l'Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V318</h2>
+<ul>
+<li>Ajout du homebrew Reset-Parental-Controls-NX.</li>
+</ul>
 <h2>V317</h2>
 <ul>
 <li>Ajout du homebrew Fiseau.</li>
