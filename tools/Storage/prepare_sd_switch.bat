@@ -413,6 +413,7 @@ IF /i "%copy_atmosphere_pack%"=="o" (
 	del /Q /S "%volume_letter%:\bootloader\.emptydir" >nul
 	del /Q /S "%volume_letter%:\emummc\.emptydir" >nul
 	del /Q /S "%volume_letter%:\mods\.emptydir" >nul
+	IF EXIST "%volume_letter%:\switch\KosmosToolbox\config.json" del /Q "%volume_letter%:\switch\KosmosToolbox\config.json" >nul 2>&1
 	IF EXIST "%volume_letter%:\bootloader\sys\switchboot.txt" (
 		%windir%\System32\Robocopy.exe TOOLS\Switchboot\tegrarcm\bootloader %volume_letter%:\bootloader /e >nul
 		%windir%\System32\Robocopy.exe TOOLS\Switchboot\Tidy_Memloader %volume_letter%:\ /e >nul
@@ -522,8 +523,16 @@ for /l %%i in (1,1,%temp_count%) do (
 		)
 	)
 	IF NOT "!temp_special_module!"=="Y" (
+		dir /b "tools\sd_switch\modules\pack\!temp_module!\titles">templogs\tempvar.txt
+		set /p temp_module_title_id=<templogs\tempvar.txt
 		%windir%\System32\Robocopy.exe tools\sd_switch\modules\pack\!temp_module!\titles %temp_modules_copy_path% /e >nul
 		IF EXIST "tools\sd_switch\modules\pack\!temp_module!\others" %windir%\System32\Robocopy.exe tools\sd_switch\modules\pack\!temp_module!\others %volume_letter%:\ /e >nul
+	)
+	IF "%~1"=="reinx" (
+		IF EXIST "%temp_modules_copy_path%\!temp_module_title_id!\toolbox.json" del /q "%temp_modules_copy_path%\!temp_module_title_id!\toolbox.json"
+	)
+		IF "%~1"=="sxos" (
+		IF EXIST "%temp_modules_copy_path%\!temp_module_title_id!\toolbox.json" del /q "%temp_modules_copy_path%\!temp_module_title_id!\toolbox.json"
 	)
 	IF "!temp_module!"=="Slidenx" (
 		IF EXIST "%volume_letter%:\SlideNX\attach.mp3" del /q "%volume_letter%:\SlideNX\attach.mp3"

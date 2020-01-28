@@ -73,6 +73,7 @@
 <li><a target="_blank" href="https://github.com/DarkMatterCore/nxdumptool">Nxdumptool</a></li>
 <li><a target="_blank" href="https://github.com/retronx-team/mtp-server-nx/">mtp-server-nx</a></li>
 <li><a target="_blank" href="https://github.com/joel16/NX-Shell">NX-Shell</a></li>
+<li><a target="_blank" href="https://github.com/CompSciOrBust/N-Xplorer">N-Xplorer</a></li>
 <li><a target="_blank" href="https://github.com/t-flo/nxTransmission">NXTransmission</a></li>
 <li><a target="_blank" href="https://github.com/suchmememanyskill/Payload_Launcher">Payload_Launcher</a></li>
 <li><a target="_blank" href="https://github.com/Cpasjuste/pplay">Pplay</a></li>
