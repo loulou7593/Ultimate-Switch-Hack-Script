@@ -1,5 +1,9 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.28</h2>
+<ul>
+<li>Petite optimisation du code de la préparation d'une SD lors de la copie d'un module pour ReiNX et SX OS.</li>
+</ul>
 <h2>V4.1.27</h2>
 <ul>
 <li>Update the SD prepare script to support the new modules management of the new version of the Kosmos Toolbox. Cause of this change, for the Atmosphere pack you will need to copy your modules again with the new version of the script cause the old configuration file will be automaticaly remove if it is found on the SD.</li>

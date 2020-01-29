@@ -527,12 +527,12 @@ for /l %%i in (1,1,%temp_count%) do (
 		set /p temp_module_title_id=<templogs\tempvar.txt
 		%windir%\System32\Robocopy.exe tools\sd_switch\modules\pack\!temp_module!\titles %temp_modules_copy_path% /e >nul
 		IF EXIST "tools\sd_switch\modules\pack\!temp_module!\others" %windir%\System32\Robocopy.exe tools\sd_switch\modules\pack\!temp_module!\others %volume_letter%:\ /e >nul
-	)
-	IF "%~1"=="reinx" (
-		IF EXIST "%temp_modules_copy_path%\!temp_module_title_id!\toolbox.json" del /q "%temp_modules_copy_path%\!temp_module_title_id!\toolbox.json"
-	)
-		IF "%~1"=="sxos" (
-		IF EXIST "%temp_modules_copy_path%\!temp_module_title_id!\toolbox.json" del /q "%temp_modules_copy_path%\!temp_module_title_id!\toolbox.json"
+		IF "%~1"=="reinx" (
+			IF EXIST "%temp_modules_copy_path%\!temp_module_title_id!\toolbox.json" del /q "%temp_modules_copy_path%\!temp_module_title_id!\toolbox.json"
+		)
+			IF "%~1"=="sxos" (
+			IF EXIST "%temp_modules_copy_path%\!temp_module_title_id!\toolbox.json" del /q "%temp_modules_copy_path%\!temp_module_title_id!\toolbox.json"
+		)
 	)
 	IF "!temp_module!"=="Slidenx" (
 		IF EXIST "%volume_letter%:\SlideNX\attach.mp3" del /q "%volume_letter%:\SlideNX\attach.mp3"
