@@ -3,6 +3,7 @@
 <h2>V4.1.28</h2>
 <ul>
 <li>Litle  optimization of the prepare SD script when copying a module for  ReiNX and SX OS.</li>
+<li>Some fix in the homebrews list files.</li>
 </ul>
 <h2>V4.1.27</h2>
 <ul>

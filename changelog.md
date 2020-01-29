@@ -3,6 +3,7 @@
 <h2>V4.1.28</h2>
 <ul>
 <li>Petite optimisation du code de la préparation d'une SD lors de la copie d'un module pour ReiNX et SX OS.</li>
+<li>Corrections dans les fichiers de liste des homebrews.</li>
 </ul>
 <h2>V4.1.27</h2>
 <ul>
