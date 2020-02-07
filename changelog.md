@@ -1,5 +1,10 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.30</h2>
+<ul>
+<li>Mise à jour de la documentation et des crédits.</li>
+<li>Mise à jour des packs de CFWs/modules/homebrews/payloads_utiles en version 321.</li>
+</ul>
 <h2>V4.1.29</h2>
 <ul>
 <li>Mise à jour de la documentation et des crédits.</li>

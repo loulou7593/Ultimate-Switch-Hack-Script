@@ -15,6 +15,7 @@
 <li><a target="_blank" href="https://github.com/switchbrew/nx-hbloader">NX-Hbloader</a></li>
 <li><a target="_blank" href="https://github.com/switchbrew/nx-hbmenu">NX-Hbmenu</a></li>
 <li><a target="_blank" href="https://github.com/WerWolv/nx-ovlloader">nx-ovlloader</a> and <a target="_blank" href="https://github.com/WerWolv/Tesla-Menu">Tesla-Menu</a></li>
+<li><a target="_blank" href="https://github.com/WerWolv/ovl-sysmodules">OvlSysmodules</a></li>
 <li><a target="_blank" href="https://switchtools.sshnuke.net/">Biskeydump, Memloader, Briccmii, Gptrestore, Romdump, ChoiDuJour, HacDiskMount, ChoiDuJourNX</a></li>
 <li><a target="_blank" href="https://github.com/CTCaer/hekate">Hekate</a></li>
 <li><a target="_blank" href="https://github.com/Joonie86/hekate/">Joonie86 Hekate fork</a></li>
