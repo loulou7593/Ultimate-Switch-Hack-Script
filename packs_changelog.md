@@ -1,5 +1,9 @@
 <h1>Changelog des packs de l'Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V323</h2>
+<ul>
+<li>Mise à jour des cheats.</li>
+</ul>
 <h2>V322</h2>
 <ul>
 <li>Ajout de l'overlay ShareNX au homebrew Screen-NX.</li>

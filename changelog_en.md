@@ -1,5 +1,10 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.32</h2>
+<ul>
+<li>Fix bugs in the  conversion script of xci/nca files.</li>
+<li> Updating CFWs/modules/homebrews/usful_payloads packs in version 323.</li>
+</ul>
 <h2>V4.1.31</h2>
 <ul>
 <li>Update Tegra-Explorer to version 1.3.1.</li>

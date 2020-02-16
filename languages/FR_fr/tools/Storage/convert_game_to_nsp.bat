@@ -42,7 +42,7 @@ goto:eof
 :output_folder_select
 echo Vous allez devoir sélectionner le dossier vers lequel le NSP converti sera extrait.
 pause
-%windir%\system32\wscript.exe //Nologo tools\Storage\functions\select_dir.vbs "..\..\templogs\tempvar.txt" "Sélection du dossier de sortie"
+%windir%\system32\wscript.exe //Nologo ..\Storage\functions\select_dir.vbs "..\..\templogs\tempvar.txt" "Sélection du dossier de sortie"
 goto:eof
 
 :no_output_folder_error

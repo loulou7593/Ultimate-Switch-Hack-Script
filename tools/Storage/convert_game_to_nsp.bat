@@ -34,7 +34,7 @@ IF EXIST keys.txt (
 	set define_new_keys_file=
 	call "%associed_language_script%" "define_new_keys_file_choice"
 	IF NOT "!define_new_keys_file!"=="" set define_new_keys_file=!define_new_keys_file:~0,1!
-	call "%this_script_dir%\functions\modify_yes_no_always_never_vars.bat" "define_new_keys_file" "o/n_choice"
+	call "..\Storage\functions\modify_yes_no_always_never_vars.bat" "define_new_keys_file" "o/n_choice"
 	IF /i "!define_new_keys_file!"=="o" goto:keys_file_creation
 )
 IF NOT EXIST keys.txt (
@@ -74,18 +74,21 @@ IF "%output_path%"=="" (
 ) else (
 	set output_path=!output_path!\
 	set output_path=!output_path:\\=\!
+	IF "!output_path:~-1,1!"=="\" set output_path=!output_path:~0,-1!
 )
 set rename_target=
 call "%associed_language_script%" "rename_param_choice"
 IF NOT "%rename_target%"=="" set rename_target=%rename_target:~0,1%
 call "..\Storage\functions\modify_yes_no_always_never_vars.bat" "rename_target" "o/n_choice"
-IF /i NOT "%rename_target%"=="o" set params=-r 
+IF /i NOT "%rename_target%"=="o" set params=--rename 
 set keepncaid=
 call "%associed_language_script%" "kipncaid_param_choice"
 IF NOT "%keepncaid%"=="" set keepncaid=%keepncaid:~0,1%
 call "..\Storage\functions\modify_yes_no_always_never_vars.bat" "keepncaid" "o/n_choice"
-IF /i NOT "%keepncaid%"=="o" set params=--keepncaid
-"4nxci.exe" --keyset "keys.txt" %params% -o "%output_path%" -t "..\..\templogs" "%game_path%"
+IF /i NOT "%keepncaid%"=="o" set params=--keepncaid 
+IF EXIST "4nxci_extracted_xci" rmdir /s /q "4nxci_extracted_xci"
+"4nxci.exe" --keyset "keys.txt" %params% -t "..\..\templogs" -o "%output_path%" "%game_path%"
+IF EXIST "4nxci_extracted_xci" rmdir /s /q "4nxci_extracted_xci"
 IF %errorlevel% NEQ 0 (
 	echo.
 	call "%associed_language_script%" "converting_error"

@@ -51,7 +51,7 @@ goto:eof
 :output_folder_select
 echo You will select the folder where the converted NSP will be copied.
 pause
-%windir%\system32\wscript.exe //Nologo tools\Storage\functions\select_dir.vbs "..\..\templogs\tempvar.txt" "Select output folder"
+%windir%\system32\wscript.exe //Nologo ..\Storage\functions\select_dir.vbs "..\..\templogs\tempvar.txt" "Select output folder"
 goto:eof
 
 :no_output_folder_error
