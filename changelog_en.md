@@ -1,5 +1,9 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.33</h2>
+<ul>
+<li>Fix a bug in the consoles serials verification.</li>
+</ul>
 <h2>V4.1.32</h2>
 <ul>
 <li>Fix bugs in the  conversion script of xci/nca files.</li>
