@@ -1,5 +1,13 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.34</h2>
+<ul>
+<li>Add the EmuTool software to the toolbox and delete Goldtree of it.</li>
+<li>Update txt of the other functions menu to precise that the NSP installation via USB doesn't work with the latest version of Goldleaf.</li>
+<li>Update Rekado to version 3.3.3.</li>
+<li>Update credits.</li>
+<li> Updating CFWs/modules/homebrews/usful_payloads packs in version 324.</li>
+</ul>
 <h2>V4.1.33</h2>
 <ul>
 <li>Fix a bug in the consoles serials verification.</li>

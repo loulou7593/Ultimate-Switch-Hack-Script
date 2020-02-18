@@ -26,7 +26,7 @@ echo 3: Convert a NSP to try to make it compatible with the lowest possible firm
 echo.
 echo 4: Install NSPs via the network and Goldleaf?
 echo.
-echo 5: Install NSPs via USB and Goldleaf?
+echo 5: Install NSPs via USB and Goldleaf ^(doesn't work with latest Goldleaf's version^)?
 echo.
 echo 6: Convert a Zelda Breath Of The Wild gamesave from Switch to Wii U or Wii U to Switch?
 echo.

@@ -1,5 +1,10 @@
 <h1>Changelog des packs de l'Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V324</h2>
+<ul>
+<li>Mise à jour de Mgba en version 0.8.1.</li>
+<li>Mise à jour de SimpleModManager en version 1.4.0.</li>
+</ul>
 <h2>V323</h2>
 <ul>
 <li>Mise à jour des cheats.</li>

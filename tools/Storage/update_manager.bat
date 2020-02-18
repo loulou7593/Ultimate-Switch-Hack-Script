@@ -1743,10 +1743,6 @@ call :verif_folder_version "tools\emuGUIibo"
 IF "!update_finded!"=="Y" (
 	call :update_folder
 )
-call :verif_folder_version "tools\Goldtree"
-IF "!update_finded!"=="Y" (
-	call :update_folder
-)
 call :verif_folder_version "tools\GuiFormat"
 IF "!update_finded!"=="Y" (
 	call :update_folder
@@ -1764,6 +1760,10 @@ IF "!update_finded!"=="Y" (
 	call :update_folder
 )
 call :verif_folder_version "tools\XCI-Cutter"
+IF "!update_finded!"=="Y" (
+	call :update_folder
+)
+call :verif_folder_version "tools\EmuTool"
 IF "!update_finded!"=="Y" (
 	call :update_folder
 )

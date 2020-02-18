@@ -13,11 +13,11 @@ echo 1: Préparer une mise à jour via ChoiDuJour-NX sur la SD et/ou un package 
 echo.
 echo 2: Convertir un fichier XCI ou NCA en NSP?
 echo.
-echo 3: Convertir un NSP pour le rendre compatible avec le firmware de la Switch le plus bas possible.
+echo 3: Convertir un NSP pour le rendre compatible avec le firmware de la Switch le plus bas possible?
 echo.
-echo 4: Installer des NSP via Goldleaf et le réseau.
+echo 4: Installer des NSP via Goldleaf et le réseau?
 echo.
-echo 5: Installer des NSP via Goldleaf et l'USB.
+echo 5: Installer des NSP via Goldleaf et l'USB ^(ne fonctionne plus avec les dernières versions de Goldleaf^)?
 echo.
 echo 6: Convertir une sauvegarde de Zelda Breath Of The Wild du format Wii U vers Switch ou inversement?
 echo.
@@ -27,7 +27,7 @@ echo 8: Vérifier des fichiers NSP?
 echo.
 echo 9: Découper un fichier NSP ou XCI en fichiers de 4 GO?
 echo.
-echo 10: Rassembler un XCI ou NSP découpé.
+echo 10: Rassembler un XCI ou NSP découpé?
 echo.
 echo 11: Configurer l'émulateur Nes Classic Edition?
 echo.
