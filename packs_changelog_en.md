@@ -1,5 +1,12 @@
 <h1>Changelog of the Ultimate Switch Hack Script packs</h1>
 &nbsp;
+<h2>V325</h2>
+<ul>
+<li>Add the Delve homebrew.</li>
+<li>Update Nx-ovlloader (Ovl-menu) to version 1.0.2.</Li>
+<li>Update NX-Activity-Log to version 1.2.0.</li>
+<li>Update Ldn_mitm to version 1.3.2.</li>
+</ul>
 <h2>V324</h2>
 <ul>
 <li>Update Mgba to version 0.8.1.</li>
