@@ -26,7 +26,7 @@ IF EXIST templogs (
 	rmdir /s /q templogs 2>nul
 )
 mkdir templogs
-IF NOT EXIST "tools\sd_switch\mixed\profiles\*.*" mkdir "tools\sd_switch\mixed\profiles"
+IF NOT EXIST "tools\sd_switch\overlays\profiles\*.*" mkdir "tools\sd_switch\overlays\profiles"
 
 :define_action_choice
 cls
@@ -49,7 +49,7 @@ IF %errorlevel% EQU 404 (
 )
 echo.
 call "%associed_language_script%" "info_profile"
-call :list_homebrews_in_profile "%profile_selected%"
+call :list_overlays_in_profile "%profile_selected%"
 pause
 goto:define_action_choice
 
@@ -71,7 +71,7 @@ IF %i% LSS %nb% (
 	set /a i+=1
 	goto:check_chars_new_profile_name
 )
-copy nul "tools\sd_switch\mixed\profiles\%new_profile_name%.ini" >nul
+copy nul "tools\sd_switch\overlays\profiles\%new_profile_name%.ini" >nul
 call "%associed_language_script%" "create_profile_success"
 set profile_selected=%new_profile_name%.ini
 goto:skip_modify_select_profile
@@ -87,7 +87,7 @@ IF %errorlevel% EQU 404 (
 )
 :skip_modify_select_profile
 IF %errorlevel% EQU 0 (
-	call :add_del_homebrew_in_profile "%profile_selected%"
+	call :add_del_overlay_in_profile "%profile_selected%"
 ) else (
 	goto:define_action_choice
 )
@@ -107,7 +107,7 @@ IF %errorlevel% EQU 0 (
 	cd tools\sd_switch\profiles
 	set /a temp_count=0
 	for %%p in (*.bat) do (
-		..\..\gnuwin32\bin\grep.exe -c "mixed_profile_path=tools\\sd_switch\\mixed\\profiles\\%profile_selected%" <"%%p" > ..\..\..\templogs\tempvar.txt
+		..\..\gnuwin32\bin\grep.exe -c "overlays_profile_path=tools\\sd_switch\\overlays\\profiles\\%profile_selected%" <"%%p" > ..\..\..\templogs\tempvar.txt
 		set /p temp_test_profile=<..\..\..\templogs\tempvar.txt
 		IF "!temp_test_profile!"=="1" (
 			set /a temp_count+=1
@@ -138,7 +138,7 @@ IF %errorlevel% EQU 0 (
 		goto:define_action_choice
 	)
 	:removing_profile
-	del /q "tools\sd_switch\mixed\profiles\%profile_selected%" >nul
+	del /q "tools\sd_switch\overlays\profiles\%profile_selected%" >nul
 	call "%associed_language_script%" "delete_profile_success"
 	endlocal
 	pause
@@ -148,10 +148,10 @@ goto:define_action_choice
 :select_profile
 set profile_selected=
 call "%associed_language_script%" "intro_select_profile"
-IF NOT EXIST "tools\sd_switch\mixed\profiles\*.ini" exit /b 404
+IF NOT EXIST "tools\sd_switch\overlays\profiles\*.ini" exit /b 404
 set /a temp_count=1
 copy nul templogs\profiles_list.txt >nul
-cd tools\sd_switch\mixed\profiles
+cd tools\sd_switch\overlays\profiles
 for %%p in (*.ini) do (
 	set temp_profilename=%%p
 	set temp_profilename=!temp_profilename:~0,-4!
@@ -186,38 +186,38 @@ del /q templogs\profiles_list.txt >nul
 set /p profile_selected=<templogs\tempvar.txt
 exit /b
 
-:list_homebrews_in_profile
+:list_overlays_in_profile
 Setlocal disabledelayedexpansion
-copy nul templogs\homebrews_list.txt >nul
-tools\gnuwin32\bin\grep.exe -c "" <"tools\sd_switch\mixed\profiles\%~1" > templogs\tempvar.txt
-set /p count_homebrews=<templogs\tempvar.txt
-IF %count_homebrews% EQU 0 (
-	call "%associed_language_script%" "no_homebrews_in_profile_error"
+copy nul templogs\overlays_list.txt >nul
+tools\gnuwin32\bin\grep.exe -c "" <"tools\sd_switch\overlays\profiles\%~1" > templogs\tempvar.txt
+set /p count_overlays=<templogs\tempvar.txt
+IF %count_overlays% EQU 0 (
+	call "%associed_language_script%" "no_overlays_in_profile_error"
 	endlocal
 	exit /b
 )
-%windir%\System32\sort.exe /l C <"tools\sd_switch\mixed\profiles\%~1" /o "templogs\homebrews_list.txt"
-type "templogs\homebrews_list.txt"
-del /q templogs\homebrews_list.txt
+%windir%\System32\sort.exe /l C <"tools\sd_switch\overlays\profiles\%~1" /o "templogs\overlays_list.txt"
+type "templogs\overlays_list.txt"
+del /q templogs\overlays_list.txt
 endlocal
 exit /b
 
-:add_del_homebrew_in_profile
+:add_del_overlay_in_profile
 set temp_profile=%~1
-set temp_path_profile=tools\sd_switch\mixed\profiles\%~1
+set temp_path_profile=tools\sd_switch\overlays\profiles\%~1
 set /a selected_page=1
-call :homebrews_list
+call :overlays_list
 IF %errorlevel% EQU 404 (
-	del /q templogs\homebrews_list.txt
+	del /q templogs\overlays_list.txt
 	exit /b 400
 )
-set /a page_number=%count_homebrews%/20
-IF %count_homebrews% LEQ 20 (
+set /a page_number=%count_overlays%/20
+IF %count_overlays% LEQ 20 (
 	set /a modulo=0
 	set /a page_number=1
 	goto:skip:modulo_calc
 )
-set mod_a=!count_homebrews!
+set mod_a=!count_overlays!
 set mod_b=20
 set mod_counter=0
 for /l %%k in (1,1,!mod_a!) do (
@@ -229,64 +229,64 @@ for /l %%k in (1,1,!mod_a!) do (
 if not defined modulo set modulo=0
 IF %modulo% NEQ 0 set /a page_number+=1
 :skip:modulo_calc
-:recall_add_remove_homebrew
-IF %count_homebrews% LEQ 20 (
-	call "%associed_language_script%" "intro_homebrews_one_page"
+:recall_add_remove_overlay
+IF %count_overlays% LEQ 20 (
+	call "%associed_language_script%" "intro_overlays_one_page"
 ) else (
-	call "%associed_language_script%" "intro_homebrews_multi_page"
+	call "%associed_language_script%" "intro_overlays_multi_page"
 )
 echo.
-call "%associed_language_script%" "add_remove_homebrews_info"
+call "%associed_language_script%" "add_remove_overlays_info"
 echo.
 IF %modulo% NEQ 0 (
 	IF %selected_page% EQU %page_number% (
-		set /a temp_max_display_homebrews=%count_homebrews%
-		set /a temp_min_display_homebrews=%count_homebrews%-%modulo%+1
+		set /a temp_max_display_overlays=%count_overlays%
+		set /a temp_min_display_overlays=%count_overlays%-%modulo%+1
 	) else (
-		set /a temp_max_display_homebrews=%selected_page%*20
-		set /a temp_min_display_homebrews=!temp_max_display_homebrews!-19
+		set /a temp_max_display_overlays=%selected_page%*20
+		set /a temp_min_display_overlays=!temp_max_display_overlays!-19
 	)
 ) else (
-	IF %count_homebrews% LEQ 20 (
-		set /a temp_max_display_homebrews=%count_homebrews%
-		set /a temp_min_display_homebrews=1
+	IF %count_overlays% LEQ 20 (
+		set /a temp_max_display_overlays=%count_overlays%
+		set /a temp_min_display_overlays=1
 	) else (
-		set /a temp_max_display_homebrews=%selected_page%*20
-		set /a temp_min_display_homebrews=!temp_max_display_homebrews!-19
+		set /a temp_max_display_overlays=%selected_page%*20
+		set /a temp_min_display_overlays=!temp_max_display_overlays!-19
 	)
 )
-for /l %%i in (%temp_min_display_homebrews%,1,%temp_max_display_homebrews%) do (
-	tools\gnuwin32\bin\grep.exe -c "!homebrews_list_%%i_0!" <"%temp_path_profile%" > templogs\tempvar.txt
-	set /p temp_count_homebrews=<templogs\tempvar.txt
-	IF !temp_count_homebrews! EQU 0 (
-		echo %%i: !homebrews_list_%%i_0!
+for /l %%i in (%temp_min_display_overlays%,1,%temp_max_display_overlays%) do (
+	tools\gnuwin32\bin\grep.exe -c "!overlays_list_%%i_0!" <"%temp_path_profile%" > templogs\tempvar.txt
+	set /p temp_count_overlays=<templogs\tempvar.txt
+	IF !temp_count_overlays! EQU 0 (
+		echo %%i: !overlays_list_%%i_0!
 	) else (
-		echo %%i: *!homebrews_list_%%i_0!
+		echo %%i: *!overlays_list_%%i_0!
 	)
 )
-IF %count_homebrews% GTR 20 call "%associed_language_script%" "change_page_info"
-set homebrew_choice=
-call "%associed_language_script%" "add_remove_homebrews_choice_ending"
-IF "%homebrew_choice%"=="" set /a homebrew_choice=0
-call TOOLS\Storage\functions\strlen.bat nb "%homebrew_choice%"
-IF /i "%homebrew_choice:~0,1%"=="p" (
+IF %count_overlays% GTR 20 call "%associed_language_script%" "change_page_info"
+set overlay_choice=
+call "%associed_language_script%" "add_remove_overlays_choice_ending"
+IF "%overlay_choice%"=="" set /a overlay_choice=0
+call TOOLS\Storage\functions\strlen.bat nb "%overlay_choice%"
+IF /i "%overlay_choice:~0,1%"=="p" (
 	set change_page=Y
 	IF %nb% equ 1 (
-		set homebrew_choice=0
+		set overlay_choice=0
 	) else (
-		set homebrew_choice=%homebrew_choice:~1%
+		set overlay_choice=%overlay_choice:~1%
 	)
 	)
-call TOOLS\Storage\functions\strlen.bat nb "%homebrew_choice%"
+call TOOLS\Storage\functions\strlen.bat nb "%overlay_choice%"
 set i=0
-:check_chars_homebrew_choice
+:check_chars_overlay_choice
 IF %i% NEQ %nb% (
 	set check_chars=0
 	FOR %%z in (0 1 2 3 4 5 6 7 8 9) do (
-		IF "!homebrew_choice:~%i%,1!"=="%%z" (
+		IF "!overlay_choice:~%i%,1!"=="%%z" (
 			set /a i+=1
 			set check_chars=1
-			goto:check_chars_homebrew_choice
+			goto:check_chars_overlay_choice
 		)
 	)
 	IF "!check_chars!"=="0" (
@@ -294,63 +294,63 @@ exit /b 400
 	)
 )
 IF "%change_page%"=="Y" (
-	IF %homebrew_choice% GTR %page_number% (
+	IF %overlay_choice% GTR %page_number% (
 		call "%associed_language_script%" "page_not_exist_error"
 		set change_page=
-		goto:recall_add_remove_homebrew
-	) else IF %homebrew_choice% LEQ 0 (
+		goto:recall_add_remove_overlay
+	) else IF %overlay_choice% LEQ 0 (
 	call "%associed_language_script%" "page_not_exist_error"
 	set change_page=
-	goto:recall_add_remove_homebrew
+	goto:recall_add_remove_overlay
 	) else (
-		set selected_page=%homebrew_choice%
+		set selected_page=%overlay_choice%
 		set change_page=
-		goto:recall_add_remove_homebrew
+		goto:recall_add_remove_overlay
 	)
 )
-IF %homebrew_choice% GTR %count_homebrews% (
-	del /q templogs\homebrews_list.txt
+IF %overlay_choice% GTR %count_overlays% (
+	del /q templogs\overlays_list.txt
 	exit /b 400
 )
-IF %homebrew_choice% EQU 0 (
-	del /q templogs\homebrews_list.txt
+IF %overlay_choice% EQU 0 (
+	del /q templogs\overlays_list.txt
 	exit /b 400
 )
-TOOLS\gnuwin32\bin\sed.exe -n %homebrew_choice%p <templogs\homebrews_list.txt > templogs\tempvar.txt
-set /p homebrew_selected=<templogs\tempvar.txt
-tools\gnuwin32\bin\grep.exe -c "%homebrew_selected%" <"%temp_path_profile%" > templogs\tempvar.txt
+TOOLS\gnuwin32\bin\sed.exe -n %overlay_choice%p <templogs\overlays_list.txt > templogs\tempvar.txt
+set /p overlay_selected=<templogs\tempvar.txt
+tools\gnuwin32\bin\grep.exe -c "%overlay_selected%" <"%temp_path_profile%" > templogs\tempvar.txt
 set /p temp_count=<templogs\tempvar.txt
 IF %temp_count% EQU 0 (
-	echo %homebrew_selected%>>"%temp_path_profile%"
+	echo %overlay_selected%>>"%temp_path_profile%"
 ) else (
-	tools\gnuwin32\bin\grep.exe -v "%homebrew_selected%" <"%temp_path_profile%" > templogs\tempvar.txt
+	tools\gnuwin32\bin\grep.exe -v "%overlay_selected%" <"%temp_path_profile%" > templogs\tempvar.txt
 	del /q "%temp_path_profile%" >nul
 	move templogs\tempvar.txt "%temp_path_profile%" >nul
 )
-goto:recall_add_remove_homebrew
+goto:recall_add_remove_overlay
 exit /b
 
-:homebrews_list
-copy nul templogs\homebrews_list.txt >nul
-cd tools\sd_switch\mixed\modular
+:overlays_list
+copy nul templogs\overlays_list.txt >nul
+cd tools\sd_switch\overlays\pack
 for /D %%i in (*) do (
-	echo %%i>>..\..\..\..\templogs\homebrews_list.txt
+	echo %%i>>..\..\..\..\templogs\overlays_list.txt
 )
 cd ..\..\..\..
-tools\gnuwin32\bin\grep.exe -c "" <templogs\homebrews_list.txt > templogs\tempvar.txt
-set /p count_homebrews=<templogs\tempvar.txt
+tools\gnuwin32\bin\grep.exe -c "" <templogs\overlays_list.txt > templogs\tempvar.txt
+set /p count_overlays=<templogs\tempvar.txt
 set temp_count=1
-:listing_homebrews
-IF %count_homebrews% EQU 0 (
-	call "%associed_language_script%" "no_homebrews_in_homebrews_folder"
+:listing_overlays
+IF %count_overlays% EQU 0 (
+	call "%associed_language_script%" "no_overlays_in_overlays_folder"
 	exit /b 404
 )
-IF %temp_count% GTR %count_homebrews% goto:skip_listing_homebrews
-TOOLS\gnuwin32\bin\sed.exe -n %temp_count%p <templogs\homebrews_list.txt > templogs\tempvar.txt
-set /p homebrews_list_%temp_count%_0=<templogs\tempvar.txt
+IF %temp_count% GTR %count_overlays% goto:skip_listing_overlays
+TOOLS\gnuwin32\bin\sed.exe -n %temp_count%p <templogs\overlays_list.txt > templogs\tempvar.txt
+set /p overlays_list_%temp_count%_0=<templogs\tempvar.txt
 set /a temp_count+=1
-goto:listing_homebrews
-:skip_listing_homebrews
+goto:listing_overlays
+:skip_listing_overlays
 exit /b
 
 :end_script

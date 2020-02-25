@@ -1,5 +1,12 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.37</h2>
+<ul>
+<li>In the SD preparation script, add the support of the overlays copy not depending on the Ovl-menu copy and add the profiles management for them. With this, if you use general profiles for the SD preparation, you must reconfigure them because they not be functional anymore.</li>
+<li>In the homebrews profiles management script, fix a minor bug.</li>
+<li>Update documentation.</li>
+<li> Updating CFWs/modules/homebrews/overlays/usful_payloads packs in version 327.</li>
+</ul>
 <h2>V4.1.36</h2>
 <ul>
 <li>Update documentation and credits.</li>

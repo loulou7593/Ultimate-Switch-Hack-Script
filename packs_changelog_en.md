@@ -1,5 +1,9 @@
 <h1>Changelog of the Ultimate Switch Hack Script packs</h1>
 &nbsp;
+<h2>V327</h2>
+<ul>
+
+</ul>
 <h2>V326</h2>
 <ul>
 <li>Add TextReaderOverlay-NX and Status-Monitor-Overlay overlays to the Ovl-menu.</li>

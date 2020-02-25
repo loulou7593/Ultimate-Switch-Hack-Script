@@ -255,6 +255,76 @@ set /p mixed_profile_path=<templogs\tempvar.txt
 set mixed_profile_path=tools\sd_switch\mixed\profiles\%mixed_profile_path%
 :skip_verif_mixed_profile
 del /q templogs\profiles_list.txt >nul
+
+:define_select_overlays_profile
+echo.
+set overlays_profile_path=
+set overlays_profile=
+call "%associed_language_script2%" "overlays_profile_choice_begin"
+set /a temp_count=1
+copy nul templogs\profiles_list.txt >nul
+IF NOT EXIST "tools\sd_switch\overlays\profiles\*.ini" (
+	goto:no_overlays_profile_created
+)
+cd tools\sd_switch\overlays\profiles
+for %%p in (*.ini) do (
+	set temp_profilename=%%p
+	set temp_profilename=!temp_profilename:~0,-4!
+	echo !temp_count!: !temp_profilename!
+	echo %%p>> ..\..\..\..\templogs\profiles_list.txt
+	set /a temp_count+=1
+)
+cd ..\..\..\..
+:no_overlays_profile_created
+IF EXIST "tools\default_configs\overlays_profile_all.ini" (
+	call "%associed_language_script2%" "overlays_profile_all"
+) else (
+	set /a temp_count-=1
+	set no_default_config=Y
+)
+call "%associed_language_script2%" "overlays_profile_choice"
+IF "%overlays_profile%"=="" (
+	set pass_copy_mixed_pack=Y
+	goto:skip_verif_overlays_profile
+)
+call TOOLS\Storage\functions\strlen.bat nb "%overlays_profile%"
+set i=0
+:check_chars_overlays_profile
+IF %i% NEQ %nb% (
+	set check_chars=0
+	FOR %%z in (0 1 2 3 4 5 6 7 8 9) do (
+		IF "!overlays_profile:~%i%,1!"=="%%z" (
+			set /a i+=1
+			set check_chars=1
+			goto:check_chars_overlays_profile
+		)
+	)
+	IF "!check_chars!"=="0" (
+		set pass_copy_overlays_pack=Y
+		goto:skip_verif_overlays_profile
+	)
+)
+IF %overlays_profile% GTR %temp_count% (
+	set pass_copy_overlays_pack=Y
+		goto:skip_verif_overlays_profile
+)
+IF "%overlays_profile%"=="0" (
+	call tools\Storage\overlays_pack_profiles_management.bat
+	call "%associed_language_script2%" "display_title"
+	goto:define_select_overlays_profile
+)
+IF %overlays_profile% EQU %temp_count% (
+	IF NOT "%no_default_config%"=="Y" (
+		set overlays_profile_path=tools\default_configs\overlays_profile_all.ini
+		goto:skip_verif_overlays_profile
+	)
+)
+TOOLS\gnuwin32\bin\sed.exe -n %overlays_profile%p <templogs\profiles_list.txt > templogs\tempvar.txt
+set /p overlays_profile_path=<templogs\tempvar.txt
+set overlays_profile_path=tools\sd_switch\overlays\profiles\%overlays_profile_path%
+:skip_verif_overlays_profile
+del /q templogs\profiles_list.txt >nul
+
 :define_select_cheats_profile
 set cheats_profile_path=
 set cheats_profile_name=

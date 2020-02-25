@@ -39,7 +39,8 @@ IF "%action_choice%"=="10" goto:mixed_packs_profiles_management
 IF "%action_choice%"=="11" goto:cheats_profiles_management
 IF "%action_choice%"=="12" goto:emu_profiles_management
 IF "%action_choice%"=="13" goto:modules_profiles_management
-IF "%action_choice%"=="14" goto:emummc_profiles_management
+IF "%action_choice%"=="14" goto:overlays_profiles_management
+IF "%action_choice%"=="15" goto:emummc_profiles_management
 goto:end_script
 :save_config
 set action_choice=
@@ -172,6 +173,19 @@ IF EXIST "tools\Storage\modules_profiles_management.bat" (
 	call tools\Storage\update_manager.bat "update_modules_profiles_management.bat" "force"
 )
 call TOOLS\Storage\modules_profiles_management.bat
+rmdir /s /q templogs
+@echo off
+goto:define_action_choice
+:overlays_profiles_management
+set action_choice=
+echo.
+cls
+IF EXIST "tools\Storage\overlays_pack_profiles_management.bat" (
+	call tools\Storage\update_manager.bat "update_overlays_pack_profiles_management.bat"
+) else (
+	call tools\Storage\update_manager.bat "update_overlays_pack_profiles_management.bat" "force"
+)
+call TOOLS\Storage\overlays_pack_profiles_management.bat
 rmdir /s /q templogs
 @echo off
 goto:define_action_choice

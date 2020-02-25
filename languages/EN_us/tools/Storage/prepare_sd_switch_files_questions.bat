@@ -107,9 +107,24 @@ goto:eof
 
 :homebrews_profile_choice
 echo 0: Open the homebrews profiles management.
-echo All other choices: Don't copy any homebrew.
+echo All other choices: Don't copy any homebrews.
 echo.
 set /p mixed_profile=Make your choice: 
+goto:eof
+
+:overlays_profile_choice_begin
+echo Select the overlays profile:
+goto:eof
+
+:overlays_profile_all
+echo %temp_count%: All overlays.
+goto:eof
+
+:overlays_profile_choice
+echo 0: Open the overlays profiles management.
+echo All other choices: Don't copy any overlays.
+echo.
+set /p overlays_profile=Make your choice: 
 goto:eof
 
 :cheats_profile_choice_begin

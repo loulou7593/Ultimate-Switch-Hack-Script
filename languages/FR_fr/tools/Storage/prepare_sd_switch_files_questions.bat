@@ -103,6 +103,21 @@ echo.
 set /p mixed_profile=Choisissez un profile de homebrews: 
 goto:eof
 
+:overlays_profile_choice_begin
+echo Sélection du profile pour la copie des overlays:
+goto:eof
+
+:overlays_profile_all
+echo %temp_count%: Tous les overlays.
+goto:eof
+
+:overlays_profile_choice
+echo 0: Accéder à la gestion des profiles d'overlays.
+echo Tout autre choix: Ne copier aucun des overlays.
+echo.
+set /p overlays_profile=Choisissez un profile d'overlays: 
+goto:eof
+
 :cheats_profile_choice_begin
 echo Sélection du profile pour la copie des cheats:
 goto:eof

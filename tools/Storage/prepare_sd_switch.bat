@@ -312,6 +312,11 @@ IF NOT "%pass_copy_mixed_pack%"=="Y" (
 			set errorlevel=404
 	)
 )
+IF NOT "%pass_copy_overlays_pack%"=="Y" (
+	IF NOT EXIST "%overlays_profile_path%" (
+			set errorlevel=404
+	)
+)
 :confirm_settings
 call tools\Storage\prepare_sd_switch_infos.bat
 call "%associed_language_script%" "display_title"
@@ -424,6 +429,7 @@ IF /i "%copy_atmosphere_pack%"=="o" (
 	)
 	call :copy_modules_pack "atmosphere"
 	IF NOT "%atmosphere_pass_copy_emummc_pack%"=="Y" copy /v "%atmosphere_emummc_profile_path%" "%volume_letter%:\emummc\emummc.ini" >nul
+	IF NOT "%pass_copy_overlays_pack%"=="Y" call :force_copy_overlays_base_files "atmosphere"
 )
 
 IF /i "%copy_reinx_pack%"=="o" (
@@ -442,6 +448,7 @@ IF /i "%copy_reinx_pack%"=="o" (
 	IF EXIST "%volume_letter%:\ReiNX\titles\010000000000100D\exefs.nsp" del /q "%volume_letter%:\ReiNX\titles\010000000000100D\exefs.nsp" >nul
 	copy /V /B TOOLS\sd_switch\payloads\ReiNX.bin %volume_letter%:\ReiNX\reboot_payload.bin >nul
 	call :copy_modules_pack "reinx"
+	rem IF NOT "%pass_copy_overlays_pack%"=="Y" call :force_copy_overlays_base_files "reinx"
 )
 
 IF /i "%copy_sxos_pack%"=="o" (
@@ -462,6 +469,7 @@ IF /i "%copy_sxos_pack%"=="o" (
 		)
 	)
 	call :copy_modules_pack "sxos"
+	rem IF NOT "%pass_copy_overlays_pack%"=="Y" call :force_copy_overlays_base_files "sxos"
 	IF EXIST "%volume_letter%:\switch\sx_installer" rmdir /s /q "%volume_letter%:\switch\sx_installer"
 	del /Q /S "%volume_letter%:\sxos\.emptydir" >nul
 	IF EXIST "%volume_letter%:\sxos\titles\0100000000000123" rmdir /s /q "%volume_letter%:\sxos\titles\0100000000000123"
@@ -474,6 +482,7 @@ IF /i "%copy_memloader%"=="o" (
 )
 
 call :copy_mixed_pack
+call :copy_overlays_pack
 call :copy_emu_pack
 
 del /Q /S "%volume_letter%:\switch\.emptydir" >nul
@@ -559,6 +568,20 @@ rem )
 :skip_copy_modules_pack
 exit /b
 
+:force_copy_overlays_base_files
+IF "%~1"=="atmosphere" (
+	set temp_modules_copy_path=%volume_letter%:\atmosphere\contents
+)
+IF "%~1"=="reinx" (
+	set temp_modules_copy_path=%volume_letter%:\ReiNX\titles
+)
+IF "%~1"=="sxos" (
+	set temp_modules_copy_path=%volume_letter%:\sxos\titles
+)
+%windir%\System32\Robocopy.exe tools\sd_switch\modules\pack\Ovl-menu\titles %temp_modules_copy_path% /e >nul
+%windir%\System32\Robocopy.exe tools\sd_switch\modules\pack\Ovl-menu\others %volume_letter%:\ /e >nul
+exit /b
+
 :copy_mixed_pack
 %windir%\System32\Robocopy.exe tools\sd_switch\mixed\base %volume_letter%:\ /e >nul
 IF "%pass_copy_mixed_pack%"=="Y" goto:skip_copy_mixed_pack
@@ -634,6 +657,19 @@ for /l %%i in (1,1,%temp_count%) do (
 	)
 )
 :skip_copy_mixed_pack
+exit /b
+
+:copy_overlays_pack
+IF "%pass_copy_overlays_pack%"=="Y" goto:skip_copy_overlays_pack
+tools\gnuwin32\bin\grep.exe -c "" <"%overlays_profile_path%" > templogs\tempvar.txt
+set /p temp_count=<templogs\tempvar.txt
+for /l %%i in (1,1,%temp_count%) do (
+	set temp_special_overlay=N
+	TOOLS\gnuwin32\bin\sed.exe -n %%ip <"%overlays_profile_path%" >templogs\tempvar.txt
+	set /p temp_overlay=<templogs\tempvar.txt
+	IF "!temp_special_overlay!"=="N" %windir%\System32\Robocopy.exe tools\sd_switch\overlays\pack\!temp_overlay! %volume_letter%:\ /e >nul
+)
+:skip_copy_overlays_pack
 exit /b
 
 :copy_emu_pack

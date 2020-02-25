@@ -1348,6 +1348,39 @@ IF NOT "%language_path%"=="languages\FR_fr" (
 )
 exit /b
 
+:update_overlays_pack_profiles_management.bat
+call :verif_file_version "tools\Storage\overlays_pack_profiles_management.bat"
+IF "!update_finded!"=="Y" (
+	call :update_file
+)
+call :verif_file_version "languages\FR_fr\tools\Storage\overlays_pack_profiles_management.bat"
+IF "!update_finded!"=="Y" (
+	call :update_file
+)
+IF NOT "%language_path%"=="languages\FR_fr" (
+	IF "%language_custom%"=="0" (
+		call :verif_file_version "%language_path%\tools\Storage\overlays_pack_profiles_management.bat"
+		IF "!update_finded!"=="Y" (
+			call :update_file
+		)
+	)
+)
+tools\gnuwin32\bin\grep.exe -c "" <"tools\default_configs\Lists\overlays.list" > templogs\tempvar.txt
+set /p count_overlays=<templogs\tempvar.txt
+set /a temp_count=1
+:listing_overlays
+IF %temp_count% GTR %count_overlays% goto:skip_listing_overlays
+"tools\gnuwin32\bin\sed.exe" -n %temp_count%p "tools\default_configs\Lists\overlays.list" >templogs\tempvar.txt
+set /p temp_overlay=<templogs\tempvar.txt
+call :verif_folder_version "tools\sd_switch\overlays\pack\%temp_module%"
+IF "!update_finded!"=="Y" (
+	call :update_folder
+)
+set /a temp_count+=1
+goto:listing_overlays
+:skip_listing_overlays
+exit /b
+
 :update_pegaswitch.bat
 call :verif_file_version "tools\Storage\pegaswitch.bat"
 IF "!update_finded!"=="Y" (
@@ -1456,6 +1489,7 @@ call :update_emulators_pack_profiles_management.bat
 call :update_emummc_profiles_management.bat
 call :update_mixed_pack_profiles_management.bat
 call :update_modules_profiles_management.bat
+call :update_overlays_pack_profiles_management.bat
 call :update_prepare_sd_switch_profiles_management.bat
 call :verif_file_version "tools\sd_switch\version.txt"
 IF "!update_finded!"=="Y" (

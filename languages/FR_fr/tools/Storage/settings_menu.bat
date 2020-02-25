@@ -35,7 +35,9 @@ echo 12: Configurer les profiles de copie d'émulateurs utilisés lors de la pr�
 echo.
 echo 13: Configurer les profiles de copie de modules utilisés lors de la préparation d'une SD?
 echo.
-echo 14: Configurer les profiles d'emummc d'Atmosphere utilisés lors de la préparation d'une SD?
+echo 14: Configurer les profiles de copie d'overlays utilisés lors de la préparation d'une SD?
+echo.
+echo 15: Configurer les profiles d'emummc d'Atmosphere utilisés lors de la préparation d'une SD?
 echo.
 echo N'importe quelle autre choix: Revenir au menu précédent?
 echo.

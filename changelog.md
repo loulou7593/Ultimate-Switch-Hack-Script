@@ -1,5 +1,12 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.37</h2>
+<ul>
+<li>Dans la préparation d'une SD, ajout du support de la copie d'overlays indépendemment de l'Ovl-menu et ajout de la gestion de profiles pour ceux-ci. De fait, si vous utilisez des profiles généraux pendant la préparation d'une SD, il faudra les refaire car ils ne fonctionneront plus.</li>
+<li>Dans la gestion des profiles de homebrews, correction d'un bug mineur.</li>
+<li>Mise à jour de la documentation.</li>
+<li>Mise à jour des packs de CFWs/modules/homebrews/overlays/payloads_utiles en version 327.</li>
+</ul>
 <h2>V4.1.36</h2>
 <ul>
 <li>Mise à jour de la documentation et des crédits.</li>

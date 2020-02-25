@@ -44,7 +44,9 @@ echo 12: configure the emulators profiles used in SD preparation?
 echo.
 echo 13: configure the modules profiles used in SD preparation?
 echo.
-echo 14: configure the Atmosphere's emummc profiles used in SD preparation?
+echo 14: configure the overlays profiles used in SD preparation?
+echo.
+echo 15: configure the Atmosphere's emummc profiles used in SD preparation?
 echo.
 echo All other choices: Go back to main menu?
 echo.

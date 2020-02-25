@@ -266,6 +266,13 @@ IF /i "%copy_emu%"=="o" (
 	)
 	echo.
 )
+echo Overlays:
+IF "%pass_copy_overlays_pack%"=="Y" (
+	echo No overlay will be copied.
+) else (
+	tools\gnuwin32\bin\sort.exe -n "%overlays_profile_path%"
+)
+	echo.
 IF "%copy_cheats%"=="Y" (
 	echo Cheats:
 	IF "%copy_all_cheats_pack%"=="Y" (
