@@ -16,6 +16,8 @@
 <li><a target="_blank" href="https://github.com/switchbrew/nx-hbmenu">NX-Hbmenu</a></li>
 <li><a target="_blank" href="https://github.com/WerWolv/nx-ovlloader">nx-ovlloader</a> and <a target="_blank" href="https://github.com/WerWolv/Tesla-Menu">Tesla-Menu</a></li>
 <li><a target="_blank" href="https://github.com/WerWolv/ovl-sysmodules">OvlSysmodules</a></li>
+<li><a target="_blank" href="https://github.com/masagrator/Status-Monitor-Overlay">Status-Monitor-Overlay</a></li>
+<li><a target="_blank" href="https://github.com/diwo/TextReaderOverlay-NX">TextReaderOverlay-NX</a></li>
 <li><a target="_blank" href="https://switchtools.sshnuke.net/">Biskeydump, Memloader, Briccmii, Gptrestore, Romdump, ChoiDuJour, HacDiskMount, ChoiDuJourNX</a></li>
 <li><a target="_blank" href="https://github.com/CTCaer/hekate">Hekate</a></li>
 <li><a target="_blank" href="https://github.com/Joonie86/hekate/">Joonie86 Hekate fork</a></li>
@@ -69,6 +71,7 @@
 <li><a target="_blank" href="https://github.com/StarDustCFW/Haku33/">Haku33</a></li>
 <li><a target="_blank" href="https://github.com/blawar/incognito">Incognito</a></li>
 <li><a target="_blank" href="https://github.com/jimzrt/Incognito_RCM">Incognito_rcm</a></li>
+<li><a target="_blank" href="https://github.com/3096/ipswitch">Ipswitch</a></li>
 <li><a target="_blank" href="https://github.com/J-D-K/JKSV">JKSV</a></li>
 <li><a target="_blank" href="https://tinfoil.io/Download#download">Lithium, Tinfoil</a></li>
 <li><a target="_blank" href="https://github.com/Nalorokk/mod_Plague">Mod_Plague</a></li>

@@ -1,5 +1,10 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.36</h2>
+<ul>
+<li>Update documentation and credits.</li>
+<li> Updating CFWs/modules/homebrews/usful_payloads packs in version 326.</li>
+</ul>
 <h2>V4.1.35</h2>
 <ul>
 <li>Update Hactool to version 1.3.1.</li>
