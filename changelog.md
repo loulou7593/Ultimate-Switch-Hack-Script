@@ -1,5 +1,9 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.38</h2>
+<ul>
+<li>Ajout de quelques vérifications permettant de pouvoir utiliser d'ancien profiles généraux durant la préparation d'une SD, ceci annulant donc l'avertissement  disant de les mettre à jour dans le changelog de la version 4.1.37.</li>
+</ul>
 <h2>V4.1.37</h2>
 <ul>
 <li>Dans la préparation d'une SD, ajout du support de la copie d'overlays indépendemment de l'Ovl-menu et ajout de la gestion de profiles pour ceux-ci. De fait, si vous utilisez des profiles généraux pendant la préparation d'une SD, il faudra les refaire car ils ne fonctionneront plus.</li>

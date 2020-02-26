@@ -76,6 +76,20 @@ IF "%atmo_cheats_override_key%"=="" (
 	set inverted_atmo_cheats_override_key=Y
 	set atmo_cheats_override_key=L
 )
+IF "%atmosphere_emummc_profile_path%"=="" set atmosphere_pass_copy_emummc_pack=Y
+IF "%atmosphere_modules_profile_path%"=="" set atmosphere_pass_copy_modules_pack=Y
+IF "%reinx_modules_profile_path%"=="" set reinx_pass_copy_modules_pack=Y
+IF "%sxos_modules_profile_path%"=="" set sxos_pass_copy_modules_pack=Y
+IF "%emu_profile_path%"=="" set pass_copy_emu_pack=Y
+IF "%mixed_profile_path%"=="" set pass_copy_mixed_pack=Y
+IF "%overlays_profile_path%"=="" set pass_copy_overlays_pack=Y
+IF "%cheats_profile_path%"=="" (
+	IF NOT "%copy_all_cheats_pack%"=="Y" (
+		set copy_cheats=
+		set atmosphere_enable_cheats=
+		set sxos_enable_cheats=
+	)
+)
 echo.
 call "%associed_language_script%" "display_infos"
 endlocal
