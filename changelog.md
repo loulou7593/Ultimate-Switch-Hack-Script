@@ -1,5 +1,9 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.39</h2>
+<ul>
+<li>Mise à jour des packs de CFWs/modules/homebrews/overlays/payloads_utiles en version 328.</li>
+</ul>
 <h2>V4.1.38</h2>
 <ul>
 <li>Ajout de quelques vérifications permettant de pouvoir utiliser d'ancien profiles généraux durant la préparation d'une SD, ceci annulant donc l'avertissement  disant de les mettre à jour dans le changelog de la version 4.1.37.</li>

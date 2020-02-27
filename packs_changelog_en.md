@@ -1,5 +1,10 @@
 <h1>Changelog of the Ultimate Switch Hack Script packs</h1>
 &nbsp;
+<h2>V328</h2>
+<ul>
+<li>Update Status-Monitor-Overlay to version 0.3.</li>
+<li>Update Awoo-installer to version 1.3.2.</li>
+</ul>
 <h2>V327</h2>
 <ul>
 
