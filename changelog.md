@@ -1,5 +1,10 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.41</h2>
+<ul>
+<li>Correction d'un bug dans les choix oui/non ou oui/non/toujours/jamais.</li>
+<li>Mise à jour des packs de CFWs/modules/homebrews/overlays/payloads_utiles en version 330.</li>
+</ul>
 <h2>V4.1.40</h2>
 <ul>
 <li>Correction d'un bug important pouvant provoquer une boucle infini de redémarrage dans le script de mise à jour automatique. Dans ce même script, correction d'un bug empêchant le téléchargement des overlays de se faire correctement.</li>

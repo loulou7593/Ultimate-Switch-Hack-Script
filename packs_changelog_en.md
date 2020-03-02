@@ -1,5 +1,9 @@
 <h1>Changelog of the Ultimate Switch Hack Script packs</h1>
 &nbsp;
+<h2>V330</h2>
+<ul>
+<li>Update TextReaderOverlay to version 1.1.</li>
+</ul>
 <h2>V329</h2>
 <ul>
 <li>Move the Hekate's Minerva library from the Atmosphere pack to the elements that are always copied on the SD.</li>
