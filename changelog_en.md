@@ -1,5 +1,12 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.40</h2>
+<ul>
+<li>Fix an important bug witch could cause an infinite reboot script  process in the update manager script. In the same script, fix a bug witch make the overlays download impossible.</li>
+<li>Update Hactoolnet to version 0.9.0.</li>
+<li>Update SwitchPresence-Rewritten-GUI to version 1.7.</li>
+<li> Updating CFWs/modules/homebrews/overlays/usful_payloads packs in version 329.</li>
+</ul>
 <h2>V4.1.39</h2>
 <ul>
 <li> Updating CFWs/modules/homebrews/overlays/usful_payloads packs in version 328.</li>
@@ -13,7 +20,6 @@
 <li>In the SD preparation script, add the support of the overlays copy not depending on the Ovl-menu copy and add the profiles management for them. With this, if you use general profiles for the SD preparation, you must reconfigure them because they not be functional anymore.</li>
 <li>In the homebrews profiles management script, fix a minor bug.</li>
 <li>Update documentation.</li>
-<li> Updating CFWs/modules/homebrews/overlays/usful_payloads packs in version 327.</li>
 </ul>
 <h2>V4.1.36</h2>
 <ul>

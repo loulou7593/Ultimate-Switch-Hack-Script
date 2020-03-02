@@ -128,6 +128,7 @@ IF  "%~2"=="force" (
 )
 IF EXIST "failed_updates\*.failed" (
 	set auto_update=O
+	set failed_updates_finded=Y
 	goto:begin_update
 )
 :verif_auto_update_ini
@@ -1372,7 +1373,7 @@ set /a temp_count=1
 IF %temp_count% GTR %count_overlays% goto:skip_listing_overlays
 "tools\gnuwin32\bin\sed.exe" -n %temp_count%p "tools\default_configs\Lists\overlays.list" >templogs\tempvar.txt
 set /p temp_overlay=<templogs\tempvar.txt
-call :verif_folder_version "tools\sd_switch\overlays\pack\%temp_module%"
+call :verif_folder_version "tools\sd_switch\overlays\pack\%temp_overlay%"
 IF "!update_finded!"=="Y" (
 	call :update_folder
 )

@@ -1,13 +1,18 @@
 <h1>Changelog of the Ultimate Switch Hack Script packs</h1>
 &nbsp;
+<h2>V329</h2>
+<ul>
+<li>Move the Hekate's Minerva library from the Atmosphere pack to the elements that are always copied on the SD.</li>
+<li>Update Edizon's scripts.</li>
+<li>Update Tesla-menu to version 1.0.2.</li>
+<li>Update OvlSysmodules to version 1.1.0.</li>
+<li>Update Status-Monitor-Overlay to version 0.4.</li>
+<li>Update SwitchPresence-Rewritten to version 1.7.</li>
+</ul>
 <h2>V328</h2>
 <ul>
 <li>Update Status-Monitor-Overlay to version 0.3.</li>
 <li>Update Awoo-installer to version 1.3.2.</li>
-</ul>
-<h2>V327</h2>
-<ul>
-
 </ul>
 <h2>V326</h2>
 <ul>

@@ -110,11 +110,21 @@ echo End of the general elements update, the script will need to restart to use 
 goto:eof
 
 :update_file_error
-echo Error during update of the "%temp_file_path%" file, the script will close and will relaunch the update on next restart.
+IF %failed_updates_finded%=="Y" (
+	rmdir /s /s "failed_updates"
+	echo Error during update of the "%temp_file_path%" file, the script will close and will not automaticaly relaunch the update on next restart.
+	) else (
+	echo Error during update of the "%temp_file_path%" file, the script will close and will relaunch the update on next restart.
+)
 goto:eof
 
 :update_file.version_error
-echo Error during update of the "%temp_file_path%.version" file, the script will close and will relaunch the update on next restart.
+IF %failed_updates_finded%=="Y" (
+	rmdir /s /s "failed_updates"
+	echo Error during update of the "%temp_file_path%.version" file, the script will close and will not automaticaly relaunch the update on next restart.
+	) else (
+	echo Error during update of the "%temp_file_path%.version" file, the script will close and will relaunch the update on next restart.
+)
 goto:eof
 
 :update_file_success
@@ -122,7 +132,12 @@ echo Update of "%temp_file_path%" success.
 goto:eof
 
 :update_folder_error
-echo Error during update of the "%temp_folder_path%" folder, the script will close and will relaunch the update on next restart.
+IF %failed_updates_finded%=="Y" (
+	rmdir /s /s "failed_updates"
+	echo Error during update of the "%temp_folder_path%" folder, the script will close and will not automaticaly relaunch the update on next restart.
+) else (
+	echo Error during update of the "%temp_folder_path%" folder, the script will close and will relaunch the update on next restart.
+)
 goto:eof
 
 :update_folder_success
