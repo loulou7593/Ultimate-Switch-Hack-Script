@@ -95,6 +95,7 @@ echo %temp_language_path%>>"Ultimate-Switch-Hack-Script.bat.lng"
 call "%associed_language_script%" "language_change_success"
 pause
 rmdir /s /q templogs
+set /p language_path=<Ultimate-Switch-Hack-Script.bat.lng
 call tools\Storage\update_manager.bat "general_content_update" "force"
 endlocal
 start /i "" "%windir%\system32\cmd.exe" /c call "Ultimate-Switch-Hack-Script.bat"

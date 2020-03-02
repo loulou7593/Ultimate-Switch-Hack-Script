@@ -3,6 +3,7 @@
 <h2>V4.1.40</h2>
 <ul>
 <li>Fix an important bug witch could cause an infinite reboot script  process in the update manager script. In the same script, fix a bug witch make the overlays download impossible.</li>
+<li>Fix a bug in the language selector.</li>
 <li>Update Hactoolnet to version 0.9.0.</li>
 <li>Update SwitchPresence-Rewritten-GUI to version 1.7.</li>
 <li> Updating CFWs/modules/homebrews/overlays/usful_payloads packs in version 329.</li>
