@@ -6,7 +6,7 @@ The GPL V3 license applies to the batch scripts at the root of this project, the
 
 ## Importante note
 
-The SD preparation can prepare it with  Atmosphere 0.10.1, SX OS 2.9.3 beta (for the other things see the changelogs) so the  hack is supported to the 9.1.0 firmware or lesser for the non-patched consoles, for the patched consoles Cafeine support the consoles on the 4.1.0 firmware and lesser. For personal reasons this project will not be updated by myself during an undefinite time.
+The SD preparation can prepare it with  Atmosphere 0.10.3, SX OS 2.9.4 beta (for the other things see the changelogs) so the  hack is supported to the 9.2.0 firmware or lesser for the non-patched consoles, for the patched consoles Cafeine support the consoles on the 4.1.0 firmware and lesser. For personal reasons this project could  be updated less often by myself during an undefinite time.
 
 ## Features
 

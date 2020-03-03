@@ -15,13 +15,35 @@ copy nul "%file%" >nul
 echo ^<!DOCTYPE HTML^>>>"%file%"
 echo ^<html lang="en-US"^>>>"%file%"
 echo ^<head^>>>"%file%"
-IF "%~1"=="languages\FR_fr\doc\files\changelog.html" (
+IF "%~1"=="languages\EN_us\doc\files\changelog.html" (
 	echo ^<title^>Changelog Ultimate Switch Hack Script^</title^>>>"%file%"
-) else IF "%~1"=="languages\FR_fr\doc\files\packs_changelog.html" (
+) else IF "%~1"=="languages\EN_us\doc\files\packs_changelog.html" (
 	echo ^<title^>Pack Changelog of CFWs/modules/homebrews^</title^>>>"%file%"
 )
 echo ^<meta charset="UTF-8"^>>>"%file%"
 echo ^<meta http-equiv="X-UA-Compatible" content="IE=edge"^>>>"%file%"
+echo ^<style type="text/css"^>>>"%file%"
+echo body {>>"%file%"
+echo background-color: #00000^0;>>"%file%"
+echo color: #FFFFFF>>"%file%"
+echo }>>"%file%"
+echo.>>"%file%"
+echo body h1 {>>"%file%"
+
+echo }>>"%file%"
+echo.>>"%file%"
+echo body h2 {>>"%file%"
+
+echo }>>"%file%"
+echo.>>"%file%"
+echo body ul {
+
+echo }>>"%file%"
+echo.>>"%file%"
+echo body ul li {>>"%file%"
+
+echo }>>"%file%"
+echo ^</style^>>>"%file%"
 echo ^</head^>>>"%file%"
 echo ^<body^>>>"%file%"
 exit /b

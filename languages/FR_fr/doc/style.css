@@ -1,0 +1,88 @@
+html
+{
+	height: 100%;
+}
+
+body
+{
+	margin: auto;
+	height: 100%;
+	overflow: auto;
+}
+
+#menu
+{
+	position: fixed !important;
+	position: absolute; /*ie6 */
+	bottom: 10%;
+	width: 20%;
+	height: 90%;
+	border: 1px solid #555555;
+	background-color: #000000;
+	color: #FFFFFF;
+}
+
+#menu h1
+{
+	
+}
+
+#menu ul
+{
+	list-style-type: none;
+	padding: 0px;
+	padding-left: 20px;
+	margin: 0px;
+	margin-bottom: 5px;
+}
+
+#menu ul a
+{
+	color: #0000FF;
+}
+
+#menu ul a:hover
+{
+	color: #00FF00;
+}
+
+#contenu
+{
+	margin-left: 21%;
+	padding: 5px;
+	border: 2px solid #555555;
+	width: 80%;
+	background-color: #000000;
+	color: #FFFFFF
+}
+
+#contenu h1
+{
+	
+}
+
+#contenu h2
+{
+	
+}
+
+#contenu h3
+{
+	
+}
+
+#contenu p {
+	text-align: justify;
+	padding-top: 1px;
+	padding-bottom: 2px;
+}
+
+#contenu ul
+{
+	
+}
+
+#contenu ul li
+{
+	
+}

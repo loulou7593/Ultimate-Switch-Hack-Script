@@ -1,5 +1,13 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.42</h2>
+<ul>
+<li>Update documentation.</li>
+<li>Update Fusee-primary to version 0.10.3.</li>
+<li>Update Hekate to version 5.1.2.</li>
+<li>Update Rekado to version 3.3.4.</li>
+<li> Updating CFWs/modules/homebrews/overlays/usful_payloads packs in version 331.</li>
+</ul>
 <h2>V4.1.41</h2>
 <ul>
 <li>Fix a bug in the choices yes/no or yes/no/always/never.</li>

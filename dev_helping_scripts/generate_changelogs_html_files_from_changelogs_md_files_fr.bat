@@ -22,6 +22,28 @@ IF "%~1"=="languages\FR_fr\doc\files\changelog.html" (
 )
 echo ^<meta charset="UTF-8"^>>>"%file%"
 echo ^<meta http-equiv="X-UA-Compatible" content="IE=edge"^>>>"%file%"
+echo ^<style type="text/css"^>>>"%file%"
+echo body {>>"%file%"
+echo background-color: #00000^0;>>"%file%"
+echo color: #FFFFFF>>"%file%"
+echo }>>"%file%"
+echo.>>"%file%"
+echo body h1 {>>"%file%"
+
+echo }>>"%file%"
+echo.>>"%file%"
+echo body h2 {>>"%file%"
+
+echo }>>"%file%"
+echo.>>"%file%"
+echo body ul {
+
+echo }>>"%file%"
+echo.>>"%file%"
+echo body ul li {>>"%file%"
+
+echo }>>"%file%"
+echo ^</style^>>>"%file%"
 echo ^</head^>>>"%file%"
 echo ^<body^>>>"%file%"
 exit /b

@@ -1,5 +1,13 @@
 <h1>Changelog of the Ultimate Switch Hack Script packs</h1>
 &nbsp;
+<h2>V331</h2>
+<ul>
+<li>Update Atmosphere to version 0.10.3.</li>
+<li>Update SX OS to version 2.8.4 beta.</li>
+<li>Update Hekate to version 5.1.2 and rewrite it configuration files.</li>
+<li>Update Ldn_mitm to version 1.3.3.</li>
+<li>Update Status-Monitor-Overlay to version 0.4.1.</li>
+</ul>
 <h2>V330</h2>
 <ul>
 <li>Update TextReaderOverlay to version 1.1.</li>

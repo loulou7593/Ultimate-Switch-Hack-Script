@@ -6,7 +6,7 @@ La licence GPL V3 s'applique sur les scripts batch se trouvant à la racine de c
 
 ## Note importante
 
-La préparation d'une SD permet de préparer celle-ci jusqu'à Atmosphere 0.10.1, SX OS 2.9.3 beta (pour le reste voir les changelogs) et donc le hack est pris en charge jusqu'au 9.1.0 pour les consoles non patchées, pour les consoles patchées Cafeine prend en charge les consoles sur le firmware 4.1.0 et inférieur. Pour des raisons personnelles ce script ne sera plus mis à jour par moi-même pendant une période non définie.
+La préparation d'une SD permet de préparer celle-ci jusqu'à Atmosphere 0.10.3, SX OS 2.9.4 beta (pour le reste voir les changelogs) et donc le hack est pris en charge jusqu'au firmware 9.2.0 et inférieurs pour les consoles non patchées, pour les consoles patchées Cafeine prend en charge les consoles sur le firmware 4.1.0 et inférieur. Pour des raisons personnelles ce script sera bien moins mis à jour par moi-même pendant une période non définie.
 
 ## Fonctionnalités
 
