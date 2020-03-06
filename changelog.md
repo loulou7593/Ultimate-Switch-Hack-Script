@@ -1,5 +1,11 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.43</h2>
+<ul>
+<li>Faute d'orthographe corrigée dans la préparation d'une SD pour la langue française.</li>
+<li>Mise à jour de Hactoolnet en version 0.9.1.</li>
+<li>Mise à jour des packs de CFWs/modules/homebrews/overlays/payloads_utiles en version 332.</li>
+</ul>
 <h2>V4.1.42</h2>
 <ul>
 <li>Mise à jour  de la documentation.</li>

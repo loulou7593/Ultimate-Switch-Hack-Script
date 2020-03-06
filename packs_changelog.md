@@ -1,5 +1,10 @@
 <h1>Changelog des packs de l'Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V332</h2>
+<ul>
+<li>Mise à jour de Sys-botbase en version 1.4.</li>
+<li>Mise à jour de Status-Monitor-Overlay en version 0.4.2.</li>
+</ul>
 <h2>V331</h2>
 <ul>
 <li>Mise à jour d'Atmosphere en version 0.10.3.</li>
