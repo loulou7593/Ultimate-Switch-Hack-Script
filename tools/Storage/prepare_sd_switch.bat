@@ -847,7 +847,6 @@ IF /i "%atmo_enable_deprecated_hid_mitm%"=="o" (
 ) else (
 	set atmo_enable_deprecated_hid_mitm=0x0
 )
-enable_deprecated_hid_mitm
 IF "%atmo_fatal_auto_reboot_interval%"=="" (
 	set atmo_fatal_auto_reboot_interval=0x0
 ) else (

@@ -11,6 +11,7 @@ var menu_text='\
 <br/>\
 <li><a href="sd_prepare.html">packs content of the script</a></li>\
 <li><a href="install_drivers.html">Drivers installation</a></li>\
+<li><a href="keys_dump.html">Keys dump</a></li>\
 <li><a href="choidujournx.html">Use ChoiDuJourNX</a></li>\
 <li><a href="netplay.html">Use the alternative network to play</a></li>\
 <br/>\
