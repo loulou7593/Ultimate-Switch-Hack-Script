@@ -1,4 +1,4 @@
-call :%~2
+call :%~2 "%~1"
 goto:eof
 
 :o/n_choice

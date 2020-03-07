@@ -1,5 +1,9 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.44</h2>
+<ul>
+<li>Important bug fixed in the yes/no or yes/no/never/always choice function.</li>
+</ul>
 <h2>V4.1.43</h2>
 <ul>
 <li>Spelling error corrected in the SD preparation script for the French language.</li>
