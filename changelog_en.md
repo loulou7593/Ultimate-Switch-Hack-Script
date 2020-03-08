@@ -3,6 +3,7 @@
 <h2>V4.1.46</h2>
 <ul>
 <li>Fix a bug that caused an impossibility to join Hekate dump  in the nand joiner script.</li>
+<li>Update Xci-explorer to version 1.5.0.</li>
 </ul>
 <h2>V4.1.45</h2>
 <ul>
