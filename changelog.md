@@ -1,5 +1,9 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.46</h2>
+<ul>
+<li>Correction d'un bug qui empêchait de joindre un dump de nand fait via Hekate dans le script permettant de joindre les fichiers de nand.</li>
+</ul>
 <h2>V4.1.45</h2>
 <ul>
 <li>Petite erreur sans conséquences corrigée dans la préparation d'une SD.</li>

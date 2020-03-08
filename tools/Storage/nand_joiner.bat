@@ -48,9 +48,9 @@ IF "%cfw_used%"=="1" goto:verif_hekate_dump
 IF "%cfw_used%"=="2" goto:verif_sx_dump
 :verif_hekate_dump
 IF EXIST "%dump_input%\rawnand.bin.00" (
-	set nand_input_filename=rawnand.bin"
+	set nand_input_filename=rawnand.bin
 ) else IF EXIST "%dump_input%\nand.bin.00" (
-	set nand_input_filename=nand.bin"
+	set nand_input_filename=nand.bin
 ) else (
 	set error_input=Y
 	goto:skip_verif_input
