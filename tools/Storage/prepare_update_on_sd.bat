@@ -84,6 +84,7 @@ echo 8.1.0?
 echo 9.0.0?
 echo 9.0.1?
 echo 9.1.0?
+echo 9.2.0?
 echo.
 call "%associed_language_script%" "firmware_choice_end"
 IF NOT EXIST "downloads" mkdir "downloads"
@@ -300,6 +301,15 @@ IF "%firmware_choice%"=="9.1.0" (
 	set expected_md5=9936bae12d9ada861a160a6a29c0b6dc
 	set "firmware_link=https://mega.nz/#^!oJo2RCRb^!xMklUfjgiIXiDrCF4QLwtU0oQzMKqbVKbwuV4tGToY4"
 	set firmware_file_name=Firmware 9.1.0.zip
+	set firmware_folder=firmware_temp\
+	call :cdj_test_max_firmware
+	IF !errorlevel! EQU 1 goto:define_firmware_choice
+	goto:download_firmware
+)
+IF "%firmware_choice%"=="9.2.0" (
+	set expected_md5=1a83c5642eb66acc44aa02fafa16b770
+	set "firmware_link=https://mega.nz/#^!tRo0UahC^!Z5MntwPeB4Dv1643Q5novzsuZrhNQWxEND2sIzXg4aI"
+	set firmware_file_name=Firmware 9.2.0.zip
 	set firmware_folder=firmware_temp\
 	call :cdj_test_max_firmware
 	IF !errorlevel! EQU 1 goto:define_firmware_choice

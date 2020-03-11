@@ -1,5 +1,11 @@
 <h1>Changelog des packs de l'Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V333</h2>
+<ul>
+<li>Mise à jour d'Atmosphere en version 0.10.4.</li>
+<li>Mise à jour de Status-Monitor-Overlay en version 0.5.</li>
+<li>Mise à jour de Emuiibo vers la version master du Github, compilé par moi-même. L'overlay pour ce module a également été compilé et ajouté.</li>
+</ul>
 <h2>V332</h2>
 <ul>
 <li>Mise à jour de Sys-botbase en version 1.4.</li>

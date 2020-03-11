@@ -1,5 +1,10 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.47</h2>
+<ul>
+<li>Support of the firmware 9.2.0 in the ChoiDuJourNX SD preparing script.</li>
+<li> Updating CFWs/modules/homebrews/overlays/usful_payloads packs in version 333.</li>
+</ul>
 <h2>V4.1.46</h2>
 <ul>
 <li>Fix a bug that caused an impossibility to join Hekate dump  in the nand joiner script.</li>
