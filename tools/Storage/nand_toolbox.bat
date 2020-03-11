@@ -396,13 +396,12 @@ IF /i "%nand_type%"=="RAWNAND" (
 	call :partition_select dump_nand
 ) else IF /i "%nand_type%"=="FULL NAND" (
 	call :partition_select dump_nand all_partitions_excepted
-) else IF /i "%nand_type:~0,9%"=="partition" (
-	echo %nand_type%|tools\gnuwin32\bin\cut.exe -d " " -f 2 >templogs\tempvar.txt
-	set /p partition=<templogs\tempvar.txt
-	goto:decrypt_verif_encrypted_or_not
-) else (
+) else IF /i "%nand_type%"=="unknown" (
 	call "%associed_language_script%" "decrypt_rawnand_not_selected_error"
 	goto:decrypt_nand
+) else (
+	set partition=%nand_type%
+	goto:decrypt_verif_encrypted_or_not
 )
 :decrypt_verif_encrypted_or_not
 IF /i NOT "%nand_encrypted:~0,3%"=="Yes" (
@@ -490,13 +489,12 @@ IF /i "%nand_type%"=="RAWNAND" (
 	call :partition_select dump_nand
 ) else IF /i "%nand_type%"=="FULL NAND" (
 	call :partition_select dump_nand all_partitions_excepted
-) else IF /i "%nand_type:~0,9%"=="partition" (
-	echo %nand_type%|tools\gnuwin32\bin\cut.exe -d " " -f 2 >templogs\tempvar.txt
-	set /p partition=<templogs\tempvar.txt
-	goto:encrypt_verif_encrypted_or_not
-) else (
+) else IF /i "%nand_type%"=="unknown" (
 	call "%associed_language_script%" "encrypt_rawnand_not_selected_error"
 	goto:encrypt_nand
+) else (
+	set partition=%nand_type%
+	goto:encrypt_verif_encrypted_or_not
 )
 :encrypt_verif_encrypted_or_not
 IF /i NOT "%nand_encrypted%"=="No" (
@@ -592,7 +590,7 @@ IF /i "%nand_type%"=="RAWNAND" (
 ) else IF /i "%nand_type%"=="FULL NAND" (
 	set partition=PRODINFO
 	goto:incognito_verif_encrypted_or_not
-) else IF /i "%nand_type%"=="partition PRODINFO" (
+) else IF /i "%nand_type%"=="PRODINFO" (
 	goto:incognito_verif_encrypted_or_not
 ) else (
 	call "%associed_language_script%" "incognito_nand_type_error"
@@ -1136,7 +1134,7 @@ IF "%nand_type%"=="FULL NAND" (
 		)
 	)
 )
-IF "%nand_type%"=="PARTITION PRODINFO" (
+IF "%nand_type%"=="PRODINFO" (
 	IF "%nand_encrypted%"=="No" (
 		tools\gnuwin32\bin\grep.exe "Serial number " <"templogs\infos_nand.txt" | tools\gnuwin32\bin\cut.exe -d : -f 2 >templogs\tempvar.txt
 		set /p nand_serial_number=<templogs\tempvar.txt
@@ -1174,7 +1172,7 @@ IF "%nand_type%"=="PARTITION PRODINFO" (
 		)
 	)
 )
-IF "%nand_type%"=="PARTITION SYSTEM" (
+IF "%nand_type%"=="SYSTEM" (
 	IF "%nand_encrypted%"=="No" (
 		tools\gnuwin32\bin\grep.exe "Firmware ver" <"templogs\infos_nand.txt" | tools\gnuwin32\bin\cut.exe -d : -f 2 >templogs\tempvar.txt
 		set /p nand_firmware_ver=<templogs\tempvar.txt

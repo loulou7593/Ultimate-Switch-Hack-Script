@@ -519,7 +519,7 @@ IF /i "%nand_type%"=="FULL NAND" (
 		echo GPT partition table backup finded: %nand_backup_gpt%
 	)
 )
-IF /i "%nand_type%"=="PARTITION PRODINFO" (
+IF /i "%nand_type%"=="PRODINFO" (
 	IF NOT "%nand_serial_number%"=="" (
 		echo Console serial number: %nand_serial_number%
 	)
@@ -530,7 +530,7 @@ IF /i "%nand_type%"=="PARTITION PRODINFO" (
 		echo Console MAC address: %nand_mac_address%
 	)
 )
-IF /i "%nand_type%"=="PARTITION SYSTEM" (
+IF /i "%nand_type%"=="SYSTEM" (
 	IF NOT "!nand_firmware_ver!"=="" (
 		set temp_count=
 		echo !nand_firmware_ver!|tools\gnuwin32\bin\grep.exe -c "higher" >templogs\tempvar.txt

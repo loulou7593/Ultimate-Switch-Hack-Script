@@ -1,5 +1,9 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.49</h2>
+<ul>
+<li>Beaucoup de bugs corrigés dans la Nand Toolbox lié aux traitement des partitions spécifiques.</li>
+</ul>
 <h2>V4.1.48</h2>
 <ul>
 <li>Correction d'un bug lors de la restauration d'une partition spécifique suune nand dans la Nand Toolbox.</li>
