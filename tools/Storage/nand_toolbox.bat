@@ -269,7 +269,7 @@ IF "%output_nand_type%"=="RAWNAND (splitted dump)" (
 )
 IF NOT "%partition%"=="" (
 	IF "%output_nand_type%"=="RAWNAND" (
-		IF NOT "PARTITION %partition%"=="%input_nand_type%" (
+		IF NOT "%partition%"=="%input_nand_type%" (
 			call "%associed_language_script%" "restaure_partitions_not_match_error"
 			goto:restaure_nand
 		)
@@ -284,7 +284,7 @@ IF NOT "%partition%"=="" (
 				call "%associed_language_script%" "restaure_partitions_not_match_error"
 				goto:restaure_nand
 			)
-		) else IF NOT "PARTITION %partition%"=="%input_nand_type%" (
+		) else IF NOT "%partition%"=="%input_nand_type%" (
 			call "%associed_language_script%" "restaure_partitions_not_match_error"
 			goto:restaure_nand
 		)

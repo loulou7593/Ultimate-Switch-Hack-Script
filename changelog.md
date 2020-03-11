@@ -1,5 +1,9 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.48</h2>
+<ul>
+<li>Correction d'un bug lors de la restauration d'une partition spécifique suune nand dans la Nand Toolbox.</li>
+</ul>
 <h2>V4.1.47</h2>
 <ul>
 <li>Support du téléchargement et de la mise en place sur la SD pour ChoiDuJourNX du firmware 9.2.0.</li>
