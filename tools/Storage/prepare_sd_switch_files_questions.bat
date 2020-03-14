@@ -58,12 +58,12 @@ call "tools\Storage\functions\modify_yes_no_always_never_vars.bat" "atmosphere_e
 :skip_ask_cheats_atmosphere
 
 echo.
-IF /i "%copy_atmosphere_pack%"=="o" (
-	call "%associed_language_script2%" "reinx_warning_if_atmosphere_chosen"
-)
-call "%associed_language_script2%" "copy_reinx_pack_choice"
-IF NOT "%copy_reinx_pack%"=="" set copy_reinx_pack=%copy_reinx_pack:~0,1%
-call "tools\Storage\functions\modify_yes_no_always_never_vars.bat" "copy_reinx_pack" "o/n_choice"
+rem IF /i "%copy_atmosphere_pack%"=="o" (
+	rem call "%associed_language_script2%" "reinx_warning_if_atmosphere_chosen"
+rem )
+rem call "%associed_language_script2%" "copy_reinx_pack_choice"
+rem IF NOT "%copy_reinx_pack%"=="" set copy_reinx_pack=%copy_reinx_pack:~0,1%
+rem call "tools\Storage\functions\modify_yes_no_always_never_vars.bat" "copy_reinx_pack" "o/n_choice"
 IF /i NOT "%copy_reinx_pack%"=="o" goto:skip_copy_reinx_pack
 echo.
 call "%associed_language_script2%" "reinx_nogc_patch_choice"

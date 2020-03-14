@@ -1,5 +1,13 @@
 <h1>Changelog of the Ultimate Switch Hack Script packs</h1>
 &nbsp;
+<h2>V334</h2>
+<ul>
+<li>Add OpenBOR in emulators list.</li>
+<li>Update Haku33 to version 2.8.</li>
+<li>Update PPSSPP to version 20200311.</li>
+<li>Remove ReiNX but the files will be kept in the script in case of update of this CFW.</li>
+<li>Remove Reicast.</li>
+</ul>
 <h2>V333</h2>
 <ul>
 <li>Update Atmosphere to version 0.10.4.</li>

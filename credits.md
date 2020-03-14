@@ -46,7 +46,8 @@
 <li><a target="_blank" href="https://github.com/XorTroll/uLaunch">uLaunch</a></li>
 <li><a target="_blank" href="https://github.com/khedoros/khedgb">Khedgb</a></li>
 <li><a target="_blank" href="https://github.com/mgba-emu/mgba">Mgba</a></li>
-<li><a target="_blank" href="https://github.com/Cpasjuste/pemu/tree/master/pfba">Pfba</a></li>
+<li><a target="_blank" href="https://github.com/mgba-emu/mgba">Mgba</a></li>
+<li><a target="_blank" href="https://github.com/rsn8887/openbor">OpenBOR</a></li>
 <li><a target="_blank" href="https://github.com/Cpasjuste/pemu/tree/master/pnes">Pnes</a></li>
 <li><a target="_blank" href="https://github.com/m4xw/ppsspp/">PPSSPP</a></li>
 <li><a target="_blank" href="https://github.com/Cpasjuste/pemu/tree/master/psnes">Psnes</a></li>
