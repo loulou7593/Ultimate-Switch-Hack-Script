@@ -1,5 +1,10 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.51</h2>
+<ul>
+<li>Mise à jour de Hactool en version 1.3.2.</li>
+<li>Mise à jour des packs de CFWs/modules/homebrews/overlays/payloads_utiles en version 335.</li>
+</ul>
 <h2>V4.1.50</h2>
 <ul>
 <li>Suppression de ReiNX dans la préparation d'une SD, il sera remis si il est de nouveau mis à jour.</li>
