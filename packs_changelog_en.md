@@ -1,5 +1,9 @@
 <h1>Changelog of the Ultimate Switch Hack Script packs</h1>
 &nbsp;
+<h2>V336</h2>
+<ul>
+<li>Update Fizeau to version 1.2.0.</li>
+</ul>
 <h2>V335</h2>
 <ul>
 <li>Update Atmosphere to version 0.10.5.</li>
