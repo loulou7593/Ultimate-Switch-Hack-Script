@@ -1,5 +1,10 @@
 <h1>Changelog des packs de l'Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V337</h2>
+<ul>
+<li>Mise à jour de Hekate en version 5.1.3.</li>
+<li>Mise à jour de Mtp-server-nx en version 1.2.</li>
+</ul>
 <h2>V336</h2>
 <ul>
 <li>Mise à jour de Fizeau en version 1.2.0.</li>
