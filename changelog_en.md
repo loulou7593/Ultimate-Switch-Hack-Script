@@ -1,5 +1,10 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.54</h2>
+<ul>
+<li>Fix importants bugs in SD preparation.</li>
+<li> Updating CFWs/modules/homebrews/overlays/usful_payloads packs in version 338.</li>
+</ul>
 <h2>V4.1.53</h2>
 <ul>
 <li>Update Hekate to version 5.1.3.</li>

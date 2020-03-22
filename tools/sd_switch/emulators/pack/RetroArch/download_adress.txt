@@ -1,1 +1,1 @@
-https://buildbot.libretro.com/stable/1.8.4/nintendo/switch/libnx/RetroArch.7z
+https://buildbot.libretro.com/stable/1.8.5/nintendo/switch/libnx/RetroArch.7z

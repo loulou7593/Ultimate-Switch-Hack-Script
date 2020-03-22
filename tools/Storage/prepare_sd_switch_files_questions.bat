@@ -284,7 +284,7 @@ IF EXIST "tools\default_configs\overlays_profile_all.ini" (
 )
 call "%associed_language_script2%" "overlays_profile_choice"
 IF "%overlays_profile%"=="" (
-	set pass_copy_mixed_pack=Y
+	set pass_copy_overlays_pack=Y
 	goto:skip_verif_overlays_profile
 )
 call TOOLS\Storage\functions\strlen.bat nb "%overlays_profile%"

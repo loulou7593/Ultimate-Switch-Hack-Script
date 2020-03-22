@@ -1,5 +1,11 @@
 <h1>Changelog des packs de l'Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V338</h2>
+<ul>
+<li>Mise à jour du lien de Retroarch pour la version 1.8.5.</li>
+<li>Mise à jour de Mtp-server-nx en version 1.3.</li>
+<li>Mise à jour de JKSV en version 03.21.2020.</li>
+</ul>
 <h2>V337</h2>
 <ul>
 <li>Mise à jour de Hekate en version 5.1.3.</li>
