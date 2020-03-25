@@ -2068,7 +2068,7 @@ exit /b
 :update_folder
 echo %temp_folder_path%>"failed_updates\%temp_folder_path:\=;%.fold.failed"
 IF "%temp_folder_path%"=="Payloads" (
-	"tools\gitget\SVN\svn.exe" export %folders_url_project_base%/%temp_folder_slash_path% templogs\gitget --force >nul
+	"tools\gitget\SVN\svn.exe" export %folders_url_project_base%/%temp_folder_slash_path% templogs\Payloads --force >nul
 	IF !errorlevel! NEQ 0 (
 		call "%associed_language_script%" "update_folder_error"
 		IF EXIST templogs (
@@ -2077,7 +2077,9 @@ IF "%temp_folder_path%"=="Payloads" (
 		pause
 		exit
 	) else (
-		move "templogs\Payloads" "%temp_folder_path%"
+		move "templogs\Payloads\*.*" "%temp_folder_path%"
+		del /q "failed_updates\%temp_folder_path:\=;%.fold.failed"
+call "%associed_language_script%" "update_folder_success"
 		exit /b
 	)
 )

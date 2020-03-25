@@ -1,9 +1,14 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.56</h2>
+<ul>
+<li>Bug fix for the Payloads folder download introduced in the previous version.</li>
+</ul>
 <h2>V4.1.55</h2>
 <ul>
 <li>The "Payloads" directory is no longer completely deleted when it is updated, allowing users to keep their personal payloads in this directory if they wish; personal payloads must have a different name than the default one, otherwise they will always be replaced during an update.</li>
 <li>Add NS-USBloader-mobile to the Android's applications list.</li>
+<li>Update credits.</li>
 <li> Updating CFWs/modules/homebrews/overlays/usful_payloads packs in version 339.</li>
 </ul>
 <h2>V4.1.54</h2>
