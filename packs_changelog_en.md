@@ -1,5 +1,10 @@
 <h1>Changelog of the Ultimate Switch Hack Script packs</h1>
 &nbsp;
+<h2>V339</h2>
+<ul>
+<li>Update N-Xplorer to version 0.7.1.</li>
+<li>Update NX-Activity-Log to version 1.2.1.</li>
+</ul>
 <h2>V338</h2>
 <ul>
 <li>Update the  Retroarch link for the version 1.8.5.</li>
