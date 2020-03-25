@@ -60,14 +60,14 @@ body
 	color: #FFFFFF
 }
 
-#contenu ul a
+#contenu a
 {
 	color: #666666;
 	text-decoration: underline;
 	font-weight: bold;
 }
 
-#contenu ul a:hover
+#contenu a:hover
 {
 	color: #AAAAAA;
 	text-decoration: underline;
