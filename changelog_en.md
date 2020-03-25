@@ -1,5 +1,10 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.59</h2>
+<ul>
+<li>Minor bug fix in the update manager.</li>
+<li>Update the design of the documentation, the links are not blue but grey.</li>
+</ul>
 <h2>V4.1.58</h2>
 <ul>
 <li>Bugs fix for the Payloads folder download introduced in the previous version.</li>

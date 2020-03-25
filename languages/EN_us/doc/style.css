@@ -38,12 +38,16 @@ body
 
 #menu ul a
 {
-	color: #0000FF;
+	color: #666666;
+	text-decoration: underline;
+	font-weight: bold;
 }
 
 #menu ul a:hover
 {
-	color: #00FF00;
+	color: #AAAAAA;
+	text-decoration: underline;
+	font-weight: bold;
 }
 
 #contenu
@@ -54,6 +58,25 @@ body
 	width: 80%;
 	background-color: #000000;
 	color: #FFFFFF
+}
+
+#contenu ul a
+{
+	color: #666666;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+#contenu ul a:hover
+{
+	color: #AAAAAA;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+#contenu h1
+{
+	
 }
 
 #contenu h1

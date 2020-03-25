@@ -2050,7 +2050,10 @@ IF "%temp_file_path%"=="tools\sd_switch\version.txt" goto:skip_file.version_down
 IF "%temp_file_path%"=="tools\general_update_version.txt" goto:skip_file.version_download
 IF "%temp_file_path%"=="languages\FR_fr\tools\general_update_version.txt" goto:skip_file.version_download
 IF "%temp_file_path%"=="%language_path%\tools\general_update_version.txt" goto:skip_file.version_download
-IF "%temp_file_path%"=="tools\version.txt" goto:skip_file.version_download
+IF "%temp_file_path%"=="tools\version.txt" (
+			set /p ushs_version=<tools\version.txt
+	goto:skip_file.version_download
+)
 "tools\aria2\aria2c.exe" -m 0 --auto-save-interval=0 --file-allocation=none --allow-overwrite=true --continue=false --auto-file-renaming=false --quiet=true --summary-interval=0 --remove-control-file=true --always-resume=false --save-not-found=false --keep-unfinished-download-result=false -o "%temp_file_path%.version" "%files_url_project_base%/%temp_file_slash_path%.version"
 IF %errorlevel% NEQ 0 (
 	call "%associed_language_script%" "update_file.version_error"
