@@ -2077,6 +2077,10 @@ IF "%temp_folder_path%"=="Payloads" (
 		pause
 		exit
 	) else (
+		IF NOT EXIST "%temp_folder_path%\*.*" (
+			IF EXIST ""%temp_folder_path%"" del /q "%temp_folder_path%"
+			mkdir "%temp_folder_path%"
+		)
 		move "templogs\Payloads\*.*" "%temp_folder_path%"
 		del /q "failed_updates\%temp_folder_path:\=;%.fold.failed"
 call "%associed_language_script%" "update_folder_success"

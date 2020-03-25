@@ -1,8 +1,8 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
-<h2>V4.1.56</h2>
+<h2>V4.1.57</h2>
 <ul>
-<li>Bug fix for the Payloads folder download introduced in the previous version.</li>
+<li>Bugs fix for the Payloads folder download introduced in the previous version.</li>
 </ul>
 <h2>V4.1.55</h2>
 <ul>
