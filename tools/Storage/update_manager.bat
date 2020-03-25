@@ -4,11 +4,11 @@ IF EXIST "tools\storage\functions\ini_scripts.bat" (
 ) else (
 	@echo off
 	chcp 65001 >nul
-	IF EXIST "%~0.version" (
+)
+IF EXIST "%~0.version" (
 	set /p this_script_version=<"%~0.version"
 ) else (
 	set this_script_version=1.00.00
-)
 )
 Setlocal enabledelayedexpansion
 set base_script_path="%~dp0\..\.."
@@ -2081,7 +2081,7 @@ IF "%temp_folder_path%"=="Payloads" (
 			IF EXIST ""%temp_folder_path%"" del /q "%temp_folder_path%"
 			mkdir "%temp_folder_path%"
 		)
-		move "templogs\Payloads\*.*" "%temp_folder_path%"
+		move "templogs\Payloads\*.*" "%temp_folder_path%" >nul
 		del /q "failed_updates\%temp_folder_path:\=;%.fold.failed"
 call "%associed_language_script%" "update_folder_success"
 		exit /b
