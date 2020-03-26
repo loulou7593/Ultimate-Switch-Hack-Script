@@ -1,6 +1,14 @@
 ::script by shadow256
 chcp 65001 >nul
+
+@echo off
 cd ..
+choice /c on /n /m "Incrémenter de 1 la version dans le fichier de la documentation  française? ^(o/n^): "
+IF %errorlevel% EQU 2 goto:begin_writing_doc
+set /p number=<"languages\FR_fr\doc\folder_version.txt"
+set /a number+=1
+<nul set /p ="%number%">"languages\FR_fr\doc\folder_version.txt"
+:begin_writing_doc
 call :write_begining_of_file "languages\FR_fr\doc\files\changelog.html"
 call :write_begining_of_file "languages\FR_fr\doc\files\packs_changelog.html"
 "tools\gnuwin32\bin\tail.exe" -n+1 <"changelog.md" >>"languages\FR_fr\doc\files\changelog.html"

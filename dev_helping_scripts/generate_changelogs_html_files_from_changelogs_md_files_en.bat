@@ -1,6 +1,13 @@
 ::script by shadow256
 chcp 65001 >nul
+@echo off
 cd ..
+choice /c yn /n /m "Increment 1 in the english documentation version file? ^(y/n^): "
+IF %errorlevel% EQU 2 goto:begin_writing_doc
+set /p number=<"languages\EN_us\doc\folder_version.txt"
+set /a number+=1
+<nul set /p ="%number%">"languages\EN_us\doc\folder_version.txt"
+:begin_writing_doc
 call :write_begining_of_file "languages\EN_us\doc\files\changelog.html"
 call :write_begining_of_file "languages\EN_us\doc\files\packs_changelog.html"
 "tools\gnuwin32\bin\tail.exe" -n+1 <"changelog_en.md" >>"languages\EN_us\doc\files\changelog.html"
