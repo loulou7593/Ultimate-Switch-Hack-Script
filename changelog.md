@@ -1,5 +1,9 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.60</h2>
+<ul>
+<li>Mise à jour de Hactoolnet en version 0.10.0.</li>
+</ul>
 <h2>V4.1.59</h2>
 <ul>
 <li>Bug mineur corrigé dans le gestionnaire de mises à jour.</li>
