@@ -49,19 +49,19 @@ echo font-weight: bold;>>"%file%"
 echo }>>"%file%"
 echo.>>"%file%"
 echo body h1 {>>"%file%"
-
+echo.>>"%file%"
 echo }>>"%file%"
 echo.>>"%file%"
 echo body h2 {>>"%file%"
-
+echo.>>"%file%"
 echo }>>"%file%"
 echo.>>"%file%"
-echo body ul {
-
+echo body ul {>>"%file%"
+echo.>>"%file%"
 echo }>>"%file%"
 echo.>>"%file%"
 echo body ul li {>>"%file%"
-
+echo.>>"%file%"
 echo }>>"%file%"
 echo ^</style^>>>"%file%"
 echo ^</head^>>>"%file%"
