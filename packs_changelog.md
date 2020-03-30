@@ -1,5 +1,13 @@
 <h1>Changelog des packs de l'Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V340</h2>
+<ul>
+<li>Mise à jour de PFBA en version 4.1.</li>
+<li>Mise à jour de Nx-ovlloader en version 1.0.3 et du Tesla-Menu en version 1.1.1.</li>
+<li>Mise à jour de Ovl-sysmodules en version 1.2.0.</li>
+<li>Mise à jour de NxDumpTool en version 1.1.9.</li>
+<li>Mise à jour de NX-Activity-Log en version 1.2.2.</li>
+</ul>
 <h2>V339</h2>
 <ul>
 <li>Mise à jour de N-Xplorer en version 0.7.1.</li>
