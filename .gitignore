@@ -15,6 +15,10 @@
 /tools/Hactool_based_programs/keys.dat
 /tools/Hactool_based_programs/ChoiDuJour_keys.txt
 /tools/NSC_Builder/keys.txt
+/tools/NSC_Builder/zconfig/DB/nutdb.json
+/tools/NSC_Builder/NSCB_output
+/tools/NSC_Builder/lists
+/tools/NSC_Builder/INFO
 /tools/HacDiskMount/HacDiskMount.log
 /HacDiskMount.log
 /tools/sd_switch/AceOS
