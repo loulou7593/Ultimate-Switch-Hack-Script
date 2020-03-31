@@ -3,6 +3,7 @@
 <h2>V4.1.61</h2>
 <ul>
 <li>Some updates to the documentation.</li>
+<li>Update Rekado to version 3.4.</li>
 <li> Updating CFWs/modules/homebrews/overlays/usful_payloads packs in version 340.</li>
 </ul>
 <h2>V4.1.60</h2>
