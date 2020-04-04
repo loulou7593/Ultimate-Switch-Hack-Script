@@ -1,5 +1,12 @@
 <h1>Changelog of the Ultimate Switch Hack Script packs</h1>
 &nbsp;
+<h2>V341</h2>
+<ul>
+<li>Add Scummvm to the emulators' list.</li>
+<li>Add Uae4all2 to the emulators' list.</li>
+<li>Add Joycon-Toolbox to the homebrews' list.</li>
+<li>Update PFBA to version 4.2.</li>
+</ul>
 <h2>V340</h2>
 <ul>
 <li>Update PFBA to version 4.1.</li>

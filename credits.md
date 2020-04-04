@@ -50,6 +50,8 @@
 <li><a target="_blank" href="https://github.com/Cpasjuste/pemu/tree/master/psnes">Psnes</a></li>
 <li><a target="_blank" href="https://github.com/reicast/reicast-emulator">Reicast</a></li>
 <li><a target="_blank" href="http://retroarch.com/?page=platforms">RetroArch</a></li>
+<li><a target="_blank" href="https://www.scummvm.org/downloads/#stable">Scummvm</a></li>
+<li><a target="_blank" href="https://github.com/rsn8887/uae4all2">Uae4all2</a></li>
 <li><a target="_blank" href="https://gbatemp.net/threads/vba-next-for-switch-works-4-1.504947/">Vba-next</a></li>
 <li><a target="_blank" href="https://gitlab.com/4TU/hb-appstore">Homebrew App Store</a></li>
 <li><a target="_blank" href="https://github.com/ITotalJustice/atmosphere-updater">atmosphere-updater</a> and <a target="_blank" href="https://github.com/ITotalJustice/sigpatch-updater">sigpatch-updater</a></li>
@@ -71,6 +73,7 @@
 <li><a target="_blank" href="https://github.com/jimzrt/Incognito_RCM">Incognito_rcm</a></li>
 <li><a target="_blank" href="https://github.com/3096/ipswitch">Ipswitch</a></li>
 <li><a target="_blank" href="https://github.com/J-D-K/JKSV">JKSV</a></li>
+<li><a target="_blank" href="https://github.com/CompSciOrBust/JCToolBox">Joycon-Toolbox</a></li>
 <li><a target="_blank" href="https://tinfoil.io/Download#download">Lithium, Tinfoil</a></li>
 <li><a target="_blank" href="https://github.com/Nalorokk/mod_Plague">Mod_Plague</a></li>
 <li><a target="_blank" href="https://github.com/zhaoloving/n1dus">N1dusd</a></li>
