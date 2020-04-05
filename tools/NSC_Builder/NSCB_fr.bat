@@ -738,7 +738,7 @@ echo Tapez "7" pour entrer en mode réunification
 echo Tapez "8" pour entrer en mode Compression/Décompression
 echo Tapez "9" pour entrer en mode restauration
 REM echo Tapez "10" pour dans le gestionnaire de fichiers
-echo Input "0" pour configurer le script.
+echo Tapez "0" pour configurer le script.
 echo.
 echo Tapez "D" pour utiliser GOOGLE DRIVE
 echo Tapez "L" pour entrer dans l'ancien mode
