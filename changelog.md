@@ -1,5 +1,9 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.63</h2>
+<ul>
+<li>Mise à jour des packs de CFWs/modules/homebrews/overlays/payloads_utiles en version 342.</li>
+</ul>
 <h2>V4.1.62</h2>
 <ul>
 <li>Mise à jour de la documentation et des crédits.</li>

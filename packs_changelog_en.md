@@ -1,5 +1,9 @@
 <h1>Changelog of the Ultimate Switch Hack Script packs</h1>
 &nbsp;
+<h2>V342</h2>
+<ul>
+<li>Update Gamecard-Installer-NX to version 2.0.0.</li>
+</ul>
 <h2>V341</h2>
 <ul>
 <li>Add Scummvm to the emulators' list.</li>
