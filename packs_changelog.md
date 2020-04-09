@@ -1,5 +1,12 @@
 <h1>Changelog des packs de l'Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V343</h2>
+<ul>
+<li>Mise à jour de HBMenu en version 3.3.0.</li>
+<li>Mise à jour de Fizeau en version 1.3.0.</li>
+<li>Mise à jour des fichiers de scripts d'EdiZon.</li>
+<li>Mise à jour des cheats.</li>
+</ul>
 <h2>V342</h2>
 <ul>
 <li>Mise à jour de Gamecard-Installer-NX en version 2.0.0.</li>

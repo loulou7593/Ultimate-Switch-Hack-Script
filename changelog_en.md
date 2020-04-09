@@ -1,5 +1,11 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.64</h2>
+<ul>
+<li>Update TegraExplorer to version 1.5.0.</li>
+<li>Update Hactool to version 1.3.3.</li>
+<li> Updating CFWs/modules/homebrews/overlays/usful_payloads packs in version 343.</li>
+</ul>
 <h2>V4.1.63</h2>
 <ul>
 <li> Updating CFWs/modules/homebrews/overlays/usful_payloads packs in version 342.</li>
