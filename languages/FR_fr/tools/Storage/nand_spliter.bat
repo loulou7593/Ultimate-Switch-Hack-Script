@@ -33,7 +33,7 @@ echo Aucun dossier sélectionné, le script va s'arrêter.
 goto:eof
 
 :parts_number_choice
-set /p parts_number=Choisissez le nombre de partie que vous souhaitez avoir ^(de 8 jusqu'à 64^): 
+set /p parts_number=Choisissez le nombre de partie que vous souhaitez avoir ^(de 2 jusqu'à 64^): 
 goto:eof
 
 :empty_parts_number_error
@@ -49,7 +49,7 @@ echo Un caractère non autorisé a été saisie dans le choix du nombre de parti
 goto:eof
 
 :parts_number_too_low_error
-echo Le nombre de parties ne peut être inférieur à 8.
+echo Le nombre de parties ne peut être inférieur à 2.
 goto:eof
 
 :parts_number_too_high_error

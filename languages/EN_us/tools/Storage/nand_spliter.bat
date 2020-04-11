@@ -42,7 +42,7 @@ echo No output folder selected, the script couldn't continue.
 goto:eof
 
 :parts_number_choice
-set /p parts_number=Select the parts number that you want ^(from 8 to 64^): 
+set /p parts_number=Select the parts number that you want ^(from 2 to 64^): 
 goto:eof
 
 :empty_parts_number_error
@@ -58,7 +58,7 @@ echo Unauthorised char for parts value.
 goto:eof
 
 :parts_number_too_low_error
-echo Parts number can't be lesser than 8.
+echo Parts number can't be lesser than 2.
 goto:eof
 
 :parts_number_too_high_error

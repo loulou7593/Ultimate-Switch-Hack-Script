@@ -91,7 +91,7 @@ IF %i% LSS %nb% (
 	call "%associed_language_script%" "parts_number_char_error"
 	goto:define_parts_number
 )
-IF %parts_number% LSS 8 (
+IF %parts_number% LSS 2 (
 	call "%associed_language_script%" "parts_number_too_low_error"
 	goto:define_parts_number
 )
