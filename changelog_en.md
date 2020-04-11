@@ -1,5 +1,10 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.65</h2>
+<ul>
+<li>Update Rekado to version 4.0.</li>
+<li> Updating CFWs/modules/homebrews/overlays/usful_payloads packs in version 344.</li>
+</ul>
 <h2>V4.1.64</h2>
 <ul>
 <li>Update TegraExplorer to version 1.5.0.</li>

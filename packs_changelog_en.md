@@ -1,5 +1,10 @@
 <h1>Changelog of the Ultimate Switch Hack Script packs</h1>
 &nbsp;
+<h2>V344</h2>
+<ul>
+<li>Update KosmosUpdater to version 3.1.0.</li>
+<li>Update Psnes and PFBA to version 4.3.</li>
+</ul>
 <h2>V343</h2>
 <ul>
 <li>Update HBMenu to version 3.3.0.</li>

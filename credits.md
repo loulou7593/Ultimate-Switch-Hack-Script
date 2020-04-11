@@ -141,6 +141,7 @@
 <li>@Nilecna from Logic-sunrise forum for all his tests and returns, he help me a lot to identify bugs.</li>
 <li>@fabriceunko from Logic-sunrise for his translation of NSC_Builder 0.86 and up.</li>
 <li>@markus95 from Logic-sunrise for his scripts witch configure the Nes Classic Edition and Snes Classic Edition emulators.</li>
+<li>@Loulou7593 of Logic-sunrise who give me some help with the documentation and for some elements update.</li>
 <li>All contributors of cheats sharing, see <a target="_blank" href="https://gbatemp.net/threads/cheat-codes-sx-os-add-and-request.520293/">this GBATemp thread</a> to see some of my sources and see <a target="_blank" href="https://github.com/WerWolv/EdiZon_ConfigsAndScripts/">this github repository</a> witch is my main ressource.</li>
 <li>And everybody else I might have forgotten.</li>
 </ul>
