@@ -1,5 +1,10 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.66</h2>
+<ul>
+<li>Mise à jour de TegraExplorer en version 1.5.1-hotfix.</li>
+<li>Mise à jour des packs de CFWs/modules/homebrews/overlays/payloads_utiles en version 345.</li>
+</ul>
 <h2>V4.1.65</h2>
 <ul>
 <li>Dans le script permettant de diviser un fichier de RAWNAND, le nombre de partie minimum a été abaissé à 2.</li>
