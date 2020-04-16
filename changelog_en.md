@@ -1,5 +1,15 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.67</h2>
+<ul>
+<li>In the SD preparation script, if the Ovl-menu is copied or if an overlay is selected, the hold folder of the NX-Ovlmenu module will be removed of the SD if it exist.</li>
+<li>Support of the firmware 10.0.0 in the ChoiDuJourNX SD preparing script.</li>
+<li>Update Hekate to version 5.1.4.</li>
+<li>Update Fusee-primary to version 0.11.1.</li>
+<li>Update Lockpick-RCM to version 1.8.2.</li>
+<li>Update Incognito-RCM to version 0.6.2 (using the Borntohonk's fork).</li>
+<li> Updating CFWs/modules/homebrews/overlays/usful_payloads packs in version 346.</li>
+</ul>
 <h2>V4.1.66</h2>
 <ul>
 <li>Update TegraExplorer to version 1.5.1-hotfix.</li>

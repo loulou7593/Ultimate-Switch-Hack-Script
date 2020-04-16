@@ -543,6 +543,9 @@ for /l %%i in (1,1,%temp_count%) do (
 			IF EXIST "%temp_modules_copy_path%\!temp_module_title_id!\toolbox.json" del /q "%temp_modules_copy_path%\!temp_module_title_id!\toolbox.json"
 		)
 	)
+	IF "!temp_module!"=="Ovl-menu" (
+		IF EXIST "%temp_modules_copy_path%\010000000007E51A\*.*" rmdir /s /q "%temp_modules_copy_path%\010000000007E51A"
+	)
 	IF "!temp_module!"=="Slidenx" (
 		IF EXIST "%volume_letter%:\SlideNX\attach.mp3" del /q "%volume_letter%:\SlideNX\attach.mp3"
 		IF EXIST "%volume_letter%:\SlideNX\detach.mp3" del /q "%volume_letter%:\SlideNX\detach.mp3"
@@ -553,7 +556,7 @@ for /l %%i in (1,1,%temp_count%) do (
 	IF "!temp_module!"=="BootSoundNX" (
 		IF EXIST "%volume_letter%:\bootloader\sound\bootsound.mp3" rmdir /s /q "%volume_letter%:\bootloader\sound"
 		IF EXIST "%volume_letter%:\config\BootSoundNX\bootsound.mp3" del /q "%volume_letter%:\config\BootSoundNX\bootsound.mp3" >nul
-		IF EXIST "%temp_modules_copy_path%\AA200000000002AA" rmdir /s /q ""%temp_modules_copy_path%\AA200000000002AA""
+		IF EXIST "%temp_modules_copy_path%\AA200000000002AA\*.*" rmdir /s /q ""%temp_modules_copy_path%\AA200000000002AA""
 		
 	)
 )
@@ -578,6 +581,7 @@ IF "%~1"=="reinx" (
 IF "%~1"=="sxos" (
 	set temp_modules_copy_path=%volume_letter%:\sxos\titles
 )
+IF EXIST "%temp_modules_copy_path%\010000000007E51A\*.*" rmdir /s /q "%temp_modules_copy_path%\010000000007E51A"
 %windir%\System32\Robocopy.exe tools\sd_switch\modules\pack\Ovl-menu\titles %temp_modules_copy_path% /e >nul
 %windir%\System32\Robocopy.exe tools\sd_switch\modules\pack\Ovl-menu\others %volume_letter%:\ /e >nul
 exit /b
