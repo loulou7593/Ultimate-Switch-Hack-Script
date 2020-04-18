@@ -1,5 +1,9 @@
 <h1>Changelog des packs de l'Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V348</h2>
+<ul>
+<li>Le fichier "loader.kip" qui doit être inclus pour la prise en charge des sig_patches via Hekate a été déplacé dans le dossier "atmosphere\hekate_kips", veuillez supprimer le fichier "atmosphere\kips\loader.kip" si vous avez utilisé la version précédente de mon script. Ceci sert à séparer les choses entre Atmosphere via Fusee-primary et Atmosphere via Hekate, l'un n'aura pas d'incidence sur l'autre.</li>
+</ul>
 <h2>V347</h2>
 <ul>
 <li>Ajout des sig_patches pour Atmosphere pour le firmware 10.0.0.</li>

@@ -1,5 +1,9 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.69</h2>
+<ul>
+<li> Updating CFWs/modules/homebrews/overlays/usful_payloads packs in version 348.</li>
+</ul>
 <h2>V4.1.68</h2>
 <ul>
 <li>Replace Hekate by the  @Joonie86's fork to use the sig_patches correctly.</li>
