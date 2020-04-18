@@ -1,5 +1,11 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.68</h2>
+<ul>
+<li>Replace Hekate by the  @Joonie86's fork to use the sig_patches correctly.</li>
+<li>Update EmuGUIibo (Emutool) to version 0.5.</li>
+<li> Updating CFWs/modules/homebrews/overlays/usful_payloads packs in version 347.</li>
+</ul>
 <h2>V4.1.67</h2>
 <ul>
 <li>In the SD preparation script, if the Ovl-menu is copied or if an overlay is selected, the hold folder of the NX-Ovlmenu module will be removed of the SD if it exist.</li>

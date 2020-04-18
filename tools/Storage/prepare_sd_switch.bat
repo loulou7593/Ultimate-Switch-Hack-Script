@@ -546,6 +546,10 @@ for /l %%i in (1,1,%temp_count%) do (
 	IF "!temp_module!"=="Ovl-menu" (
 		IF EXIST "%temp_modules_copy_path%\010000000007E51A\exefs.nsp" rmdir /s /q "%temp_modules_copy_path%\010000000007E51A"
 	)
+	IF "!temp_module!"=="Emuiibo" (
+		call :force_copy_overlays_base_files "%~1"
+		IF EXIST "%volume_letter%:\switch\AmiiSwap\*.*" rmdir /s /q "%volume_letter%:\switch\AmiiSwap"
+	)
 	IF "!temp_module!"=="Slidenx" (
 		IF EXIST "%volume_letter%:\SlideNX\attach.mp3" del /q "%volume_letter%:\SlideNX\attach.mp3"
 		IF EXIST "%volume_letter%:\SlideNX\detach.mp3" del /q "%volume_letter%:\SlideNX\detach.mp3"
