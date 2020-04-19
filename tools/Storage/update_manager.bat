@@ -2271,6 +2271,7 @@ IF EXIST "DOC\*.*" rmdir /s /q "DOC"
 IF EXIST "tools\sd_switch\mixed\modular\DZ" rmdir /s /q "tools\sd_switch\mixed\modular\DZ"
 IF EXIST "tools\sd_switch\mixed\modular\Zerotwoxci" rmdir /s /q "tools\sd_switch\mixed\modular\Zerotwoxci"
 IF EXIST "tools\sd_switch\modules\pack\Sys-Netcheat" rmdir /s /q "tools\sd_switch\modules\pack\Sys-Netcheat"
+IF EXIST "tools\sd_switch\modules\pack\Sys-audioplayer" rmdir /s /q "tools\sd_switch\modules\pack\Sys-audioplayer"
 call "%associed_language_script%" "del_hold_files_end"
 exit /b
 

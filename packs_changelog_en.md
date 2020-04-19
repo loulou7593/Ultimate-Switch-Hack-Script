@@ -1,5 +1,9 @@
 <h1>Changelog of the Ultimate Switch Hack Script packs</h1>
 &nbsp;
+<h2>V350</h2>
+<ul>
+<li>Replace the Sys-audioplayer module by the Sys-tune module.</li>
+</ul>
 <h2>V349</h2>
 <ul>
 <li>Update Sys-clk to version 0.13.1.</li>

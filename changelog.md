@@ -1,5 +1,12 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.71</h2>
+<ul>
+<li>Amélioration de la logique de copie de l'Ovlmenu dans la préparation d'une SD.</li>
+<li>Suppression du module Sys-audioplayer par le gestionnaire de mises à jour.</li>
+<li>Mise à jour de la documentation et des crédits.</li>
+<li>Mise à jour des packs de CFWs/modules/homebrews/overlays/payloads_utiles en version 350.</li>
+</ul>
 <h2>V4.1.70</h2>
 <ul>
 <li>Correction d'un bug dans la boîte à outils pour la nand qui faisait que le dump de la RAWNAND via une FULLNAND n'était pas nommé correctement.</li>

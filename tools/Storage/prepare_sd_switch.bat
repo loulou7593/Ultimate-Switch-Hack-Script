@@ -531,20 +531,24 @@ for /l %%i in (1,1,%temp_count%) do (
 			rem IF EXIST "%volume_letter%:\sxos\config\stealth_enable" rename "%volume_letter%:\sxos\config\stealth_enable" "stealth_disable"
 		)
 	)
+	IF "!temp_module!"=="Ovl-menu" (
+		IF EXIST "%temp_modules_copy_path%\010000000007E51A\exefs.nsp" rmdir /s /q "%temp_modules_copy_path%\010000000007E51A"
+		IF "%ovlmenu_already_copied%"=="Y" set temp_special_module=Y
+	)
 	IF NOT "!temp_special_module!"=="Y" (
 		dir /b "tools\sd_switch\modules\pack\!temp_module!\titles">templogs\tempvar.txt
 		set /p temp_module_title_id=<templogs\tempvar.txt
 		%windir%\System32\Robocopy.exe tools\sd_switch\modules\pack\!temp_module!\titles %temp_modules_copy_path% /e >nul
 		IF EXIST "tools\sd_switch\modules\pack\!temp_module!\others" %windir%\System32\Robocopy.exe tools\sd_switch\modules\pack\!temp_module!\others %volume_letter%:\ /e >nul
+		IF "!temp_module!"=="Ovl-menu" (
+			set ovlmenu_already_copied=Y
+		)
 		IF "%~1"=="reinx" (
 			IF EXIST "%temp_modules_copy_path%\!temp_module_title_id!\toolbox.json" del /q "%temp_modules_copy_path%\!temp_module_title_id!\toolbox.json"
 		)
 			IF "%~1"=="sxos" (
 			IF EXIST "%temp_modules_copy_path%\!temp_module_title_id!\toolbox.json" del /q "%temp_modules_copy_path%\!temp_module_title_id!\toolbox.json"
 		)
-	)
-	IF "!temp_module!"=="Ovl-menu" (
-		IF EXIST "%temp_modules_copy_path%\010000000007E51A\exefs.nsp" rmdir /s /q "%temp_modules_copy_path%\010000000007E51A"
 	)
 	IF "!temp_module!"=="Emuiibo" (
 		call :force_copy_overlays_base_files "%~1"
@@ -561,7 +565,9 @@ for /l %%i in (1,1,%temp_count%) do (
 		IF EXIST "%volume_letter%:\bootloader\sound\bootsound.mp3" rmdir /s /q "%volume_letter%:\bootloader\sound"
 		IF EXIST "%volume_letter%:\config\BootSoundNX\bootsound.mp3" del /q "%volume_letter%:\config\BootSoundNX\bootsound.mp3" >nul
 		IF EXIST "%temp_modules_copy_path%\AA200000000002AA\exefs.nsp" rmdir /s /q ""%temp_modules_copy_path%\AA200000000002AA""
-		
+	)
+	IF "!temp_module!"=="Sys-tune" (
+		call :force_copy_overlays_base_files "%~1"
 	)
 )
 rem IF "%~1"=="reinx" (
@@ -576,6 +582,7 @@ rem )
 exit /b
 
 :force_copy_overlays_base_files
+IF "%ovlmenu_already_copied%"=="Y" exit /b
 IF "%~1"=="atmosphere" (
 	set temp_modules_copy_path=%volume_letter%:\atmosphere\contents
 )
@@ -588,6 +595,7 @@ IF "%~1"=="sxos" (
 IF EXIST "%temp_modules_copy_path%\010000000007E51A\exefs.nsp" rmdir /s /q "%temp_modules_copy_path%\010000000007E51A"
 %windir%\System32\Robocopy.exe tools\sd_switch\modules\pack\Ovl-menu\titles %temp_modules_copy_path% /e >nul
 %windir%\System32\Robocopy.exe tools\sd_switch\modules\pack\Ovl-menu\others %volume_letter%:\ /e >nul
+set ovlmenu_already_copied=Y
 exit /b
 
 :copy_mixed_pack
