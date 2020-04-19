@@ -180,7 +180,11 @@ IF "%output_path%"=="" (
 IF NOT "%output_path%"=="" set output_path=%output_path%\
 IF NOT "%output_path%"=="" set output_path=%output_path:\\=\%
 IF NOT "%partition%"=="" (
-	set output_path=%output_path%%partition%
+	IF /i "%partition%"=="RAWNAND" (
+		set output_path=%output_path%%partition%.bin
+	) else (
+		set output_path=%output_path%%partition%
+	)
 ) else (
 	IF "%nand_type%"=="RAWNAND" (
 		set output_path=%output_path%rawnand.bin
