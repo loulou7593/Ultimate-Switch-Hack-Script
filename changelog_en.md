@@ -1,5 +1,11 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.72</h2>
+<ul>
+<li>Use again Hekate 5.1.4.</li>
+<li>Update credits.</li>
+<li> Updating CFWs/modules/homebrews/overlays/usful_payloads packs in version 351.</li>
+</ul>
 <h2>V4.1.71</h2>
 <ul>
 <li>Improve the copy logic of the Ovlmenu module on the SD preparation script.</li>

@@ -1,5 +1,11 @@
 <h1>Changelog des packs de l'Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V351</h2>
+<ul>
+<li>Mise à jour des sig_patches du pack Atmosphere.</li>
+<li>Remise en place de Hekate 5.1.4.</li>
+<li>Utilisation de USB-Botbase à la place de Sys-Botbase, le nom Sys-Botbase est cependant gardé.</li>
+</ul>
 <h2>V350</h2>
 <ul>
 <li>Remplacement du module Sys-audioplayer par le module Sys-tune.</li>

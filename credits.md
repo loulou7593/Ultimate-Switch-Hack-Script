@@ -17,7 +17,7 @@
 <li><a target="_blank" href="https://github.com/diwo/TextReaderOverlay-NX">TextReaderOverlay-NX</a></li>
 <li><a target="_blank" href="https://switchtools.sshnuke.net/">Biskeydump, Memloader, Briccmii, Gptrestore, Romdump, ChoiDuJour, HacDiskMount, ChoiDuJourNX</a></li>
 <li><a target="_blank" href="https://github.com/CTCaer/hekate">Hekate</a></li>
-<li><a target="_blank" href="https://github.com/Joonie86/hekate/">Joonie86 Hekate fork</a></li>
+<li><a target="_blank" href="https://gbatemp.net/threads/latest-fs-and-acid-patches-for-kosmos.562915/">some sig_patches</a> and <a target="_blank" href="https://gbatemp.net/threads/atmosphere-patches-es-fs-and-loader-fusee_primary-only.562812/">this page for some others sig_patches</a></li>
 <li><a target="_blank" href="https://gbatemp.net/threads/trinket-rebug-others-switchboot_uf2-fusee_uf2-modchip-software.526607/">Switchboot</a></li>
 <li><a target="_blank" href="https://github.com/bemardev/HekateBrew/">HekateBrew</a></li>
 <li><a target="_blank" href="https://github.com/motezazer/pk1decryptor">Pk1decryptor</a></li>
@@ -34,7 +34,7 @@
 <li><a target="_blank" href="https://github.com/jonyluke/SlideNX">Slidenx</a></li>
 <li><a target="_blank" href="https://github.com/SunTheCourier/SwitchPresence-Rewritten">SwitchPresence-Rewritten</a></li>
 <li><a target="_blank" href="https://github.com/jakibaki/sys-audioplayer">Sys-audioplayer</a>, replaced by <a target="_blank" href="https://github.com/HookedBehemoth/sys-tune">Sys-tune</a></li>
-<li><a target="_blank" href="https://github.com/olliz0r/sys-botbase">Sys-botbase</a></li>
+<li><a target="_blank" href="https://github.com/olliz0r/sys-botbase">Sys-botbase</a> replaced by <a target="_blank" href="https://github.com/fishguy6564/USB-Botbase">USB-Botbase</a></li>
 <li><a target="_blank" href="https://github.com/retronx-team/sys-clk">Sys-clk</a> and <a target="_blank" href="https://github.com/SunTheCourier/sys-clk-Editor/">Sys-clk-Editor</a></li>
 <li><a target="_blank" href="https://github.com/cathery/sys-con">Sys-con</a></li>
 <li><a target="_blank" href="https://github.com/jakibaki/sys-ftpd">Sys-FTPD</a></li>
