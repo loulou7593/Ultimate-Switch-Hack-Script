@@ -82,6 +82,9 @@ call "%associed_language_script2%" "copy_sxos_pack_choice"
 IF NOT "%copy_sxos_pack%"=="" set copy_sxos_pack=%copy_sxos_pack:~0,1%
 call "tools\Storage\functions\modify_yes_no_always_never_vars.bat" "copy_sxos_pack" "o/n_choice"
 IF /i NOT "%copy_sxos_pack%"=="o" goto:skip_ask_cheats_sxos
+call "%associed_language_script2%" "sxos_remove_sx_autoloader"
+IF NOT "!remove_sx_autoloader!"=="" set remove_sx_autoloader=!remove_sx_autoloader:~0,1!
+call "tools\Storage\functions\modify_yes_no_always_never_vars.bat" "remove_sx_autoloader" "o/n_choice"
 call "%associed_language_script2%" "sxos_copy_selected_payloads_sd_root_choice"
 IF NOT "!copy_payloads!"=="" set copy_payloads=!copy_payloads:~0,1!
 call "tools\Storage\functions\modify_yes_no_always_never_vars.bat" "copy_payloads" "o/n_choice"

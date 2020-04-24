@@ -473,6 +473,14 @@ IF /i "%copy_sxos_pack%"=="o" (
 	IF EXIST "%volume_letter%:\switch\sx_installer" rmdir /s /q "%volume_letter%:\switch\sx_installer"
 	del /Q /S "%volume_letter%:\sxos\.emptydir" >nul
 	IF EXIST "%volume_letter%:\sxos\titles\0100000000000123" rmdir /s /q "%volume_letter%:\sxos\titles\0100000000000123"
+	IF /i "%remove_sx_autoloader%"=="o" (
+		IF EXIST "%volume_letter%:\sxos\titles\00FF0012656180FF\cache" (
+			rmdir /s /q "%volume_letter%:\sxos\titles\00FF0012656180FF\flags"
+			del /q "%volume_letter%:\sxos\titles\00FF0012656180FF\exefs.nsp"
+		) else (
+			rmdir /s /q "%volume_letter%:\sxos\titles\00FF0012656180FF"
+		)
+	)
 )
 
 IF /i "%copy_memloader%"=="o" (

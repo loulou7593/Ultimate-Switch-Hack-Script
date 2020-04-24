@@ -62,6 +62,10 @@ goto:eof
 set /p copy_sxos_pack=Do you want to copy the SX OS pack? ^(%lng_yes_choice%/%lng_no_choice%^): 
 goto:eof
 
+:sxos_remove_sx_autoloader
+set /p remove_sx_autoloader=Do you want to remove the  SX-Autoloader module ^(only the module will be removed, not his cache if it exist^)? ^(%lng_yes_choice%/%lng_no_choice%^): 
+goto:eof
+
 :sxos_copy_selected_payloads_sd_root_choice
 set /p copy_payloads=Do you want to copy the payloads  of the previously selected functions on SD root, to be compatible  with the payload launching of SX Loader? ^(%lng_yes_choice%/%lng_no_choice%^): 
 goto:eof
