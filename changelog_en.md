@@ -1,5 +1,9 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.74</h2>
+<ul>
+<li> Updating CFWs/modules/homebrews/overlays/usful_payloads packs in version 352.</li>
+</ul>
 <h2>V4.1.73</h2>
 <ul>
 <li>Support of the firmware 10.0.1 in the ChoiDuJourNX SD preparing script.</li>

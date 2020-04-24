@@ -1,5 +1,10 @@
 <h1>Changelog of the Ultimate Switch Hack Script packs</h1>
 &nbsp;
+<h2>V352</h2>
+<ul>
+<li>Update SX OS to version 2.9.5 Beta.</li>
+<li>Update BiggestDump to version 1.0.0.</li>
+</ul>
 <h2>V351</h2>
 <ul>
 <li>Update the sig_patches of the Atmosphere pack.</li>
