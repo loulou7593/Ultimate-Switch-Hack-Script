@@ -1,5 +1,10 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.76</h2>
+<ul>
+<li>Update Fusee-primary to version 0.12.0.</li>
+<li> Updating CFWs/modules/homebrews/overlays/usful_payloads packs in version 353.</li>
+</ul>
 <h2>V4.1.75</h2>
 <ul>
 <li>In the SD preparation script, add a question to remove the SX-Autoloader module (module that could cause some problems on some firmwares) if the SX OS pack is copied (the module's cache will not be removed if it exist).</li>

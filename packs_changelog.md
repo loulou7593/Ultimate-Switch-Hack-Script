@@ -1,5 +1,11 @@
 <h1>Changelog des packs de l'Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V353</h2>
+<ul>
+<li>Mise à jour d'Atmosphere en version 0.12.0.</li>
+<li>Mise à jour de SX-Autoloader en version 1.40.</li>
+<li>Mise à jour de Status-Monitor-Overlay en version 0.5.2.</li>
+</ul>
 <h2>V352</h2>
 <ul>
 <li>Mise à jour de SX OS en version 2.9.5 Beta.</li>
