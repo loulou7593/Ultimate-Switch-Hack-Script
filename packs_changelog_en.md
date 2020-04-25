@@ -1,5 +1,9 @@
 <h1>Changelog of the Ultimate Switch Hack Script packs</h1>
 &nbsp;
+<h2>V354</h2>
+<ul>
+<li>Update Sys-con to version 0.6.1.</li>
+</ul>
 <h2>V353</h2>
 <ul>
 <li>Update Atmosphere to version 0.12.0.</li>

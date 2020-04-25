@@ -1,5 +1,9 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.77</h2>
+<ul>
+<li>Mise à jour des packs de CFWs/modules/homebrews/overlays/payloads_utiles en version 354.</li>
+</ul>
 <h2>V4.1.76</h2>
 <ul>
 <li>Mise à jour de Fusee-primary en version 0.12.0.</li>
