@@ -1,5 +1,11 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.78</h2>
+<ul>
+<li>The setting used to remove or not SX-Autoloader during the SD preparation script could now be saved in the profiles and an info about it has been added in the sumary before the copy.</li>
+<li>Update TegraExplorer to version 1.5.2.</li>
+<li> Updating CFWs/modules/homebrews/overlays/usful_payloads packs in version 355.</li>
+</ul>
 <h2>V4.1.77</h2>
 <ul>
 <li> Updating CFWs/modules/homebrews/overlays/usful_payloads packs in version 354.</li>

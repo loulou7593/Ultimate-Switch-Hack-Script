@@ -210,6 +210,11 @@ IF /i "%copy_sxos_pack%"=="o" (
 	) else (
 		echo Pack SX OS
 	)
+	IF /i "%sxos_remove_sx_autoloader%"=="o" (
+		echo Le module SX-Autoloader sera supprimé.
+	) else (
+		echo Le module SX-Autoloader sera utilisé.
+	)
 	IF NOT "%sxos_pass_copy_modules_pack%"=="Y" (
 		Echo Modules optionnels pour SX OS:
 		tools\gnuwin32\bin\sort.exe -n "%sxos_modules_profile_path%"
