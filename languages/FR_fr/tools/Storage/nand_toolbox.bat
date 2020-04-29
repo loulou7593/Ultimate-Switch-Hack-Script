@@ -84,6 +84,10 @@ goto:eof
 echo Le répertoire pour extraire le dump ne peut être vide, la fonction va être annulée.
 goto:eof
 
+:zip_param_choice
+set /p zip_param=Souhaitez-vous compresser le fichier en sortie dans un fichier zip? ^(%lng_yes_choice%/%lng_no_choice%^): 
+goto:eof
+
 :dump_erase_existing_file_choice
 set /p erase_output_file=Ce dossier contient déjà un fichier de ce type de dump, souhaitez-vous vraiment continuer en écrasant le fichier existant ^(si oui, le fichier sera supprimé juste après ce choix^)? ^(%lng_yes_choice%/%lng_no_choice%^): 
 goto:eof
@@ -304,6 +308,22 @@ goto:eof
 
 :debug_param_choice
 set /p debug_option=Souhaitez-vous activer les informations de débogage? ^(%lng_yes_choice%/%lng_no_choice%^): 
+goto:eof
+
+:passthrough_0_option_choice
+set /p passthrough_0_option=Souhaitez-vous que les clusters non assignés de la nand soit remplis par des zéros ^(permet une meilleur compression de la nand^)? ^(%lng_yes_choice%/%lng_no_choice%^): 
+goto:eof
+
+:nnm_split_option_choice
+set /p nnm_split_option=Souhaitez-vous diviser le fichier en sortie en plusieurs parties ^(aucune vérification ne sera faite si des fichiers de parties existent, ils seront écrasés^)? ^(%lng_yes_choice%/%lng_no_choice%^): 
+goto:eof
+
+:nnm_split_size_option_choice
+set /p nnm_split_size_option=Quelle taille  en MB chaque partie du fichier divisé devra faire ^(300 minimum^)? ^(4096 MB si laissée vide, entrer 0 pour revenir au choix précédent^): 
+goto:eof
+
+:nnm_split_size_option_to_small_error
+echo La taille minimum doit être de 300 MB.
 goto:eof
 
 :display_infos_nand

@@ -33,6 +33,11 @@ pause
 cls
 set biskeys_param=
 set biskeys_file_path=
+set erase_output_file=
+set partition=
+set zip_param=
+set existing_file_finded=
+set split_param=
 set action_choice=
 call "%associed_language_script%" "display_title"
 call "%associed_language_script%" "first_action_choice"
@@ -116,7 +121,11 @@ call "%associed_language_script%" "nand_choice"
 IF "%action_choice%" == "" (
 	goto:define_action_choice
 )
-call :verif_disk_choice %action_choice% info_nand
+call :verif_disk_choice %action_choice%
+IF %errorlevel% EQU 3000 (
+	set errorlevel=0
+	goto:info_nand
+)
 IF "%action_choice%" == "0" (
 	call :nand_file_input_select
 ) else (
@@ -151,7 +160,11 @@ call "%associed_language_script%" "nand_choice"
 IF "%action_choice%" == "" (
 	goto:define_action_choice
 )
-call :verif_disk_choice %action_choice% dump_nand
+call :verif_disk_choice %action_choice%
+IF %errorlevel% EQU 3000 (
+	set errorlevel=0
+	goto:dump_nand
+)
 IF "%action_choice%" == "0" (
 	call :nand_file_input_select
 ) else (
@@ -167,9 +180,13 @@ IF "%input_path%"=="" (
 )
 set partition=
 call :get_type_nand "%input_path%"
-IF /i "%nand_type%"=="RAWNAND" call :partition_select dump_nand
-IF /i "%nand_type%"=="RAWNAND (splitted dump)" call :partition_select dump_nand
-IF /i "%nand_type%"=="FULL NAND" call :partition_select dump_nand full_nand_choice
+IF /i "%nand_type%"=="RAWNAND" call :partition_select
+IF /i "%nand_type%"=="RAWNAND (splitted dump)" call :partition_select
+IF /i "%nand_type%"=="FULL NAND" call :partition_select full_nand_choice
+IF %errorlevel% EQU 3001 (
+	set errorlevel=0
+	goto:dump_nand
+)
 echo.
 call "%associed_language_script%" "dump_output_folder_choice"
 set /p output_path=<templogs\tempvar.txt
@@ -196,20 +213,50 @@ IF NOT "%partition%"=="" (
 		set output_path=%output_path%%nand_type%
 	)
 )
-IF EXIST "%output_path%" (
+call :set_nnm_split_param
+set zip_param=
+call "%associed_language_script%" "zip_param_choice"
+IF NOT "%zip_param%"=="" set zip_param=%zip_param:~0,1%
+call "tools\Storage\functions\modify_yes_no_always_never_vars.bat" "zip_param" "o/n_choice"
+set existing_file_finded=
+IF /i NOT "%nnm_split_option%"=="O" (
+	IF /i NOT "%zip_param%"=="o" (
+		IF /i NOT "%nnm_split_option%"=="o" (
+			IF EXIST "%output_path%" (
+				set existing_file_finded=Y
+			)
+		)
+	) else (
+		IF /i NOT "%nnm_split_option%"=="o" (
+			IF EXIST "%output_path%" (
+				set existing_file_finded=Y
+			)
+		)
+		IF EXIST "%output_path%.zip" (
+			set existing_file_finded=Y
+		)
+	)
+)
+IF "%existing_file_finded%"=="Y" (
 	call "%associed_language_script%" "dump_erase_existing_file_choice"
 )
 IF NOT "%erase_output_file%"=="" set erase_output_file=%erase_output_file:~0,1%
 call "tools\Storage\functions\modify_yes_no_always_never_vars.bat" "erase_output_file" "o/n_choice"
-IF EXIST "%output_path%" (
+IF "%existing_file_finded%"=="Y" (
 	IF /i NOT "%erase_output_file%"=="o" (
 		call "%associed_language_script%" "canceled"
 		goto:dump_nand
 	) else (
-		del /q "%output_path%"
+		IF /i NOT "%nnm_split_option%"=="o" (
+			IF EXIST "%output_path%" del /q "%output_path%"
+		)
+		IF /i "%zip_param%"=="o" (
+			IF EXIST "%output_path%.zip" del /q "%output_path%.zip"
+		)
 	)
 )
 call :set_NNM_params
+call :set_nnm_passthrough_0_param
 ::echo -i "%input_path%" -o "%output_path%" %params%%lflags%
 tools\NxNandManager\NxNandManager.exe -i "%input_path%" -o "%output_path%" %params%%lflags%
 echo.
@@ -235,7 +282,11 @@ call "%associed_language_script%" "nand_choice"
 IF "%action_choice%" == "" (
 	goto:define_action_choice
 )
-call :verif_disk_choice %action_choice% restaure_nand
+call :verif_disk_choice %action_choice%
+IF %errorlevel% EQU 3000 (
+	set errorlevel=0
+	goto:restaure_nand
+)
 IF "%action_choice%" == "0" (
 	call :nand_file_output_select
 ) else (
@@ -251,9 +302,13 @@ IF "%output_path%"=="" (
 )
 set partition=
 call :get_type_nand "%output_path%"
-IF /i "%nand_type%"=="RAWNAND" call :partition_select restaure_nand
-IF /i "%nand_type%"=="RAWNAND (splitted dump)" call :partition_select restaure_nand
-IF /i "%nand_type%"=="FULL NAND" call :partition_select restaure_nand full_nand_choice
+IF /i "%nand_type%"=="RAWNAND" call :partition_select
+IF /i "%nand_type%"=="RAWNAND (splitted dump)" call :partition_select
+IF /i "%nand_type%"=="FULL NAND" call :partition_select full_nand_choice
+IF %errorlevel% EQU 3001 (
+	set errorlevel=0
+	goto:restaure_nand
+)
 set output_nand_type=%nand_type%
 call :get_type_nand "%input_path%"
 set input_nand_type=%nand_type%
@@ -303,6 +358,7 @@ IF NOT "%partition%"=="" (
 	)
 )
 call :set_NNM_params
+call :set_nnm_passthrough_0_param
 ::echo -i "%input_path%" -o "%output_path%" %params%%lflags%
 tools\NxNandManager\NxNandManager.exe -i "%input_path%" -o "%output_path%" %params%%lflags%
 echo.
@@ -318,7 +374,11 @@ call "%associed_language_script%" "nand_choice"
 IF "%action_choice%" == "" (
 	goto:define_action_choice
 )
-call :verif_disk_choice %action_choice% autorcm_management
+call :verif_disk_choice %action_choice%
+IF %errorlevel% EQU 3000 (
+	set errorlevel=0
+	goto:autorcm_management
+)
 IF "%action_choice%" == "0" (
 	call :nand_file_input_select
 ) else (
@@ -379,7 +439,11 @@ call "%associed_language_script%" "nand_choice"
 IF "%action_choice%" == "" (
 	goto:define_action_choice
 )
-call :verif_disk_choice %action_choice% decrypt_nand
+call :verif_disk_choice %action_choice%
+IF %errorlevel% EQU 3000 (
+	set errorlevel=0
+	goto:decrypt_nand
+)
 IF "%action_choice%" == "0" (
 	call :nand_file_input_select
 ) else (
@@ -397,15 +461,19 @@ set partition=
 call :get_type_nand "%input_path%"
 IF /i "%nand_type%"=="RAWNAND (splitted dump)" set nand_type=RAWNAND
 IF /i "%nand_type%"=="RAWNAND" (
-	call :partition_select dump_nand
+	call :partition_select
 ) else IF /i "%nand_type%"=="FULL NAND" (
-	call :partition_select dump_nand all_partitions_excepted
+	call :partition_select all_partitions_excepted
 ) else IF /i "%nand_type%"=="unknown" (
 	call "%associed_language_script%" "decrypt_rawnand_not_selected_error"
 	goto:decrypt_nand
 ) else (
 	set partition=%nand_type%
 	goto:decrypt_verif_encrypted_or_not
+)
+IF %errorlevel% EQU 3001 (
+	set errorlevel=0
+	goto:decrypt_nand
 )
 :decrypt_verif_encrypted_or_not
 IF /i NOT "%nand_encrypted:~0,3%"=="Yes" (
@@ -418,7 +486,7 @@ IF "%biskeys_file_path%"=="" (
 	call "%associed_language_script%" "biskeys_file_not_selected_error"
 	goto:decrypt_nand
 )
-tools\NxNandManager\NxNandManager.exe --info -i "%input_path%" %biskeys_param% >nul 2>&1
+tools\NxNandManager\NxNandManager.exe --info -i "%input_path%" -keyset "%biskeys_file_path%" >nul 2>&1
 IF %errorlevel% NEQ 0 (
 	call "%associed_language_script%" "decrypt_biskeys_not_valid_error"
 	goto:decrypt_nand
@@ -443,23 +511,53 @@ IF NOT "%partition%"=="" (
 		set output_path=%output_path%rawnand_decrypted.bin
 	)
 )
-IF EXIST "%output_path%" (
+call :set_nnm_split_param
+set zip_param=
+call "%associed_language_script%" "zip_param_choice"
+IF NOT "%zip_param%"=="" set zip_param=%zip_param:~0,1%
+call "tools\Storage\functions\modify_yes_no_always_never_vars.bat" "zip_param" "o/n_choice"
+set existing_file_finded=
+IF /i NOT "%nnm_split_option%"=="O" (
+	IF /i NOT "%zip_param%"=="o" (
+		IF /i NOT "%nnm_split_option%"=="o" (
+			IF EXIST "%output_path%" (
+				set existing_file_finded=Y
+			)
+		)
+	) else (
+		IF /i NOT "%nnm_split_option%"=="o" (
+			IF EXIST "%output_path%" (
+				set existing_file_finded=Y
+			)
+		)
+		IF EXIST "%output_path%.zip" (
+			set existing_file_finded=Y
+		)
+	)
+)
+IF "%existing_file_finded%"=="Y" (
 	call "%associed_language_script%" "dump_erase_existing_file_choice"
 )
 IF NOT "%erase_output_file%"=="" set erase_output_file=%erase_output_file:~0,1%
 call "tools\Storage\functions\modify_yes_no_always_never_vars.bat" "erase_output_file" "o/n_choice"
-IF EXIST "%output_path%" (
+IF "%existing_file_finded%"=="Y" (
 	IF /i NOT "%erase_output_file%"=="o" (
 		call "%associed_language_script%" "canceled"
 		goto:decrypt_nand
 	) else (
-		del /q "%output_path%"
+		IF /i NOT "%nnm_split_option%"=="o" (
+			IF EXIST "%output_path%" del /q "%output_path%"
+		)
+		IF /i "%zip_param%"=="o" (
+			IF EXIST "%output_path%.zip" del /q "%output_path%.zip"
+		)
 	)
 )
 IF /i NOT "%nand_type%"=="RAWNAND" (
 	set partition=
 )
 call :set_NNM_params
+call :set_nnm_passthrough_0_param
 IF /i "%nand_type%"=="RAWNAND" (
 	IF "%partition%"=="" (
 		tools\NxNandManager\NxNandManager_old.exe -i "%input_path%" -o "%output_path%" -d %biskeys_param% %params%%lflags%
@@ -490,15 +588,19 @@ set partition=
 call :get_type_nand "%input_path%"
 IF /i "%nand_type%"=="RAWNAND (splitted dump)" set nand_type=RAWNAND
 IF /i "%nand_type%"=="RAWNAND" (
-	call :partition_select dump_nand
+	call :partition_select
 ) else IF /i "%nand_type%"=="FULL NAND" (
-	call :partition_select dump_nand all_partitions_excepted
+	call :partition_select all_partitions_excepted
 ) else IF /i "%nand_type%"=="unknown" (
 	call "%associed_language_script%" "encrypt_rawnand_not_selected_error"
 	goto:encrypt_nand
 ) else (
 	set partition=%nand_type%
 	goto:encrypt_verif_encrypted_or_not
+)
+IF %errorlevel% EQU 3001 (
+	set errorlevel=0
+	goto:encrypt_nand
 )
 :encrypt_verif_encrypted_or_not
 IF /i NOT "%nand_encrypted%"=="No" (
@@ -531,23 +633,53 @@ IF NOT "%partition%"=="" (
 		set output_path=%output_path%rawnand.bin
 	)
 )
-IF EXIST "%output_path%" (
+call :set_nnm_split_param
+set zip_param=
+call "%associed_language_script%" "zip_param_choice"
+IF NOT "%zip_param%"=="" set zip_param=%zip_param:~0,1%
+call "tools\Storage\functions\modify_yes_no_always_never_vars.bat" "zip_param" "o/n_choice"
+set existing_file_finded=
+IF /i NOT "%nnm_split_option%"=="O" (
+	IF /i NOT "%zip_param%"=="o" (
+		IF /i NOT "%nnm_split_option%"=="o" (
+			IF EXIST "%output_path%" (
+				set existing_file_finded=Y
+			)
+		)
+	) else (
+		IF /i NOT "%nnm_split_option%"=="o" (
+			IF EXIST "%output_path%" (
+				set existing_file_finded=Y
+			)
+		)
+		IF EXIST "%output_path%.zip" (
+			set existing_file_finded=Y
+		)
+	)
+)
+IF "%existing_file_finded%"=="Y" (
 	call "%associed_language_script%" "dump_erase_existing_file_choice"
 )
 IF NOT "%erase_output_file%"=="" set erase_output_file=%erase_output_file:~0,1%
 call "tools\Storage\functions\modify_yes_no_always_never_vars.bat" "erase_output_file" "o/n_choice"
-IF EXIST "%output_path%" (
+IF "%existing_file_finded%"=="Y" (
 	IF /i NOT "%erase_output_file%"=="o" (
 		call "%associed_language_script%" "canceled"
 		goto:encrypt_nand
 	) else (
-		del /q "%output_path%"
+		IF /i NOT "%nnm_split_option%"=="o" (
+			IF EXIST "%output_path%" del /q "%output_path%"
+		)
+		IF /i "%zip_param%"=="o" (
+			IF EXIST "%output_path%.zip" del /q "%output_path%.zip"
+		)
 	)
 )
 IF /i NOT "%nand_type%"=="RAWNAND" (
 	set partition=
 )
 call :set_NNM_params
+call :set_nnm_passthrough_0_param
 IF /i "%nand_type%"=="RAWNAND" (
 	IF "%partition%"=="" (
 		tools\NxNandManager\NxNandManager_old.exe -i "%input_path%" -o "%output_path%" -e %biskeys_param% %params%%lflags%
@@ -571,7 +703,11 @@ call "%associed_language_script%" "nand_choice"
 IF "%action_choice%" == "" (
 	goto:define_action_choice
 )
-call :verif_disk_choice %action_choice% incognito_apply
+call :verif_disk_choice %action_choice%
+IF %errorlevel% EQU 3000 (
+	set errorlevel=0
+	goto:incognito_apply
+)
 IF "%action_choice%" == "0" (
 	call :nand_file_input_select
 ) else (
@@ -614,7 +750,7 @@ IF /i NOT "%nand_encrypted:~0,3%"=="Yes" (
 		goto:incognito_apply
 	)
 )
-tools\NxNandManager\NxNandManager.exe --info -i "%input_path%" %biskeys_param% >nul 2>&1
+tools\NxNandManager\NxNandManager.exe --info -i "%input_path%" -keyset "%biskeys_file_path%" >nul 2>&1
 IF %errorlevel% NEQ 0 (
 	call "%associed_language_script%" "incognito_biskeys_not_valid_error"
 	goto:incognito_apply
@@ -657,6 +793,7 @@ pause
 goto:define_action_choice
 
 :resize_user_partition
+set partition=
 set input_path=
 set output_path=
 set partition_size=
@@ -667,7 +804,11 @@ call "%associed_language_script%" "nand_choice"
 IF "%action_choice%" == "" (
 	goto:define_action_choice
 )
-call :verif_disk_choice %action_choice% resize_user_partition
+call :verif_disk_choice %action_choice%
+IF %errorlevel% EQU 3000 (
+	set errorlevel=0
+	goto:resize_user_partition
+)
 IF "%action_choice%" == "0" (
 	call :nand_file_input_select
 ) else (
@@ -694,7 +835,7 @@ IF "%biskeys_file_path%"=="" (
 	call "%associed_language_script%" "biskeys_file_not_selected_error"
 	goto:resize_user_partition
 )
-tools\NxNandManager\NxNandManager.exe --info -i "%input_path%" %biskeys_param% >nul 2>&1
+tools\NxNandManager\NxNandManager.exe --info -i "%input_path%" -keyset "%biskeys_file_path%" >nul 2>&1
 IF %errorlevel% NEQ 0 (
 	call "%associed_language_script%" "decrypt_biskeys_not_valid_error"
 	goto:resize_user_partition
@@ -717,21 +858,51 @@ IF "%nand_type%"=="RAWNAND" (
 ) else IF "%nand_type%"=="FULL NAND" (
 		set output_path=%output_path%full_nand_resized.bin
 )
-IF EXIST "%output_path%" (
+call :set_nnm_split_param
+set zip_param=
+call "%associed_language_script%" "zip_param_choice"
+IF NOT "%zip_param%"=="" set zip_param=%zip_param:~0,1%
+call "tools\Storage\functions\modify_yes_no_always_never_vars.bat" "zip_param" "o/n_choice"
+set existing_file_finded=
+IF /i NOT "%nnm_split_option%"=="O" (
+	IF /i NOT "%zip_param%"=="o" (
+		IF /i NOT "%nnm_split_option%"=="o" (
+			IF EXIST "%output_path%" (
+				set existing_file_finded=Y
+			)
+		)
+	) else (
+		IF /i NOT "%nnm_split_option%"=="o" (
+			IF EXIST "%output_path%" (
+				set existing_file_finded=Y
+			)
+		)
+		IF EXIST "%output_path%.zip" (
+			set existing_file_finded=Y
+		)
+	)
+)
+IF "%existing_file_finded%"=="Y" (
 	call "%associed_language_script%" "dump_erase_existing_file_choice"
 )
 IF NOT "%erase_output_file%"=="" set erase_output_file=%erase_output_file:~0,1%
 call "tools\Storage\functions\modify_yes_no_always_never_vars.bat" "erase_output_file" "o/n_choice"
-IF EXIST "%output_path%" (
+IF "%existing_file_finded%"=="Y" (
 	IF /i NOT "%erase_output_file%"=="o" (
 		call "%associed_language_script%" "canceled"
 		goto:resize_user_partition
 	) else (
-		del /q "%output_path%"
+		IF /i NOT "%nnm_split_option%"=="o" (
+			IF EXIST "%output_path%" del /q "%output_path%"
+		)
+		IF /i "%zip_param%"=="o" (
+			IF EXIST "%output_path%.zip" del /q "%output_path%.zip"
+		)
 	)
 )
 set partition=
 call :set_NNM_params
+call :set_nnm_passthrough_0_param
 :define_resize_partition_size_value
 set resize_user_partition_value=
 call "%associed_language_script%" "resize_user_part_value_choice"
@@ -783,7 +954,11 @@ call "%associed_language_script%" "nand_choice"
 IF "%action_choice%" == "" (
 	goto:define_action_choice
 )
-call :verif_disk_choice %action_choice% brute_force
+call :verif_disk_choice %action_choice%
+IF %errorlevel% EQU 3000 (
+	set errorlevel=0
+	goto:brute_force
+)
 IF "%action_choice%" == "0" (
 	call :nand_file_input_select
 ) else (
@@ -806,7 +981,11 @@ IF /i "%nand_type%"=="SYSTEM" set partition=SYSTEM
 IF /i "%nand_type%"=="USER" set partition=USER
 IF /i "%nand_type%"=="RAWNAND" call :partition_select brute_force brute_force_choice
 IF /i "%nand_type%"=="RAWNAND (splitted dump)" call :partition_select brute_force brute_force_choice
-IF /i "%nand_type%"=="FULL NAND" call :partition_select brute_force brute_force_choice
+IF /i "%nand_type%"=="FULL NAND" call :partition_select brute_force_choice
+IF %errorlevel% EQU 3001 (
+	set errorlevel=0
+	goto:brute_force
+)
 IF /i "%partition%" == "PRODINFOF" set partition=PRODINFO
 echo.
 call "%associed_language_script%" "brute_force_output_folder_choice"
@@ -1271,7 +1450,6 @@ exit /b
 
 :verif_disk_choice
 set choice=%~1
-set label_verif_disk_choice=%~2
 call TOOLS\Storage\functions\strlen.bat nb "%choice%"
 set i=0
 :check_chars_choice
@@ -1286,16 +1464,15 @@ IF %i% NEQ %nb% (
 	)
 	IF "!check_chars!"=="0" (
 	call "%associed_language_script%" "nand_choice_char_error"
-	goto:%label_verif_disk_choice%
+	exit /b 3000
 	)
 )
-exit /b
+exit /b 0
 
 :partition_select
 set partition=
-set label_partition_select=%~1
 set choose_partition=
-IF "%~2"=="all_partitions_excepted" (
+IF "%~1"=="all_partitions_excepted" (
 	set except_all=Y
 ) else (
 	set except_all=
@@ -1303,23 +1480,27 @@ IF "%~2"=="all_partitions_excepted" (
 call "%associed_language_script%" "partition_choice_begin"
 echo 1: PRODINFO.
 echo 2: PRODINFOF.
-IF NOT "%~2" == "brute_force_choice" echo 3: BCPKG2-1-Normal-Main
-IF NOT "%~2" == "brute_force_choice" echo 4: BCPKG2-2-Normal-Sub
-IF NOT "%~2" == "brute_force_choice" echo 5: BCPKG2-3-SafeMode-Main
-IF NOT "%~2" == "brute_force_choice" echo 6: BCPKG2-4-SafeMode-Sub
-IF NOT "%~2" == "brute_force_choice" echo 7: BCPKG2-5-Repair-Main
-IF NOT "%~2" == "brute_force_choice" echo 8: BCPKG2-6-Repair-Sub
+IF NOT "%~1" == "brute_force_choice" echo 3: BCPKG2-1-Normal-Main
+IF NOT "%~1" == "brute_force_choice" echo 4: BCPKG2-2-Normal-Sub
+IF NOT "%~1" == "brute_force_choice" echo 5: BCPKG2-3-SafeMode-Main
+IF NOT "%~1" == "brute_force_choice" echo 6: BCPKG2-4-SafeMode-Sub
+IF NOT "%~1" == "brute_force_choice" echo 7: BCPKG2-5-Repair-Main
+IF NOT "%~1" == "brute_force_choice" echo 8: BCPKG2-6-Repair-Sub
 echo 9: SAFE
 echo 10: SYSTEM
 echo 11: USER
-IF "%~2"=="full_nand_choice" (
+IF "%~1"=="full_nand_choice" (
 	echo 12: BOOT0
 	echo 13: BOOT1
 	echo 14: RAWNAND
 )
 call "%associed_language_script%" "partition_choice"
-IF "%choose_partition%" == "" goto:%label_partition_select%
-call :verif_disk_choice %choose_partition% partition_select
+IF "%choose_partition%"=="" exit /b 3001
+call :verif_disk_choice %choose_partition%
+IF %errorlevel% EQU 3000 (
+	set errorlevel=0
+	goto:partition_select
+)
 IF "%except_all%"=="Y" (
 	IF %choose_partition% EQU 0 (
 		call "%associed_language_script%" "bad_value"
@@ -1351,7 +1532,7 @@ IF %choose_partition% EQU 11 set partition=USER
 IF %choose_partition% EQU 12 set partition=BOOT0
 IF %choose_partition% EQU 13 set partition=BOOT1
 IF %choose_partition% EQU 14 set partition=RAWNAND
-exit /b
+exit /b 0
 
 :set_NNM_params
 set params=
@@ -1378,6 +1559,12 @@ call "tools\Storage\functions\modify_yes_no_always_never_vars.bat" "debug_option
 IF /i "%debug_option%"=="o" (
 	set lflags=%lflags%DEBUG_MODE 
 )
+IF /i "%zip_param%"=="o" (
+	set lflags=%lflags%ZIP 
+)
+IF NOT "%split_param%"=="" (
+	set params=%params%%split_param%
+)
 exit /b
 
 :set_debug_param_only
@@ -1385,6 +1572,92 @@ set debug_option=
 call "%associed_language_script%" "debug_param_choice"
 IF NOT "%debug_option%"=="" set debug_option=%debug_option:~0,1%
 call "tools\Storage\functions\modify_yes_no_always_never_vars.bat" "debug_option" "o/n_choice"
+exit /b
+
+:set_nnm_passthrough_0_param
+set passthrough_0_option=
+call "%associed_language_script%" "passthrough_0_option_choice"
+IF NOT "%passthrough_0_option%"=="" set passthrough_0_option=%passthrough_0_option:~0,1%
+call "tools\Storage\functions\modify_yes_no_always_never_vars.bat" "passthrough_0_option" "o/n_choice"
+IF /i "%passthrough_0_option%"=="o" (
+	IF "%biskeys_param%"=="" (
+		call :get_type_nand "%input_path%"
+		IF /i "!nand_encrypted:~0,3!"=="Yes" (
+			call :select_biskeys_file
+			IF "!biskeys_file_path!"=="" (
+				call "%associed_language_script%" "biskeys_file_not_selected_error"
+				goto:set_nnm_passthrough_0_param
+			)
+			tools\NxNandManager\NxNandManager.exe --info -i "%input_path%" -biskey "!biskeys_file_path!" >nul 2>&1
+			IF !errorlevel! NEQ 0 (
+				call "%associed_language_script%" "decrypt_biskeys_not_valid_error"
+				goto:set_nnm_passthrough_0_param
+			) else (
+				set params=-keyset "!biskeys_file_path!" %params%
+			)
+		)
+	)
+	set lflags=%lflags%PASSTHROUGH_0 
+)
+exit /b
+
+:set_nnm_split_param
+call :get_type_nand "%input_path%"
+IF /i "%nand_type%"=="BOOT0" exit /b
+IF /i "%nand_type%"=="BOOT1" exit /b
+
+IF /i "%nand_type%"=="PRODINFO" exit /b
+IF /i "%nand_type%"=="PRODINFOF" exit /b
+IF /i "%nand_type%"=="BCPKG2-1-Normal-Main" exit /b
+IF /i "%nand_type%"=="BCPKG2-2-Normal-Sub" exit /b
+IF /i "%nand_type%"=="BCPKG2-3-SafeMode-Main" exit /b
+IF /i "%nand_type%"=="BCPKG2-4-SafeMode-Sub" exit /b
+IF /i "%nand_type%"=="BCPKG2-5-Repair-Main" exit /b
+IF /i "%nand_type%"=="BCPKG2-6-Repair-Sub" exit /b
+IF /i "%nand_type%"=="SAFE" exit /b
+IF NOT "%partition%"=="" (
+	IF %choose_partition% EQU 1 exit /b
+	IF %choose_partition% EQU 2 exit /b
+	IF %choose_partition% EQU 3 exit /b
+	IF %choose_partition% EQU 4 exit /b
+	IF %choose_partition% EQU 5 exit /b
+	IF %choose_partition% EQU 6 exit /b
+	IF %choose_partition% EQU 7 exit /b
+	IF %choose_partition% EQU 8 exit /b
+	IF %choose_partition% EQU 9 exit /b
+	IF %choose_partition% EQU 12 exit /b
+	IF %choose_partition% EQU 13 exit /b
+)
+set nnm_split_option=
+call "%associed_language_script%" "nnm_split_option_choice"
+IF NOT "%nnm_split_option%"=="" set nnm_split_option=%nnm_split_option:~0,1%
+call "tools\Storage\functions\modify_yes_no_always_never_vars.bat" "nnm_split_option" "o/n_choice"
+:define_nnm_split_size_option
+set nnm_split_size_option=4096
+IF /i "%nnm_split_option%"=="o" (
+	call "%associed_language_script%" "nnm_split_size_option_choice"
+) else (
+	exit /b
+)
+IF "%nnm_split_size_option%"=="0" goto:set_nnm_split_param
+call TOOLS\Storage\functions\strlen.bat nb "%nnm_split_size_option%"
+set i=0
+:check_chars_nnm_split_size_option
+IF %i% LSS %nb% (
+	FOR %%z in (0 1 2 3 4 5 6 7 8 9) do (
+		IF "!nnm_split_size_option:~%i%,1!"=="%%z" (
+			set /a i+=1
+			goto:check_chars_nnm_split_size_option
+		)
+	)
+	call "%associed_language_script%" "nand_choice_char_error"
+	goto:define_nnm_split_size_option
+)
+IF %nnm_split_size_option% LSS 300 (
+	call "%associed_language_script%" "nnm_split_size_option_to_small_error"
+	goto:define_nnm_split_size_option
+)
+set split_param=-split=%nnm_split_size_option% 
 exit /b
 
 :get_base_folder_path_of_a_file_path

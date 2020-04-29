@@ -93,6 +93,10 @@ goto:eof
 echo The folder where dump will be extracted couldn't be empty, the function will be canceled.
 goto:eof
 
+:zip_param_choice
+set /p zip_param=Do you want to compress the output file in a zip file? ^(%lng_yes_choice%/%lng_no_choice%^): 
+goto:eof
+
 :dump_erase_existing_file_choice
 set /p erase_output_file=This folder already contain a file of this type of dump, do you realy want to continue and remove the existing file ^(if yes, the file will be removed just after this choice^)? ^(%lng_yes_choice%/%lng_no_choice%^): 
 goto:eof
@@ -313,6 +317,22 @@ goto:eof
 
 :debug_param_choice
 set /p debug_option=Do you want to enable the debug infos? ^(%lng_yes_choice%/%lng_no_choice%^): 
+goto:eof
+
+:passthrough_0_option_choice
+set /p passthrough_0_option=Do you want that the no assigned clusters  of the nand be replaced by zeros ^(better nand compression possibility^)? ^(%lng_yes_choice%/%lng_no_choice%^): 
+goto:eof
+
+:nnm_split_option_choice
+set /p nnm_split_option=Do you want to split the output file ^(no verification will be made if output file parts already exist, files will be erased^)? ^(%lng_yes_choice%/%lng_no_choice%^): 
+goto:eof
+
+:nnm_split_size_option_choice
+set /p nnm_split_size_option=What size in MB each splited part must be ^(300 minimum^)? ^(4096 MB if empty, enter 0 to go back to previous choice^): 
+goto:eof
+
+:nnm_split_size_option_to_small_error
+echo The minimum size must be 300 MB.
 goto:eof
 
 :display_infos_nand

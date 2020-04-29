@@ -1,5 +1,10 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.79</h2>
+<ul>
+<li>Mise à jour de NXNandManager en version 4.0-beta.</li>
+<li>Ajout des nouvelles options de NXNandManager 4.0-beta dans la nand toolbox pour les fonctions compatibles ("zip", "passthrough_0" et "-split") et correction de bugs très importants dans celle-ci.</li>
+</ul>
 <h2>V4.1.78</h2>
 <ul>
 <li>Le paramètre permettant de supprimer ou non SX-Autoloader pendant le script de préparation d'une SD est maintenant pris en compte dans les profiles et dans le résumé avant la copie.</li>
