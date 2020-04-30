@@ -1,3 +1,19 @@
+megatools 1.10.3 - 2018-08-??
+=============================
+
+This release introduces new features.
+
+Improvements:
+- Megatools now install a single `megatools` executable, where former
+  `megaXYZ ...` commands now have to be executed as `megatools XYZ ...`.
+- Implemented PKP (public key pinning for mega.nz's API server). Megatools
+  no longer use public certificate authorities to verify API server's
+  authenticity. If you use software that MITM's your web traffic, megatools
+  will not allow this anymore.
+
+Fixes:
+- 
+
 megatools 1.10.2 - 2018-07-31
 =============================
 

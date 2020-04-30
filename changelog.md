@@ -1,5 +1,11 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.80</h2>
+<ul>
+<li>Mise à jour de Megatools en version 1.11.0-git-20200404.</li>
+<li>Support du téléchargement et de la mise en place sur la SD pour ChoiDuJourNX du firmware 10.0.2 et correction de l'ancienne ligne de commande utilisée pour le téléchargement du firmware pour l'adapter à la nouvelle version de Megatools.</li>
+<li>Dans le gestionnaire de mises à jour, certains messages inutiles ne sont plus affichés.</li>
+</ul>
 <h2>V4.1.79</h2>
 <ul>
 <li>Mise à jour de NXNandManager en version 4.0-beta.</li>

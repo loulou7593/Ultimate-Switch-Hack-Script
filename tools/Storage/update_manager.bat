@@ -2132,19 +2132,19 @@ rmdir /s /q "%temp_folder_path%"
 "tools\gitget\SVN\svn.exe" export %folders_url_project_base%/%temp_folder_slash_path% %temp_folder_path% --force >nul
 set temp_folder_download_error=%errorlevel%
 IF "%temp_folder_path%"=="tools\Hactool_based_programs" (
-		move "templogs\tempsave" "%temp_folder_path%"
+		move "templogs\tempsave" "%temp_folder_path%" >nul
 )
 IF "%temp_folder_path%"=="tools\megatools" (
-		move "templogs\tempsave" "%temp_folder_path%"
+		move "templogs\tempsave" "%temp_folder_path%" >nul
 )
 IF "%temp_folder_path%"=="tools\netplay" (
-		move "templogs\tempsave" "%temp_folder_path%"
+		move "templogs\tempsave" "%temp_folder_path%" >nul
 )
 IF "%temp_folder_path%"=="tools\NSC_Builder" (
-		move "templogs\tempsave" "%temp_folder_path%"
+		move "templogs\tempsave" "%temp_folder_path%" >nul
 )
 IF "%temp_folder_path%"=="tools\toolbox" (
-		move "templogs\tempsave" "%temp_folder_path%"
+		move "templogs\tempsave" "%temp_folder_path%" >nul
 )
 IF %temp_folder_download_error% NEQ 0 (
 	call "%associed_language_script%" "update_folder_error"

@@ -87,6 +87,7 @@ echo 9.1.0?
 echo 9.2.0?
 echo 10.0.0?
 echo 10.0.1?
+echo 10.0.2?
 echo.
 call "%associed_language_script%" "firmware_choice_end"
 IF NOT EXIST "downloads" mkdir "downloads"
@@ -335,6 +336,15 @@ IF "%firmware_choice%"=="10.0.1" (
 	IF !errorlevel! EQU 1 goto:define_firmware_choice
 	goto:download_firmware
 )
+IF "%firmware_choice%"=="10.0.2" (
+	set expected_md5=78702cba5d6024bc1c70870058b4dbb4
+	set "firmware_link=https://mega.nz/file/kQBRnYzL#AxCTCgZf4kEjtUW5z1MUSSnlcwjEe6AptanmYtr1WN8"
+	set firmware_file_name=Firmware 10.0.2.zip
+	set firmware_folder=firmware_temp\
+	call :cdj_test_max_firmware
+	IF !errorlevel! EQU 1 goto:define_firmware_choice
+	goto:download_firmware
+)
 goto:define_action_type
 
 :download_firmware
@@ -344,7 +354,7 @@ IF EXIST "downloads\firmwares\%firmware_file_name%" goto:verif_md5sum
 IF NOT EXIST "downloads\firmwares\%firmware_file_name%" (
 	call "%associed_language_script%" "firmware_downloading_begin"
 Setlocal disabledelayedexpansion
-TOOLS\megatools\megadl.exe "%firmware_link%" --path=templogs\temp.zip
+TOOLS\megatools\megatools.exe dl --path="templogs\temp.zip" "%firmware_link%"
 endlocal
 	TOOLS\gnuwin32\bin\md5sum.exe templogs\temp.zip | TOOLS\gnuwin32\bin\cut.exe -d " " -f 1 | TOOLS\gnuwin32\bin\cut.exe -d ^\ -f 2 >templogs\tempvar.txt
 		set /p md5_verif=<templogs\tempvar.txt
