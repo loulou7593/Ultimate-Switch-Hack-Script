@@ -3,6 +3,7 @@
 <h2>V356</h2>
 <ul>
 <li>Update Hekate to version 5.2.0.</li>
+<li>Some changes in Hekate's configuration files.</li>
 </ul>
 <h2>V355</h2>
 <ul>
