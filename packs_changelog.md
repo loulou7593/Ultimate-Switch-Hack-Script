@@ -1,5 +1,10 @@
 <h1>Changelog des packs de l'Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V357</h2>
+<ul>
+<li>Mise à jour des patches d'Atmosphere et de Hekate.</li>
+<li>Mise à jour de SimpleModManager en version 1.4.1.</li>
+</ul>
 <h2>V356</h2>
 <ul>
 <li>Mise à jour de Hekate en version 5.2.0.</li>

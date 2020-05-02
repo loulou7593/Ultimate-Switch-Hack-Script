@@ -3,6 +3,7 @@
 <h2>CFWs</h2>
 <ul>
 <li><a target="_blank" href="https://github.com/Atmosphere-NX/Atmosphere">Atmosphere-NX</a></li>
+<li><a target="_blank" href="https://gbatemp.net/threads/latest-fs-and-acid-patches-for-kosmos.562915/">some sig_patches</a> and <a target="_blank" href="https://gbatemp.net/threads/atmosphere-patches-es-fs-and-loader-fusee_primary-only.562812/">this page for some others sig_patches</a>.</li>
 <li><a target="_blank" href="https://github.com/Reisyukaku/ReiNX">ReiNX</a></li>
 <li><a target="_blank" href="https://sx.xecuter.com/">SX OS and Xecuter's team</a>, also see <a target="_blank" href="https://team-xecuter.com/community/resources/sx-autoloader.25/">SX Autoloader module page</a></li>
 <li>AtlasNX team for the <a target="_blank" href="https://github.com/AtlasNX/Kosmos/">Kosmos project</a>.</li>
@@ -17,7 +18,6 @@
 <li><a target="_blank" href="https://github.com/diwo/TextReaderOverlay-NX">TextReaderOverlay-NX</a></li>
 <li><a target="_blank" href="https://switchtools.sshnuke.net/">Biskeydump, Memloader, Briccmii, Gptrestore, Romdump, ChoiDuJour, HacDiskMount, ChoiDuJourNX</a></li>
 <li><a target="_blank" href="https://github.com/CTCaer/hekate">Hekate</a></li>
-<li><a target="_blank" href="https://gbatemp.net/threads/latest-fs-and-acid-patches-for-kosmos.562915/">some sig_patches</a> and <a target="_blank" href="https://gbatemp.net/threads/atmosphere-patches-es-fs-and-loader-fusee_primary-only.562812/">this page for some others sig_patches</a></li>
 <li><a target="_blank" href="https://gbatemp.net/threads/trinket-rebug-others-switchboot_uf2-fusee_uf2-modchip-software.526607/">Switchboot</a></li>
 <li><a target="_blank" href="https://github.com/bemardev/HekateBrew/">HekateBrew</a></li>
 <li><a target="_blank" href="https://github.com/motezazer/pk1decryptor">Pk1decryptor</a></li>
