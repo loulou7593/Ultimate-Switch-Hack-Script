@@ -1,5 +1,12 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.81</h2>
+<ul>
+<li>Update Hekate to version 5.2.0.</li>
+<li>In the drivers installation script, add the possibility to maximize the speed of the new function of Hekate's USB mass storage.</li>
+<li>In the general's  profiles that copy the SX OS pack in the SD preparation script, the SX-Autoloader module will be removed cause it make the system too instable.</li>
+<li> Updating CFWs/modules/homebrews/overlays/usful_payloads packs in version 356.</li>
+</ul>
 <h2>V4.1.80</h2>
 <ul>
 <li>Update Megatools to version 1.11.0-git-20200404.</li>

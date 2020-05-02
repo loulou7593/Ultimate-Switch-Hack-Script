@@ -1,5 +1,9 @@
 <h1>Changelog des packs de l'Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V356</h2>
+<ul>
+<li>Mise à jour de Hekate en version 5.2.0.</li>
+</ul>
 <h2>V355</h2>
 <ul>
 <li>Mise à jour des fichiers de configuration de Sys-con.</li>

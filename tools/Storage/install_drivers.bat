@@ -32,6 +32,7 @@ IF NOT "%install_choice%"=="" set install_choice=%install_choice:~0,1%
 IF "%install_choice%"=="1" goto:RCM_auto
 IF "%install_choice%"=="2" goto:Zadig
 IF "%install_choice%"=="3" goto:manual_install
+IF "%install_choice%"=="4" goto:maximize_hekate_mass_storage_speed
 IF "%install_choice%"=="0" goto:launch_doc
 goto:finish_script
 :RCM_auto
@@ -63,6 +64,9 @@ call "%associed_language_script%" "manual_install_instructions"
 pause
 echo.
 start devmgmt.msc
+goto:select_install
+:maximize_hekate_mass_storage_speed
+start tools\drivers\hekate_usb_storage_registry_config\nyx_usb_max_rate.reg
 goto:select_install
 :launch_doc
 echo.

@@ -26,6 +26,7 @@ echo.
 echo 1: Automatic install for the RCM mode ^(recommanded for this mode^)?
 echo 2: Install drivers via Zadig?
 echo 3: Install drivers via the Windows Devices Manager?
+echo 4: Maximize Hekate's USB mass storage function speed ^(must be executed only one time^)?
 echo 0: Launch the documentation?
 echo All other choices: Bo back to previous menu?
 echo.

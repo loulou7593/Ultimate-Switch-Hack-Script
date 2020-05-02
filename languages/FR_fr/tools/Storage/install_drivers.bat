@@ -17,6 +17,7 @@ echo.
 echo 1: Installation automatique pour le mode RCM ^(installation recommandée pour ce mode^)?
 echo 2: Installation via Zadig?
 echo 3: Installation via le gestionaire de périphériques?
+echo 4: Maximiser la vitesse de copie de la fonction de stockage de masse USB de Hekate ^(à n'exécuter qu'une seule fois^)?
 echo 0: Lancer la documentation?
 echo N'importe quel autre choix: Revenir au menu précédent.
 echo.
