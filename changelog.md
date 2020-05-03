@@ -1,5 +1,9 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.83</h2>
+<ul>
+<li>Mise à jour de TegraExplorer en version 2.0.0.</li>
+</ul>
 <h2>V4.1.82</h2>
 <ul>
 <li>Mise à jour des crédits.</li>
