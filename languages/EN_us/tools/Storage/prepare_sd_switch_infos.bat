@@ -219,7 +219,7 @@ IF /i "%copy_sxos_pack%"=="o" (
 	) else (
 		echo Pack SX OS
 	)
-	IF /i "%sxos_remove_sx_autoloader%"=="o" (
+	IF /i "%remove_sx_autoloader%"=="o" (
 		echo The SX-Autoloader module will be removed.
 	) else (
 		echo The SX-Autoloader module will be used.

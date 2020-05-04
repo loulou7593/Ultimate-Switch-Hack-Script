@@ -1,5 +1,11 @@
 <h1>Changelog of the Ultimate Switch Hack Script packs</h1>
 &nbsp;
+<h2>V358</h2>
+<ul>
+<li>Add Switch-cheats-updater homebrew.</li>
+<li>Update Haku33 to version 3.0.</li>
+<li>Update cheats.</li>
+</ul>
 <h2>V357</h2>
 <ul>
 <li>Update Atmosphere's and Hekate's patches.</li>

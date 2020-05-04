@@ -217,6 +217,7 @@ There might be a cheat in the database but not listed here!
 |Sonic Mania Plus|[01009AA000FAA000](01009AA000FAA000/cheats)|![WLD](http://nswdb.com/images/WLD.jpg)
 |Splatoon 2|[0100F8F0000A2000](0100F8F0000A2000/cheats)|![EUR](http://nswdb.com/images/EUR.jpg)
 |Stardew Valley|[0100E65002BB8000](0100E65002BB8000/cheats)|![WLD](http://nswdb.com/images/WLD.jpg)
+|Streets of Rage 4|[0100EC9010258000](0100EC9010258000/cheats)|![WLD](http://nswdb.com/images/WLD.jpg)
 |STRIKERS 1945|[0100FF5005B76000](0100FF5005B76000/cheats)|![WLD](http://nswdb.com/images/WLD.jpg)
 |STRIKERS 1945 II|[0100720008ED2000](0100720008ED2000/cheats)|![WLD](http://nswdb.com/images/WLD.jpg)
 |Super Bomberman R (rev001)|[01007AD00013E000](01007AD00013E000/cheats)|![WLD](http://nswdb.com/images/WLD.jpg)
