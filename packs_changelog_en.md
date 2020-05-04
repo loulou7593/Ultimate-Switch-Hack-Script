@@ -2,6 +2,7 @@
 &nbsp;
 <h2>V358</h2>
 <ul>
+<li>Update Atmosphere's config to disable cheats by default.</li>
 <li>Add Switch-cheats-updater homebrew.</li>
 <li>Update Haku33 to version 3.0.</li>
 <li>Update cheats.</li>

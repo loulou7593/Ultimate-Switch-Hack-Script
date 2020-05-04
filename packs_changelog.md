@@ -2,6 +2,7 @@
 &nbsp;
 <h2>V358</h2>
 <ul>
+<li>Correction du fichier de configuration d'Atmosphere pour désactiver les cheats par défaut.</li>
 <li>Ajout du homebrew Switch-cheats-updater.</li>
 <li>Mise à jour de Haku33 en version 3.0.</li>
 <li>Mise à jour des cheats.</li>
