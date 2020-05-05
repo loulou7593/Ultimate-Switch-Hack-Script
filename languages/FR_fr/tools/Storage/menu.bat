@@ -44,7 +44,7 @@ echo 15: Me faire une donation?
 echo.
 echo 0: Lancer la documentation ^(recommandé^)?
 echo.
-echo N'importe quelle autre choix: Quitter sans rien faire?
+echo N'importe quel autre choix: Quitter sans rien faire?
 echo.
 echo.
 set /p action_choice=Entrez le numéro correspondant à l'action à faire: 

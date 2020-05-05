@@ -31,7 +31,7 @@ echo 10: Mettre à jour Shofel2 ^(fonctionnalité obsolète^)?
 echo.
 echo 11: Compresser/décompresser un jeu grâce à nsZip ^(fonctionnalité obsolète^)?
 echo.
-echo N'importe quelle autre choix: Revenir au menu précédent?
+echo N'importe quel autre choix: Revenir au menu précédent?
 echo.
 echo.
 set /p action_choice=Entrez le numéro correspondant à l'action à faire: 

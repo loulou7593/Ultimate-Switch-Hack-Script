@@ -3,6 +3,7 @@
 <h2>V4.1.85</h2>
 <ul>
 <li>Mise à jour de Hactoolnet en version 0.11.1.</li>
+<li>Corrections de diverses fautes dans la langue française.</li>
 <li>Mise à jour de TegraExplorer en version 2.0.1.</li>
 <li>Mise à jour de la documentation et des crédits.</li>
 <li>Mise à jour des packs de CFWs/modules/homebrews/overlays/payloads_utiles en version 359.</li>

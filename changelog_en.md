@@ -2,6 +2,7 @@
 &nbsp;
 <h2>V4.1.85</h2>
 <ul>
+<li>Fix some language errors for the french one.</li>
 <li>Update documentation and credits.</li>
 <li> Updating CFWs/modules/homebrews/overlays/usful_payloads packs in version 359.</li>
 </ul>

@@ -37,7 +37,7 @@ echo 13: Installer des applications Android ^(mode débogage USB requis^)?
 echo.
 echo 14: Gestion des puces?
 echo.
-echo N'importe quelle autre choix: Revenir au menu précédent?
+echo N'importe quel autre choix: Revenir au menu précédent?
 echo.
 echo.
 set /p action_choice=Entrez le numéro correspondant à l'action à faire: 

@@ -39,7 +39,7 @@ echo 14: Configurer les profiles de copie d'overlays utilisés lors de la prépa
 echo.
 echo 15: Configurer les profiles d'emummc d'Atmosphere utilisés lors de la préparation d'une SD?
 echo.
-echo N'importe quelle autre choix: Revenir au menu précédent?
+echo N'importe quel autre choix: Revenir au menu précédent?
 echo.
 echo.
 set /p action_choice=Entrez le numéro correspondant à l'action à faire: 
