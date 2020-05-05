@@ -1,5 +1,10 @@
 <h1>Changelog des packs de l'Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V359</h2>
+<ul>
+<li>Ajout du homebrew Switch_90DNS_tester.</li>
+<li>Ajout du homebrew Tinleaf.</li>
+</ul>
 <h2>V358</h2>
 <ul>
 <li>Correction du fichier de configuration d'Atmosphere pour désactiver les cheats par défaut.</li>

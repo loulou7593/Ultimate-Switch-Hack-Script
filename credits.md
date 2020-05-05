@@ -91,8 +91,10 @@
 <li><a target="_blank" href="https://github.com/HookedBehemoth/screen-nx">Screen-NX</a> and <a target="_blank" href="https://github.com/HookedBehemoth/ShareNX-Overlay">ShareNX-Overlay</a></li>
 <li><a target="_blank" href="https://github.com/noahc3/sdsetup-switch">Sdsetup-switch</a></li>
 <li><a target="_blank" href="https://github.com/nadrino/SimpleModManager">SimpleModManager</a></li>
+<li><a target="_blank" href="https://github.com/meganukebmp/Switch_90DNS_tester">Switch_90DNS_tester</a></li>
 <li><a target="_blank" href="https://gbatemp.net/threads/switch-cheats-updater-update-your-cheat-files-from-your-switch.561878/">Switch-cheats-updater</a></li>
 <li><a target="_blank" href="https://github.com/joel16/SwitchIdent">SwitchIdent</a></li>
+<li><a target="_blank" href="https://github.com/blawar/tinleaf">Tinleaf</a></li>
 </ul>
 <h2>Software</h2>
 <ul>

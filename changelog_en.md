@@ -1,5 +1,10 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.85</h2>
+<ul>
+<li>Update documentation and credits.</li>
+<li> Updating CFWs/modules/homebrews/overlays/usful_payloads packs in version 359.</li>
+</ul>
 <h2>V4.1.84</h2>
 <ul>
 <li>Fix a bug that caused a bad message displayed for the SX-Autoloader module remove action.</li>
