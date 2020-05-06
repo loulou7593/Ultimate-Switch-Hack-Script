@@ -1,5 +1,11 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.86</h2>
+<ul>
+<li>Mise à jour de ReiNX en version 3.0.</li>
+<li>Réintégration de la copie de ReiNX durant le script de préparation d'une SD et divers ajustements sur ce même script.</li>
+<li>Mise à jour des packs de CFWs/modules/homebrews/overlays/payloads_utiles en version 360.</li>
+</ul>
 <h2>V4.1.85</h2>
 <ul>
 <li>Mise à jour de Hactoolnet en version 0.11.1.</li>

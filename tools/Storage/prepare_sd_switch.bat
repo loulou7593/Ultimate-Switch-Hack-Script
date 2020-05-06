@@ -435,22 +435,28 @@ IF /i "%copy_atmosphere_pack%"=="o" (
 )
 
 IF /i "%copy_reinx_pack%"=="o" (
-	IF EXIST "%volume_letter%:\sept\sept-secondary.enc" del /q "%volume_letter%:\sept\sept-secondary.enc"
-	IF EXIST "%volume_letter%:\sept\reinx\sept-secondary.enc" del /q "%volume_letter%:\sept\reinx\sept-secondary.enc"
-	IF EXIST "%volume_letter%:\ReiNX\warmboot.bin" del /q "%volume_letter%:\ReiNX\warmboot.bin"
-	IF EXIST "%volume_letter%:\ReiNX\titles\010000000000100D\*.*" rmdir /s /q ""%volume_letter%:\ReiNX\titles\010000000000100D"
+			IF EXIST "%volume_letter%:\ReiNX\contents" (
+			rmdir /s /q "%volume_letter%:\ReiNX\titles" >nul
+		) else (
+			move "%volume_letter%:\ReiNX\titles" "%volume_letter%:\ReiNX\contents" >nul
+		)
+	IF EXIST "%volume_letter%:\sept\sept-secondary.enc" del /q "%volume_letter%:\sept\sept-secondary.enc" >nul
+	IF EXIST "%volume_letter%:\sept\reinx\sept-secondary.enc" del /q "%volume_letter%:\sept\reinx\sept-secondary.enc" >nul
+	IF EXIST "%volume_letter%:\ReiNX\contents\010000000000100D\*.*" rmdir /s /q ""%volume_letter%:\ReiNX\contents\010000000000100D" >nul
+	IF EXIST "%volume_letter%:\ReiNX\contents\0100000000000036\exefs\*.*" rmdir /s /q ""%volume_letter%:\ReiNX\contents\0100000000000036\exefs" >nul
+	IF EXIST "%volume_letter%:\ReiNX\patches\*.*" rmdir /s /q "%volume_letter%:\ReiNX\patches" >nul
+	IF EXIST "%volume_letter%:\ReiNX\splash.bin" del /q "%volume_letter%:\ReiNX\splash.bin"
+	IF EXIST "%volume_letter%:\ReiNX\lp0fw.bin" del /q "%volume_letter%:\ReiNX\lp0fw.bin"
+	IF EXIST "%volume_letter%:\ReiNX\secmon.bin" del /q "%volume_letter%:\ReiNX\secmon.bin"
 	%windir%\System32\Robocopy.exe TOOLS\sd_switch\reinx %volume_letter%:\ /e >nul
 	IF /i NOT "%reinx_enable_nogc_patch%"=="o" del /q %volume_letter%:\ReiNX\nogc >nul
 	copy /V /B TOOLS\sd_switch\payloads\ReiNX.bin %volume_letter%:\ReiNX.bin >nul
 	IF /i "%copy_atmosphere_pack%"=="o" copy /V /B TOOLS\sd_switch\payloads\ReiNX.bin %volume_letter%:\bootloader\payloads\ReiNX.bin >nul
 	IF EXIST "%volume_letter%:\switch\GagOrder.nro" del /q "%volume_letter%:\switch\GagOrder.nro" >nul
 	IF EXIST "%volume_letter%:\switch\appstore\res" rmdir /s /q "%volume_letter%:\switch\appstore\res" >nul
-	::IF EXIST "%volume_letter%:\ReiNX\titles\010000000000100D" rmdir /s /q "%volume_letter%:\ReiNX\titles\010000000000100D" >nul
-	IF EXIST "%volume_letter%:\ReiNX\hbl.nsp" del /q "%volume_letter%:\ReiNX\hbl.nsp" >nul
-	IF EXIST "%volume_letter%:\ReiNX\titles\010000000000100D\exefs.nsp" del /q "%volume_letter%:\ReiNX\titles\010000000000100D\exefs.nsp" >nul
 	copy /V /B TOOLS\sd_switch\payloads\ReiNX.bin %volume_letter%:\ReiNX\reboot_payload.bin >nul
 	call :copy_modules_pack "reinx"
-	rem IF NOT "%pass_copy_overlays_pack%"=="Y" call :force_copy_overlays_base_files "reinx"
+	IF NOT "%pass_copy_overlays_pack%"=="Y" call :force_copy_overlays_base_files "reinx"
 )
 
 IF /i "%copy_sxos_pack%"=="o" (
@@ -520,7 +526,7 @@ IF "%~1"=="atmosphere" (
 )
 IF "%~1"=="reinx" (
 	IF "%reinx_pass_copy_modules_pack%"=="Y" goto:skip_copy_modules_pack
-	set temp_modules_copy_path=%volume_letter%:\ReiNX\titles
+	set temp_modules_copy_path=%volume_letter%:\ReiNX\contents
 	set temp_modules_profile_path=%reinx_modules_profile_path%
 )
 IF "%~1"=="sxos" (
@@ -580,14 +586,6 @@ for /l %%i in (1,1,%temp_count%) do (
 		call :force_copy_overlays_base_files "%~1"
 	)
 )
-rem IF "%~1"=="reinx" (
-	rem for %%f in ("%temp_modules_copy_path%\titles") do (
-		rem IF EXIST "%%f\flags\*.*" (
-			rem move %%f\flags\*.* %%f
-			rem rmdir /s /q %%f\flags
-		rem )
-	rem )
-rem )
 :skip_copy_modules_pack
 exit /b
 
@@ -628,9 +626,9 @@ for /l %%i in (1,1,%temp_count%) do (
 			%windir%\System32\Robocopy.exe tools\sd_switch\mixed\modular\!temp_homebrew!\special_atmosphere %volume_letter%: /e >nul
 			%windir%\System32\Robocopy.exe tools\sd_switch\mixed\modular\!temp_homebrew!\module\titles %volume_letter%:\atmosphere\contents /e >nul
 		)
-		IF EXIST "%volume_letter%:\ReiNX\titles" (
+		IF EXIST "%volume_letter%:\ReiNX\contents" (
 			set one_cfw_chosen=Y
-			%windir%\System32\Robocopy.exe tools\sd_switch\mixed\modular\!temp_homebrew!\module %volume_letter%:\ReiNX /e >nul
+			%windir%\System32\Robocopy.exe tools\sd_switch\mixed\modular\!temp_homebrew!\module\titles %volume_letter%:\ReiNX\contents /e >nul
 		)
 		IF EXIST "%volume_letter%:\sxos\titles" (
 			set one_cfw_chosen=Y
@@ -649,7 +647,7 @@ for /l %%i in (1,1,%temp_count%) do (
 		IF /i "%copy_reinx_pack%"=="o" (
 			set one_cfw_chosen=Y
 			IF NOT EXIST "%volume_letter%:\ReiNX" mkdir "%volume_letter%:\ReiNX"
-			%windir%\System32\Robocopy.exe tools\sd_switch\mixed\modular\!temp_homebrew!\module %volume_letter%:\ReiNX /e >nul
+			%windir%\System32\Robocopy.exe tools\sd_switch\mixed\modular\!temp_homebrew!\module\titles %volume_letter%:\ReiNX\contents /e >nul
 		)
 		IF /i "%copy_sxos_pack%"=="o" (
 			set one_cfw_chosen=Y
@@ -658,10 +656,8 @@ for /l %%i in (1,1,%temp_count%) do (
 		)
 		IF "!one_cfw_chosen!"=="Y" (
 			%windir%\System32\Robocopy.exe tools\sd_switch\mixed\modular\!temp_homebrew!\homebrew %volume_letter%:\ /e >nul
-			IF EXIST "%volume_letter%:\sxos\hbl.nsp" del /q "%volume_letter%:\sxos\hbl.nsp" >nul
-			IF EXIST "%volume_letter%:\sxos\hbl.nsp.sig" del /q "%volume_letter%:\sxos\hbl.nsp.sig" >nul
 		) else (
-			echo Le homebrew Tinfoil ne peut être copié si aucun CFW n'y est associé pendant la préparation de la SD car il contient des éléments liés aux différents CFW. Pour copier correctement ce homebrew, vous devez sélectionner un ou plusieurs CFW avec lesquels ce homebrew sera utilisé sur votre console ou la SD doit contenir le répertoire "titles" associé aux CFWs installés sur la SD.
+			call "%associed_language_script%" "homebrew_should_be_associed_with_at_least_one_cfw_error"
 		)
 	)
 	IF "!temp_special_homebrew!"=="N" %windir%\System32\Robocopy.exe tools\sd_switch\mixed\modular\!temp_homebrew! %volume_letter%:\ /e >nul

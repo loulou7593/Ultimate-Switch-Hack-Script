@@ -147,6 +147,10 @@ echo.
 set /p prepare_another_sd=Souhaitez-vous relancer la préparation d'une SD depuis le début? ^(%lng_yes_choice%/%lng_no_choice%^): 
 goto:eof
 
+:homebrew_should_be_associed_with_at_least_one_cfw_error
+echo Le homebrew !temp_homebrew! ne peut être copié si aucun CFW n'y est associé pendant la préparation de la SD car il contient des éléments liés aux différents CFW. Pour copier correctement ce homebrew, vous devez sélectionner un ou plusieurs CFW durant la préparation de la SD ou la SD doit contenir le répertoire "contents" ou "titles" associé aux CFWs installés sur la SD.
+goto:eof
+
 :config_nes_classic_choice
 echo Attention, il semble qu'aucune configuration de l'émulateur Nes Classic Edition n'ait eu lieu précédemment, celui-ci sera donc inutilisable en l'état.
 echo Vous pouvez configurer l'émulateur via les "autres fonctions" du script puis refaire la préparation de la SD ou choisir de le configurer immédiatement.
