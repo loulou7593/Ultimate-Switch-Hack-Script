@@ -1,5 +1,9 @@
 <h1>Changelog des packs de l'Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V361</h2>
+<ul>
+<li>Mise à jour de ReiNX en version 3.0-hotfix.</li>
+</ul>
 <h2>V360</h2>
 <ul>
 <li>Mise à jour de ReiNX en version 3.0.</li>

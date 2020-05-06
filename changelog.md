@@ -1,5 +1,10 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.87</h2>
+<ul>
+<li>Mise à jour de ReiNX en version 3.0-hotfix.</li>
+<li>Mise à jour des packs de CFWs/modules/homebrews/overlays/payloads_utiles en version 361.</li>
+</ul>
 <h2>V4.1.86</h2>
 <ul>
 <li>Mise à jour de ReiNX en version 3.0.</li>

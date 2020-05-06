@@ -447,7 +447,6 @@ IF /i "%copy_reinx_pack%"=="o" (
 	IF EXIST "%volume_letter%:\ReiNX\patches\*.*" rmdir /s /q "%volume_letter%:\ReiNX\patches" >nul
 	IF EXIST "%volume_letter%:\ReiNX\splash.bin" del /q "%volume_letter%:\ReiNX\splash.bin"
 	IF EXIST "%volume_letter%:\ReiNX\lp0fw.bin" del /q "%volume_letter%:\ReiNX\lp0fw.bin"
-	IF EXIST "%volume_letter%:\ReiNX\secmon.bin" del /q "%volume_letter%:\ReiNX\secmon.bin"
 	%windir%\System32\Robocopy.exe TOOLS\sd_switch\reinx %volume_letter%:\ /e >nul
 	IF /i NOT "%reinx_enable_nogc_patch%"=="o" del /q %volume_letter%:\ReiNX\nogc >nul
 	copy /V /B TOOLS\sd_switch\payloads\ReiNX.bin %volume_letter%:\ReiNX.bin >nul
