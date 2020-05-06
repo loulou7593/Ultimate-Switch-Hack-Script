@@ -1,5 +1,10 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.88</h2>
+<ul>
+<li>Remove installation of ReiNX for now cause it doesn't work.</li>
+<li> Updating CFWs/modules/homebrews/overlays/usful_payloads packs in version 362.</li>
+</ul>
 <h2>V4.1.87</h2>
 <ul>
 <li>Update ReiNX to version 3.0-hotfix.</li>
