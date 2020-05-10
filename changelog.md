@@ -1,5 +1,10 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.89</h2>
+<ul>
+<li>Mise à jour de Rekado en version 4.0.1.</li>
+<li>Mise à jour des packs de CFWs/modules/homebrews/overlays/payloads_utiles en version 363.</li>
+</ul>
 <h2>V4.1.88</h2>
 <ul>
 <li>Suppression de l'installation de ReiNX pour l'instant car il ne fonctionne pas.</li>

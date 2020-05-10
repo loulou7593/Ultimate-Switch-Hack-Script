@@ -1,5 +1,10 @@
 <h1>Changelog of the Ultimate Switch Hack Script packs</h1>
 &nbsp;
+<h2>V363</h2>
+<ul>
+<li>Update ShareNX-Overlay to version 1.1.2</li>
+<li>Update NX-Activity-Log to version 1.3.1.</li>
+</ul>
 <h2>V362</h2>
 <ul>
 <li>Update the  Retroarch link for the version 1.8.6.</li>
