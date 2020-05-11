@@ -618,6 +618,9 @@ for /l %%i in (1,1,%temp_count%) do (
 		IF NOT EXIST "%volume_letter%:\switch" mkdir "%volume_letter%:\switch"
 		IF EXIST "%volume_letter%:\EdiZon" move "%volume_letter%:\EdiZon" "%volume_letter%:\switch\EdiZon" >nul
 	)
+	IF "!temp_homebrew!"=="Switch-cheats-updater" (
+		IF EXIST "%volume_letter%:\config\cheats-updater\exclude.txt" rename "%volume_letter%:\config\cheats-updater\exclude.txt" "exclude.txt.bak" >nul
+	)
 		IF "!temp_homebrew!"=="Fizeau" (
 		set temp_special_homebrew=Y
 		IF EXIST "%volume_letter%:\atmosphere\contents" (
@@ -660,6 +663,12 @@ for /l %%i in (1,1,%temp_count%) do (
 		)
 	)
 	IF "!temp_special_homebrew!"=="N" %windir%\System32\Robocopy.exe tools\sd_switch\mixed\modular\!temp_homebrew! %volume_letter%:\ /e >nul
+	IF "!temp_homebrew!"=="Switch-cheats-updater" (
+		IF EXIST "%volume_letter%:\config\cheats-updater\exclude.txt.bak" (
+			del /q "%volume_letter%:\config\cheats-updater\exclude.txt" >nul
+			rename "%volume_letter%:\config\cheats-updater\exclude.txt.bak" "exclude.txt" >nul
+		)
+	)
 	IF "!temp_homebrew!"=="Nxdumptool" (
 		IF EXIST "%volume_letter%:\switch\gcdumptool\*.*" rmdir /s /q "%volume_letter%:\switch\gcdumptool"
 		IF EXIST "%volume_letter%:\switch\gcdumptool.nro" del /q "%volume_letter%:\switch\gcdumptool.nro"
