@@ -558,9 +558,6 @@ for /l %%i in (1,1,%temp_count%) do (
 		IF "!temp_module!"=="Ovl-menu" (
 			set ovlmenu_already_copied=Y
 		)
-		IF "%~1"=="reinx" (
-			IF EXIST "%temp_modules_copy_path%\!temp_module_title_id!\toolbox.json" del /q "%temp_modules_copy_path%\!temp_module_title_id!\toolbox.json"
-		)
 			IF "%~1"=="sxos" (
 			IF EXIST "%temp_modules_copy_path%\!temp_module_title_id!\toolbox.json" del /q "%temp_modules_copy_path%\!temp_module_title_id!\toolbox.json"
 		)

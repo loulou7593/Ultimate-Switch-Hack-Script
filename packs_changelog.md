@@ -1,5 +1,11 @@
 <h1>Changelog des packs de l'Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V365</h2>
+<ul>
+<li>Mise à jour de NX-hbloader en version 2.3.2.</li>
+<li>Remplacement de l'overlay OvlSysmodules par le fork de KilimIG.</li>
+<li>Mise à jour de Status-Monitor-Overlay en version 0.5.3.</li>
+</ul>
 <h2>V364</h2>
 <ul>
 <li>Mise à jour de SimpleModManager en version 1.5.0.</li>

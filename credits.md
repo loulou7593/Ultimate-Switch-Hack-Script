@@ -13,7 +13,7 @@
 <li><a target="_blank" href="https://github.com/switchbrew/nx-hbloader">NX-Hbloader</a></li>
 <li><a target="_blank" href="https://github.com/switchbrew/nx-hbmenu">NX-Hbmenu</a></li>
 <li><a target="_blank" href="https://github.com/WerWolv/nx-ovlloader">nx-ovlloader</a> and <a target="_blank" href="https://github.com/WerWolv/Tesla-Menu">Tesla-Menu</a></li>
-<li><a target="_blank" href="https://github.com/WerWolv/ovl-sysmodules">OvlSysmodules</a></li>
+<li><a target="_blank" href="https://github.com/WerWolv/ovl-sysmodules">OvlSysmodules</a>, replaced by <a target="_blank" href="https://github.com/KilimIG/ovl-sysmodules">this fork</a></li>
 <li><a target="_blank" href="https://github.com/masagrator/Status-Monitor-Overlay">Status-Monitor-Overlay</a></li>
 <li><a target="_blank" href="https://github.com/diwo/TextReaderOverlay-NX">TextReaderOverlay-NX</a></li>
 <li><a target="_blank" href="https://switchtools.sshnuke.net/">Biskeydump, Memloader, Briccmii, Gptrestore, Romdump, ChoiDuJour, HacDiskMount, ChoiDuJourNX</a></li>
