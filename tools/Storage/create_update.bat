@@ -168,6 +168,7 @@ cd "%calling_script_dir%\update_packages"
 del /q list_of_dirs.ini 2>nul
 dir /A:D >list_of_dirs.ini
 "%this_script_dir%\..\Hactool_based_programs\tools\ChoiDujour.exe" --keyset="%this_script_dir%\..\Hactool_based_programs\ChoiDuJour_keys.txt" %no_exfat_param% %fspatches% "%update_file_path%"
+::"%this_script_dir%\..\ChoiDuJour\program\ChoiDujour.exe" --keyset="%this_script_dir%\..\Hactool_based_programs\ChoiDuJour_keys.txt" %no_exfat_param% %fspatches% "%update_file_path%"
 IF %errorlevel% EQU 0 (
 	call "%associed_language_script%" "package_creation_success"
 	goto:skip_verif_fw_dir

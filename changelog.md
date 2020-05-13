@@ -1,5 +1,9 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.92</h2>
+<ul>
+<li>Modification de ChoiDuJour pour qu'il utilise des URLs venant de mon Github pour télécharger les fichiers nécessaires durant la création d'un package (sources modifiées disponibles dans le dossier "tools\ChoiDuJour" du Github de mon script).</li>
+</ul>
 <h2>V4.1.91</h2>
 <ul>
 <li>Mise à jour des packs de CFWs/modules/homebrews/overlays/payloads_utiles en version 365.</li>
