@@ -1,5 +1,10 @@
 <h1>Changelog of the Ultimate Switch Hack Script packs</h1>
 &nbsp;
+<h2>V366</h2>
+<ul>
+<li>Update PPSSPP to version bf6357a5.</li>
+<li>Update Pnes, Psnes and PFBA to version 4.4.</li>
+</ul>
 <h2>V365</h2>
 <ul>
 <li>Update NX-hbloader to version 2.3.2.</li>
