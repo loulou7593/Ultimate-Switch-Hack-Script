@@ -14,14 +14,14 @@ title Loading %this_script_version% - Shadow256 Ultimate Switch Hack Script %ush
 goto:eof
 
 :admin_error
-echo The script is in a folder witch needs admin write authorisation to be written. Reload the script with a right click and select "launch as administrator".
+echo This script requires Admin rights, please right click and select "run as admin" before continuing.
 goto:eof
 
 :display_utf8_instructions
-echo Before continuing, verify the setting explained below cause the script could have some problems if the setting isn't set correctly.
+echo Before continuing, please verify the following settings are correct. Not setting this correctly could cause this script to fail.
 echo Make a right click on the title bar or use the shortcut "alt+space" and select "properties".
-echo Goto the "fonts" tab, select the "Lucida Console" font and click on "OK" button.
+echo Go to the "fonts" tab, select the "Lucida Console" font and click the "OK" button.
 echo.
-echo If everything is well configured, the script should work correctly.
-echo If the script close just after this, the font selected is not compatible with UTF-8 encoding.
+echo If everything is configured correctly, the script should work without issue.
+echo If the script fails and force closes, the font selected is not compatible with UTF-8 encoding.
 goto:eof

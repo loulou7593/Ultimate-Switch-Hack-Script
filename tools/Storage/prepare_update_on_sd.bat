@@ -7,11 +7,11 @@ set associed_language_script=%ushs_base_path%%associed_language_script%
 IF NOT EXIST "%associed_language_script%" (
 	set associed_language_script=languages\FR_fr\!this_script_full_path:%ushs_base_path%=!
 	set associed_language_script=%ushs_base_path%!associed_language_script!
-	echo Associed language file not found, use the update manager to install the file. French language will be tryed.
+	echo The associated language file cannot be found, please run the updater to download it. French will be set as default.
 	pause
 )
 IF NOT EXIST "%associed_language_script%" (
-	echo Language error, please use the update manager to update the script. The script couldn't continue.
+	echo Language error. Please use the update manager to update the script. This script will now close.
 	pause
 	endlocal
 	goto:eof
@@ -103,8 +103,8 @@ IF /i "%firmware_choice%"=="F" (
 	goto:define_firmware_choice
 )
 IF "%firmware_choice%"=="1.0.0" (
-	set expected_md5=529bcdab4964809e44fa75634c7f1432
-	set "firmware_link=https://mega.nz/#^!YExVSRKY^!MEBPOhYCQ1hXA0tlhSh70nC1C0rGEv2P3A6go56Z87g"
+	set expected_md5=46e6814359631d3c92bc43ead4328349
+	set "firmware_link=https://mega.nz/#^!sVg2RKYS^!MVDYwOWwvL6rUKiXHPhDr7071MhsbTi9ybIn_RABihI"
 	set firmware_file_name=Firmware 1.0.0.zip
 	set firmware_folder=firmware_temp\
 	goto:download_firmware

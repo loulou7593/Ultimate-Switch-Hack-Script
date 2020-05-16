@@ -1,5 +1,11 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.94</h2>
+<ul>
+<li>Correction pour le téléchargement du firmware 1.0.0.</li>
+<li>Corrections de certains messages en anglais, merci à Synecdoche1 pour <a target=" _blank" href="https://github.com/shadow2560/Ultimate-Switch-Hack-Script/pull/10/files">la suggestion</a>.</li>
+<li>Mise à jour de Hactoolnet en version 0.11.2.</li>
+</ul>
 <h2>V4.1.93</h2>
 <ul>
 <li>Mise à jour des packs de CFWs/modules/homebrews/overlays/payloads_utiles en version 366.</li>
