@@ -1,4 +1,5 @@
 ::Script by Shadow256
+color f0
 @echo off
 chcp 65001 >nul
 Setlocal enabledelayedexpansion

@@ -1,5 +1,13 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.95</h2>
+<ul>
+<li>Update Lockpick-RCM to version 1.8.3.</li>
+<li>Update my version of ChoiDuJour to remove an unusful message.</li>
+<li>Change display colors, now it's black on white.</li>
+<li>Some other minor changes.</li>
+<li> Updating CFWs/modules/homebrews/overlays/usful_payloads packs in version 367.</li>
+</ul>
 <h2>V4.1.94</h2>
 <ul>
 <li>Fix the download for the firmware 1.0.0.</li>

@@ -71,10 +71,10 @@ call "%associed_language_script%" "keys_file_selection"
 	goto:endscript
 	)
 	
-	copy "%keys_file_path%" keys.txt
+	copy "%keys_file_path%" keys.txt >nul
 	
 :skip_keys_file_creation
-IF EXIST ChoiDuJour_keys.txt del /q ChoiDuJour_keys.txt
+IF EXIST ChoiDuJour_keys.txt del /q ChoiDuJour_keys.txt >nul
 ..\python3_scripts\Keys_management\keys_management.exe create_choidujour_keys_file keys.txt >..\..\templogs\result_choidujour_keys_file_creation_file.txt
 ..\gnuwin32\bin\tail.exe -n1 <"..\..\templogs\result_choidujour_keys_file_creation_file.txt" >..\..\templogs\tempvar.txt
 set /p create_choidujour_keys_file=<..\..\templogs\tempvar.txt

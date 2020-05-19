@@ -81,7 +81,7 @@ echo Aucun fichier ou répertoire de mise à jour  renseigné, le script va s'ar
 goto:eof
 
 :sigpatches_param_choice
-set /p enable_sigpatches=Souhaitez-vous désactiver la vérification des signatures ^(nécessaire pour installer du contenu non signé^)? ^(%lng_yes_choice%/%lng_no_choice%^): 
+set /p enable_sigpatches=Souhaitez-vous activer la vérification des signatures ^(nécessaire pour installer du contenu non signé^)? ^(%lng_yes_choice%/%lng_no_choice%^): 
 goto:eof
 
 :nogc_param_choice

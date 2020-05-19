@@ -1,5 +1,11 @@
 <h1>Changelog of the Ultimate Switch Hack Script packs</h1>
 &nbsp;
+<h2>V367</h2>
+<ul>
+<li>Update Lockpick-RCM to version 1.8.3.</li>
+<li>Update Status-Monitor-Overlay to version 0.6.0.</li>
+<li>Update the  Retroarch link for the version 1.8.7.</li>
+</ul>
 <h2>V366</h2>
 <ul>
 <li>Update PPSSPP to version bf6357a5.</li>

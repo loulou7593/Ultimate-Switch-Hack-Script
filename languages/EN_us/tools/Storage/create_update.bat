@@ -90,7 +90,7 @@ echo No input folder or file selected, the script can't continue.
 goto:eof
 
 :sigpatches_param_choice
-set /p enable_sigpatches=Do you want to  disable the signatures verification patches ^(signatures patches are used to install and launch NSP/XCI^)? ^(%lng_yes_choice%/%lng_no_choice%^): 
+set /p enable_sigpatches=Do you want to  enable the signatures verification patches ^(signatures patches are used to install and launch NSP/XCI^)? ^(%lng_yes_choice%/%lng_no_choice%^): 
 goto:eof
 
 :nogc_param_choice
