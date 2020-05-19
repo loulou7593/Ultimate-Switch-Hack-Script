@@ -831,7 +831,6 @@ try:
         set_file_attributes(filePath, fileInfo.attrs)
 
     print('All files verified! Prepared firmware update is in folder ' + os.getcwd())
-    print(patchesJsonUrl)
 finally:
     pass
     # if tempDirName != '':
