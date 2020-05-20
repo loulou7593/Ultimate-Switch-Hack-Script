@@ -4,11 +4,11 @@ Ceci est un ensemble de scripts batch automatisant beaucoup de choses.
 
 La licence GPL V3 s'applique sur les scripts batch se trouvant à la racine de ce projet, les script de traduction ainsi que sur le fichier "tools/python3_scripts/ssnc/serials.json.safe", le fichier "tools/python3_scripts/ssnc/serials.json.beta", le fichier "tools\python3_scripts\Keys_management\keys_management.py" et tous les fichiers se trouvant dans le répertoire "tools\Storage" de ce projet. Pour le reste, les licences propres aux logiciels concernés s'appliquent.
 
-## Note importante
+## Note importante:
 
 La préparation d'une SD permet de préparer celle-ci jusqu'à Atmosphere 0.12.0, SX OS 2.9.5 beta (pour le reste voir les changelogs) et donc le hack est pris en charge jusqu'au firmware 10.0.2 et inférieurs pour les consoles non patchées, pour les consoles patchées Cafeine prend en charge les consoles sur le firmware 4.1.0 et inférieur. Pour des raisons personnelles ce script sera bien moins mis à jour par moi-même pendant une période non définie.
 
-## Fonctionnalités
+## Fonctionnalités:
 
 * Mise à jour automatique du script et de ses fonctionnalités (si souhaitée).
 * Support du multi-langues.

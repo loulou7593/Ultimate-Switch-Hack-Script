@@ -4,11 +4,11 @@ This is a set of batch scripts that automates many things.
 
 The GPL V3 license applies to the batch scripts at the root of this project, the translation scripts as well as the "tools/python3_scripts/ssnc/serials.json.safe" file, the "tools/python3_scripts/ssnc/serials.json.beta" file, the "tools\python3_scripts\Keys_management\keys_management.py" file and all files in the "tools\Storage" folder of this project. For the rest, the licenses specific to the software concerned apply.
 
-## Importante note
+## Important note:
 
 The SD preparation can prepare it with  Atmosphere 0.12.0, SX OS 2.9.5 beta (for the other things see the changelogs) so the  hack is supported to the 10.0.2 firmware or lesser for the non-patched consoles, for the patched consoles Cafeine support the consoles on the 4.1.0 firmware and lesser. For personal reasons this project could  be updated less often by myself during an undefinite time.
 
-## Features
+## Features:
 
 <ul>
 <li>Possibility of automatic updating of scripts/functionalities.</li>
@@ -50,7 +50,7 @@ The SD preparation can prepare it with  Atmosphere 0.12.0, SX OS 2.9.5 beta (for
 <li>Extract files from a Switch gamesave.</li>
 </ul>
 
-## Known bugs
+## Known bugs:
 
 <ul>
 <li>The Nes Classic Edition and Snes Classic Edition configuration scripts display all games that can only be played by one player, so this must be manually fixed in the emulator's game configuration file for now.</li>
