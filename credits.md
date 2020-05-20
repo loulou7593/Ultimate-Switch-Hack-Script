@@ -113,7 +113,7 @@
 <li><a target="_blank" href="https://github.com/Thealexbarney/LibHac">Hactoolnet</a></li>
 <li>Imx_load Windows binary: rajkosto</li>
 <li><a target="_blank" href="https://github.com/MegatonHammer/linkle">Linkle</a></li>
-<li><a target="_blank" href="https://megatools.megous.com">Megatools 1.10.2</a></li>
+<li><a target="_blank" href="https://megatools.megous.com">Megatools</a></li>
 <li><a target="_blank" href="https://github.com/ihaveamac/ninfs">Ninfs</a> and <a target="_blank" href="http://www.secfs.net/winfsp/download/">WinFsp</a></li>
 <li><a target="_blank" href="https://github.com/garethflowers/nodejs-portable">NodeJS Portable</a>/</li>
 <li><a target="_blank" href="https://github.com/julesontheroad/NSC_BUILDER">NSC_Builder</a></li>
