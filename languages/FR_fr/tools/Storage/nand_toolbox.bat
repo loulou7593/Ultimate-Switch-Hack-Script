@@ -28,8 +28,8 @@ echo 5: Joindre un dump de la rawnand fait en plusieurs parties, par exemple un 
 echo 6: Spliter un dump de la rawnand?
 echo 7: Créer un fichier à partir d'un dump complet de la nand qui pourra ensuite être utilisé pour la création d'une Emunand via une partition dédiée de la SD?
 echo 8: Extraire les fichiers d'un dump de nand à partir d'un fichier de la partition de l'emunand?
-echo 9: Déchiffrer un dump ou une partition d'une rawnand ^(fonction en Alpha test^)?
-echo 10: Chiffrer un dump ou une partition d'une rawnand ^(fonction en Alpha test^)?
+echo 9: Déchiffrer un dump ou une partition d'une rawnand?
+echo 10: Chiffrer un dump ou une partition d'une rawnand?
 echo 11: Supprimer les informations d'identification de la console dans PRODINFO (fonction identique à Incognito)?
 echo 12: Utiliser Ninfs pour monter un fichier de dump de la rawnand?
 echo 13: Changer la taille de la partition USER d'une RAWNAND ou d'une FULL NAND?
