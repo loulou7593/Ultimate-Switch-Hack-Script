@@ -1,5 +1,11 @@
 <h1>Changelog Ultimate Switch Hack Script</h1>
 &nbsp;
+<h2>V4.1.96</h2>
+<ul>
+<li>Correction d'un bug dans la Nand Toolbox qui empêchait d'intervenir sur les partitions BOOT0, BOOT1 et RAWNAND d'une emunand.</li>
+<li>Quelques modifications dans les scripts  d'infos sur un fichier de clés.</li>
+<li>Mise à jour des packs de CFWs/modules/homebrews/overlays/payloads_utiles en version 368.</li>
+</ul>
 <h2>V4.1.95</h2>
 <ul>
 <li>Mise à jour de Lockpick-RCM en version 1.8.3.</li>

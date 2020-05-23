@@ -1,5 +1,9 @@
 <h1>Changelog of the Ultimate Switch Hack Script packs</h1>
 &nbsp;
+<h2>V368</h2>
+<ul>
+<li>Update JKSV to version 05.20.2020.</li>
+</ul>
 <h2>V367</h2>
 <ul>
 <li>Update Lockpick-RCM to version 1.8.3.</li>

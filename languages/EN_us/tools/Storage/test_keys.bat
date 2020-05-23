@@ -29,6 +29,16 @@ goto:eof
 echo Number of possible keys to analyse: %possible_analysed_keys%
 goto:eof
 
+:correct_keys
+IF "%correct_keys_state%"=="0" (
+	echo No correct verifiable key found.
+) else IF "%correct_keys_state%"=="1" (
+	echo Correct verifiable key found: %unknown_keys%
+) else IF "%correct_keys_state%"=="2" (
+	echo %count_correct_keys% correct verifiable keys found: %correct_keys%
+)
+goto:eof
+
 :unknown_keys
 IF "%unknown_keys_state%"=="0" (
 	echo No unknown or unic key found.

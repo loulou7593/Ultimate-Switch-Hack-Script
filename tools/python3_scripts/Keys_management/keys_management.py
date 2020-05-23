@@ -40,9 +40,13 @@ def file_is_text(fname):
 		return 0
 
 def create_sha256_file(keys_file):
-	keys_source_file = open(keys_file, 'r', encoding='utf-8')
-	temp_keys_source_list = keys_source_file.readlines()
-	keys_source_file.close()
+	try:
+		with open(keys_file, 'r', encoding='utf-8') as keys_source_file:
+			temp_keys_source_list = keys_source_file.readlines()
+			keys_source_file.close()
+	except:
+		print('Fichier de clés inexistant')
+		return 0
 	keys_source_list=[]
 	i = 0
 	for item in temp_keys_source_list:
@@ -57,18 +61,26 @@ def create_sha256_file(keys_file):
 	del temp_keys_source_list
 	i = 0
 	sha256_list = deepcopy(keys_source_list)
-	sha256_output_file = open(os.path.join(os.path.dirname(os.path.abspath(os.path.realpath(sys.argv[0]))), 'sha256_sources.txt'), 'w', encoding='utf-8')
-	for item in keys_source_list:
-		sha256_list[i][1] = hashlib.sha256(binascii.a2b_hex(item[1].lower().encode('utf-8'))).hexdigest()
-		sha256_output_file.write(sha256_list[i][0] + ' = ' + sha256_list[i][1] + '\n')
-		i +=1
-	sha256_output_file.close()
+	try:
+		with open(os.path.join(os.path.dirname(os.path.abspath(os.path.realpath(sys.argv[0]))), 'sha256_sources.txt'), 'w', encoding='utf-8') as sha256_output_file:
+			for item in keys_source_list:
+				sha256_list[i][1] = hashlib.sha256(binascii.a2b_hex(item[1].lower().encode('utf-8'))).hexdigest()
+				sha256_output_file.write(sha256_list[i][0] + ' = ' + sha256_list[i][1] + '\n')
+				i +=1
+			sha256_output_file.close()
+	except:
+		print('Impossible de créé le fichier sha256.')
+		return 0
 	return 1
 
 def test_keys_file(keys_file):
-	keys_source_file = open(keys_file, 'r', encoding='utf-8')
-	temp_keys_source_list = keys_source_file.readlines()
-	keys_source_file.close()
+	try:
+		with open(keys_file, 'r', encoding='utf-8') as keys_source_file:
+			temp_keys_source_list = keys_source_file.readlines()
+			keys_source_file.close()
+	except:
+		print ('Le fichier "' + keys_source_file + '" n\'existe pas.')
+		return 0
 	keys_source_list=[]
 	i = 0
 	for item in temp_keys_source_list:
@@ -87,9 +99,9 @@ def test_keys_file(keys_file):
 		sha256_list[i][1] = hashlib.sha256(binascii.a2b_hex(item[1].lower().encode('utf-8'))).hexdigest()
 		i += 1
 	try:
-		sha256_source_file = open(os.path.join(os.path.dirname(os.path.abspath(os.path.realpath(sys.argv[0]))), 'sha256_sources.txt'), 'r', encoding='utf-8')
-		temp_sha256_source_list = sha256_source_file.readlines()
-		sha256_source_file.close()
+		with open(os.path.join(os.path.dirname(os.path.abspath(os.path.realpath(sys.argv[0]))), 'sha256_sources.txt'), 'r', encoding='utf-8') as sha256_source_file:
+			temp_sha256_source_list = sha256_source_file.readlines()
+			sha256_source_file.close()
 	except:
 		print ('Le fichier "sha256_sources.txt" devant se trouver à côté de ce script est manquant, cette fonction ne peut pas continuer.')
 		print ('Pour corriger ce problème, veuillez créer un fichier avec le paramètre "create_sha256_file" ou télécharger le fichier "sha256_sources.txt" sur le Github du projet et le mettre à côté de ce script.')
@@ -146,7 +158,18 @@ def test_keys_file(keys_file):
 				del(sha256_list[j])
 				break
 			j += 1
+	correct_keys_list = []
+	if (len(keys_source_list) != 0):
+		for keys in keys_source_list:
+			correct_keys_list.append(keys[0])
+
 	print ('nombre de clés possibles à analyser: ' + str(len(sha256_source_list)))
+	if (len(correct_keys_list) == 0):
+		print('Aucune clés vérifiable trouvée.')
+	elif (len(correct_keys_list) == 1):
+		print('Clé vérifiable trouvée: . + correct_keys_list[0]')
+	else:
+		print (str(len(correct_keys_list)) + ' Clés vérifiable trouvées: ' + ', '.join(correct_keys_list))
 	if (len(keys_not_verified) == 0):
 		print ('Aucune clé inconnue ou unique à la console trouvée')
 	elif (len(keys_not_verified) == 1):
@@ -202,21 +225,26 @@ def create_choidujour_keys_file(keys_file):
 		if (stop_keys_needed_insertion == 1):
 			print ('La clé "' + keys_needed + '" obligatoire ne se trouve pas dans le fichier de clé, le script ne peux pas continuer.')
 			return 0
-	print('La dernière clé facultative trouvée est la clé "' + choidujour_list_prefered_usable[-1][0] + '", vous ne pourrez générer que des packages de mise à jour jusqu\'au firmware n\'utilisant que les clés jusqu\'à celle-ci.')
-	choidujour_keys_file = open('ChoiDuJour_keys.txt', 'w', encoding='utf-8')
-	choidujour_keys_file.write(choidujour_list_needed_usable[0][0] + ' = ' + choidujour_list_needed_usable[0][1] + '\n')
-	choidujour_keys_file.write(choidujour_list_needed_usable[1][0] + ' = ' + choidujour_list_needed_usable[1][1] + '\n')
-	choidujour_keys_file.write(choidujour_list_needed_usable[2][0] + ' = ' + choidujour_list_needed_usable[2][1] + '\n')
-	del(choidujour_list_needed_usable[0])
-	del(choidujour_list_needed_usable[0])
-	del(choidujour_list_needed_usable[0])
-	for keys_source in choidujour_list_prefered_usable:
-		choidujour_keys_file.write(keys_source[0] + ' = ' + keys_source[1] + '\n')
-	for keys_source in choidujour_list_needed_usable:
-		choidujour_keys_file.write(keys_source[0] + ' = ' + keys_source[1] + '\n')
-	choidujour_keys_file.close()
-	print ('Création du fichier "ChoiDuJour_keys.txt" effectuée avec succès.')
-	return 1
+	if (len(choidujour_list_prefered_usable) != len(choidujour_keys_prefered)):
+		print('La dernière clé facultative trouvée est la clé "' + choidujour_list_prefered_usable[-1][0] + '", vous ne pourrez générer que des packages de mise à jour jusqu\'au firmware n\'utilisant que les clés jusqu\'à celle-ci.')
+	try:
+		with open('ChoiDuJour_keys.txt', 'w', encoding='utf-8') as choidujour_keys_file:
+			choidujour_keys_file.write(choidujour_list_needed_usable[0][0] + ' = ' + choidujour_list_needed_usable[0][1] + '\n')
+			choidujour_keys_file.write(choidujour_list_needed_usable[1][0] + ' = ' + choidujour_list_needed_usable[1][1] + '\n')
+			choidujour_keys_file.write(choidujour_list_needed_usable[2][0] + ' = ' + choidujour_list_needed_usable[2][1] + '\n')
+			del(choidujour_list_needed_usable[0])
+			del(choidujour_list_needed_usable[0])
+			del(choidujour_list_needed_usable[0])
+			for keys_source in choidujour_list_prefered_usable:
+				choidujour_keys_file.write(keys_source[0] + ' = ' + keys_source[1] + '\n')
+			for keys_source in choidujour_list_needed_usable:
+				choidujour_keys_file.write(keys_source[0] + ' = ' + keys_source[1] + '\n')
+			choidujour_keys_file.close()
+			print ('Création du fichier "ChoiDuJour_keys.txt" effectuée avec succès.')
+			return 1
+	except:
+		print ('Le fichier "' + choidujour_keys_file + '" n\'a pas pu être créé ou une erreur d\'écriture s\'est produite.')
+		return 0
 
 def help():
 	print ('Utilisation:')

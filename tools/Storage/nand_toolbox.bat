@@ -1507,7 +1507,7 @@ IF "%except_all%"=="Y" (
 		goto:partition_select
 	)
 )
-IF "%~2"=="full_nand_choice" (
+IF "%~1"=="full_nand_choice" (
 	IF %choose_partition% GTR 14 (
 		call "%associed_language_script%" "bad_value"
 		goto:partition_select
